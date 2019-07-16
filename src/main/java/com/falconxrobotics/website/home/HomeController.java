@@ -18,14 +18,14 @@ public class HomeController {
         this.homeComponent = homeComponent;
     }
 
-    @GetMapping("/")
-    public String index() {
-        // try {
-            // model.addAllAttributes(homeComponent.getAttributes());
-        // } catch (IOException e) {
+    @GetMapping({"/index", "/home"})
+    public Model index(Model model) {
+        try {
+            model.addAllAttributes(homeComponent.getAttributes());
+        } catch (IOException e) {
             // TODO Auto-generated catch block
-            // e.printStackTrace();
-        // }
-        return "hi";
+            e.printStackTrace();
+        }
+        return model;
     }
 }

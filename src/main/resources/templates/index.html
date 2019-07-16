@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" 
 xmlns:th="http://www.thymeleaf.org" 
-xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
 xmlns:layout="/index">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +10,6 @@ xmlns:layout="/index">
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
-    <h1>hi</h1>
+    <h1 th:text="${test}"></h1>
 </body>
 </html>
