@@ -1,10 +1,9 @@
-package com.falconxrobotics.website.googlesheets;
+package com.falconxrobotics.website.application.googlesheets;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,15 +48,16 @@ public class GoogleSheetRepository {
         SHEET_CREDENTIALS = dotenv.get("SHEET_CREDENTIALS");
 
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+        service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                .setApplicationName(APPLICATION_NAME).build();
     }
 
     private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(new File(SHEET_TOKEN_PATH))).setAccessType("offline")
-                        .build();
+                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(new File(SHEET_TOKEN_PATH)))
+                        .setAccessType("offline").build();
 
         LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
@@ -65,7 +65,8 @@ public class GoogleSheetRepository {
 
     public ValueRange get(String range, String valueRenderOption) {
         try {
-            return service.spreadsheets().values().get(SHEET_ID, range).setValueRenderOption(valueRenderOption).execute();
+            return service.spreadsheets().values().get(SHEET_ID, range).setValueRenderOption(valueRenderOption)
+                    .execute();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,7 +75,8 @@ public class GoogleSheetRepository {
 
     public BatchGetValuesResponse batchGet(List<String> ranges, String valueRenderOption) {
         try {
-            return service.spreadsheets().values().batchGet(SHEET_ID).setRanges(ranges).setValueRenderOption(valueRenderOption).execute();
+            return service.spreadsheets().values().batchGet(SHEET_ID).setRanges(ranges)
+                    .setValueRenderOption(valueRenderOption).execute();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,7 +86,8 @@ public class GoogleSheetRepository {
     public UpdateValuesResponse update(String range, List<List<Object>> values, String valueInputOption) {
         try {
             ValueRange body = new ValueRange().setValues(values);
-            return service.spreadsheets().values().update(SHEET_ID, range, body).setValueInputOption(valueInputOption).execute();
+            return service.spreadsheets().values().update(SHEET_ID, range, body).setValueInputOption(valueInputOption)
+                    .execute();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,12 +97,9 @@ public class GoogleSheetRepository {
     public BatchUpdateValuesResponse batchUpdate(String range, List<List<Object>> values, String valueInputOption) {
         try {
             List<ValueRange> data = new ArrayList<ValueRange>();
-            data.add(new ValueRange()
-                .setRange(range)
-                .setValues(values));
-            BatchUpdateValuesRequest body = new BatchUpdateValuesRequest()
-                .setValueInputOption(valueInputOption)
-                .setData(data);
+            data.add(new ValueRange().setRange(range).setValues(values));
+            BatchUpdateValuesRequest body = new BatchUpdateValuesRequest().setValueInputOption(valueInputOption)
+                    .setData(data);
             return service.spreadsheets().values().batchUpdate(SHEET_ID, body).execute();
         } catch (IOException e) {
             e.printStackTrace();

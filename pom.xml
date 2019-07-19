@@ -8,8 +8,8 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.falconxrobotics</groupId>
-	<artifactId>website</artifactId>
+	<groupId>com.falconxrobotics.website</groupId>
+	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
