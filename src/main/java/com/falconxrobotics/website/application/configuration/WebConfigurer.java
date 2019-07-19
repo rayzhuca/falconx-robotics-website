@@ -11,7 +11,7 @@ public class WebConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        System.out.println("Adding view contrl");
+        // System.out.println("Adding view contrl");
 
         // registry.addViewController("/").setViewName("forward:/index");
     }

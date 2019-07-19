@@ -15,7 +15,7 @@ public class HomeController {
     @Autowired
     public HomeController(HomeComponent homeComponent) {
         this.homeComponent = homeComponent;
-        System.out.println("test");
+        // System.out.println("test");
     }
 
     @GetMapping(path = { "/index", "/" })
@@ -25,10 +25,10 @@ public class HomeController {
             return "index";
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            // TODO: Let error controller handle
+            // TODO: Let error controllers handle
         } catch (RuntimeException re) {
             re.printStackTrace();
-            // TODO: Let error controller handle
+            // TODO: Let error controllers handle
         }
         return null; // TODO: Delete this
     }

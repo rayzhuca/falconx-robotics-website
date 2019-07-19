@@ -45,11 +45,15 @@ public class GoogleSheetRepository {
 
     public GoogleSheetRepository() throws GeneralSecurityException, IOException {
         Dotenv dotenv = Dotenv.load();
-        SHEET_CREDENTIALS = dotenv.get("SHEET_CREDENTIALS");
+        SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
 
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME).build();
+    }
+
+    private String fallback(String arg1, String arg2) {
+        return arg1 == null ? arg2 : arg1;
     }
 
     private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
