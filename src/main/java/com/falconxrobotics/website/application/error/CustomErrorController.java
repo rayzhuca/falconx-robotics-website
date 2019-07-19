@@ -24,7 +24,6 @@ public class CustomErrorController implements ErrorController {
 
         if (status != null) {
             int code = Integer.parseInt(status.toString());
-
         }
 
         return "error";
