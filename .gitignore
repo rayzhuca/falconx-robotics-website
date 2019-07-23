@@ -32,3 +32,5 @@ build/
 
 # *.env
 *.txt
+*.map
+*.css
