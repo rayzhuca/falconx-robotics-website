@@ -56,7 +56,7 @@ public class GoogleSheetRepository {
         return arg1 == null ? arg2 : arg1;
     }
 
-    private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
+    private Credential getCredentials(NetHttpTransport HTTP_TRANSPORT) throws IOException {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,

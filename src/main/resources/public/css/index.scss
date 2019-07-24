@@ -1,0 +1,35 @@
+section {
+    width: 100%;
+}
+
+section#front {
+    height: 100vh;
+
+    &>.wrapper {
+        width: calc(100% - var(--wrapper-margin) * 2);
+        height: 100%;
+        position: relative;
+
+        &>.subtitle {
+            position: absolute;
+            top: 30%;
+            left: 60px;
+            min-width: 45%;
+            max-width: 50%;
+            line-height: 2em;
+            font-size: 20px;
+
+            &>a {
+                text-decoration: underline;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: rgb(120, 120, 120);
+                    text-decoration-color: rgb(120, 120, 120);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {}

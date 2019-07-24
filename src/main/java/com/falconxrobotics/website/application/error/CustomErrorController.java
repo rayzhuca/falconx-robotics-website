@@ -24,7 +24,7 @@ public class CustomErrorController implements ErrorController {
     }
 
     @GetMapping("/error")
-    public String index(final HttpServletRequest request, Model model) {
+    public String index(HttpServletRequest request, Model model) {
         model.addAllAttributes(errorComponent.getAttributes(request));
 
         return "error";
