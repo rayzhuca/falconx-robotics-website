@@ -34,3 +34,4 @@ build/
 *.txt
 *.css
 *.map
+*.DS_STORE
