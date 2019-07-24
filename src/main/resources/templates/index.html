@@ -1,16 +1,106 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Home</title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <link rel="stylesheet" th:href="@{/css/main.css}" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	</head>
-	<body>
-		<h1 th:text="${test}"></h1>
-		<style th:src="@{/js/index.js}"></style>
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../public/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo"></div>
+            <div class="title">FalconX Robotics</div>
+            <div class="menu-button-wrapper" id="menu-button">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </header>
+    <nav id="menu">
+        <!-- <header>
+            <div class="wrapper">
+                <div class="close-menu-button-wrapper"></div>
+            </div>
+        </header> -->
+        <div class="wrapper" id="main">
+            <div>
+                <div class="title">About</div>
+                <ul>
+                    <li><a href="javascript:void(0)">History</a></li>
+                    <li><a href="javascript:void(0)">First®</a></li>
+                    <li>
+                        <div class="subtitle">Divisions</div>
+                        <ul>
+                            <li><a href="javascript:void(0)">Engineering</a></li>
+                            <li><a href="javascript:void(0)">Business</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="title">Support</div>
+                <ul>
+                    <li><a href="javascript:void(0)">AMP</a></li>
+                    <li><a href="javascript:void(0)">Our Sponsers</a></li>
+                    <li><a href="javascript:void(0)">Sponser Us</a></li>
+                    <li><a href="javascript:void(0)">Levels of Sponsership</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="title">Resources</div>
+                <ul>
+                    <li>
+                        <div class="subtitle">Curriculum</div>
+                        <ul>
+                            <li><a href="javascript:void(0)">Mechanical</a></li>
+                            <li><a href="javascript:void(0)">Programming</a></li>
+                            <li><a href="javascript:void(0)">CAD</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="title">Events</div>
+                <ul>
+                    <li><a href="javascript:void(0)">FIRST Robotics Competition</a></li>
+                    <li><a href="javascript:void(0)">Capital City Classic</a></li>
+                    <li><a href="javascript:void(0)">US Davis C-STEM</a></li>
+                    <li><a href="javascript:void(0)">STEM and EdTech Symposium</a></li>
+                    <li><a href="javascript:void(0)">Other STEM Events</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="title">Projects</div>
+                <ul>
+                    <li><a href="javascript:void(0)">2019 | Obi-Wan</a></li>
+                    <li><a href="javascript:void(0)">2018 | [Blank]</a></li>
+                    <li><a href="javascript:void(0)">2017 | EZ-GC</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="title"><a href="javascript:void(0)">Contact Us</a></div>
+            </div>
+            <div>
+                <div class="title"><a href="javascript:void(0)">Calender</a></div>
+            </div>
+        </div>
+    </nav>
+    <section id="front">
+        <div class="wrapper">
+            <div class="subtitle">FalconX Robotics is a diverse team from College Park HS comprised of students, parents,
+                mentors, and teachers.</div>
+        </div>
+    </section>
+    <script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
+</body>
+
 </html>

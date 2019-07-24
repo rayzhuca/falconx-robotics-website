@@ -1,3 +1,25 @@
 section {
     width: 100%;
 }
+
+section#front {
+    height: 100vh;
+
+    & > .wrapper {
+        width: calc(100% - var(--wrapper-margin) * 2);
+        height: 100%;
+        position: relative;
+
+        & > .subtitle {
+            position: absolute;
+            top: 20%;
+            left:  40px;
+            min-width: 50%;
+            max-width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+}
