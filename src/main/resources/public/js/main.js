@@ -5,6 +5,7 @@
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById('menu');
     const fadableEles = document.getElementsByClassName('fade');
+    const header = document.getElementsByTagName('header')[0];
 
     function timeOutLoop(iterable, operation, interval = 15) {
         Array.prototype.forEach.call(iterable, function (v, i, arr) {
@@ -16,6 +17,10 @@
         menuButton.classList.toggle("change");
 
         if (menu.classList.contains('on')) {
+            document.documentElement.classList.remove('scroll-lock');
+            document.body.classList.remove('scroll-lock');
+            header.style.backgroundColor = null;
+
             //to turn off
             setTimeout(() => {
                 if (!menu.classList.contains('on')) { // so it won't turn off when user spams button
@@ -30,8 +35,11 @@
                 }
             }, 500);
         } else {
+            document.documentElement.classList.add('scroll-lock');
+            document.body.classList.add('scroll-lock');
             menu.style.display = null;
             menu.style.zIndex = null;
+            header.style.backgroundColor = "white";
         }
 
         setTimeout(() => {
@@ -93,19 +101,16 @@
 // * Header
 (() => {
     const header = document.getElementsByTagName('header')[0];
+    const menu = document.getElementById("menu");
     let lastScrollY;
 
     window.addEventListener('scroll', (_) => {
-        // if (window.scrollY <= window.innerHeight) {
-        //     header.style.position = "absolute";
-        //     header.style.top = "0";
-        //     return;
-        // } else if (header.style.position === "absolute") {
-        //     header.style.position = "fixed";
-        //     header.style.top = "calc(var(--header-height) * -2)";
-        // }
-
-        if (lastScrollY > window.scrollY) {
+        // make sure menu don't hide when menu is open
+        if (menu.classList.contains('on')) {
+            header.style.top = "0";
+         
+            return;
+        } else if (lastScrollY > window.scrollY) {
             header.style.top = "0";
         } else {
             header.style.top = "calc(var(--header-height) * -2)";

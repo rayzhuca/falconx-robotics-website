@@ -10,13 +10,18 @@
 
 html {
     scroll-behavior: smooth;
-
 }
 
 body {
     background-color: rgb(253, 253, 253);
     font-family: 'Overpass', sans-serif;
     font-weight: 300;
+}
+
+html, body {
+    &.scroll-lock {
+        overflow: hidden;
+    }
 }
 
 ul {
@@ -61,7 +66,7 @@ body>header {
     top: 0;
     left: 0;
 
-    transition: top 0.5s;
+    transition: top 0.5s, background-color 0.3s;
 
     &>.wrapper {
         display: flex;
@@ -137,7 +142,7 @@ nav#menu {
         transform: translate(0px, 25%) !important;
     }
 
-    position: absolute;
+    position: fixed;
     top: -25%;
     left: 0;
 
