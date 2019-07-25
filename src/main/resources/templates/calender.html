@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home - FalconX Robotics</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../public/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Uncomment this when deploying! -->
+    <!-- <style th:text="inline">
+        .logo {
+            background: url([[@{/images/logo.png}]]);
+        }
+    </style> -->
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <!-- Change href in other webpages -->
+            <a href="/index">
+                <div class=" logo"></div>
+            </a>
+            <div class="title"><a href="#">FalconX Robotics</a></div>
+            <div class="menu-button-wrapper" id="menu-button">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="wrapper">
+            <div class="left">
+                <ul>
+                    <li>
+                        <div class="logo"></div>
+                    </li>
+                    <li>
+                        <div class="normal">contact us</div>
+                        <div class="subtitle">contact@falconxrobotics.com</div>
+                    </li>
+                    <li>
+                        <div class="normal">address</div>
+                        <div class="subtitle address">201 Viking Dr, Pleasant Hill, CA 94523</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="right">
+                <div class="normal">check us out on social media</div>
+                <div class="list">
+                    <div class="twitter"><a href="https://twitter.com/falconxrobotics" target="_blank">Twitter</a></div>
+                    <div class="youtube"><a href="https://www.youtube.com/channel/UC2MbEcznWa_YakUtgJI8LPg"
+                            target="_blank">YouTube</a>
+                    </div>
+                    <div class="instagram"><a href="https://www.instagram.com/falconxrobotics/"
+                            target="_blank">Instagram</a></div>
+                    <div class="facebook"><a href="https://www.facebook.com/falconxrobotics/"
+                            target="_blank">Facebook</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
+</body>
+
+</html>
