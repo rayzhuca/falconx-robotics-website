@@ -53,12 +53,15 @@ a {
 }
 
 body>header {
+    background-color: rgb(253, 253, 253);
     z-index: 5;
     width: 100%;
     height: var(--header-height);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+
+    transition: top 0.5s;
 
     &>.wrapper {
         display: flex;
@@ -162,7 +165,7 @@ nav#menu {
             width: 150px;
             padding: 10px;
 
-            & *[data-fade] {
+            & .fade {
                 transition: filter 1s;
                 filter: opacity(0);
 

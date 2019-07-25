@@ -4,10 +4,10 @@
 (() => {
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById('menu');
-    const fadableEles = document.querySelectorAll('#menu *[data-fade]');
+    const fadableEles = document.getElementsByClassName('fade');
 
     function timeOutLoop(iterable, operation, interval = 15) {
-        iterable.forEach(function (v, i, arr) {
+        Array.prototype.forEach.call(iterable, function (v, i, arr) {
             setTimeout(() => operation(v, i, arr), interval * ++i);
         });
     }
@@ -18,12 +18,14 @@
         if (menu.classList.contains('on')) {
             //to turn off
             setTimeout(() => {
-                if (!menu.classList.contains('on')) {
+                if (!menu.classList.contains('on')) { // so it won't turn off when user spams button
                     menu.style.display = "none";
                     menu.style.zIndex = -1;
 
-                    fadableEles.forEach((ele) => {
+                    Array.prototype.forEach.call(fadableEles, (ele) => {
+                        console.log(ele.classList);
                         ele.classList.remove('on');
+                        console.log(ele.classList);
                     });
                 }
             }, 500);
@@ -34,7 +36,10 @@
 
         setTimeout(() => {
             menu.classList.toggle('on')
-            timeOutLoop(fadableEles, (ele) => ele.classList.add('on'));
+
+            if (menu.classList.contains('on')) {
+                timeOutLoop(fadableEles, (ele) => ele.classList.add('on'));
+            }
         }, 100);
 
     });
@@ -83,4 +88,30 @@
             }
         }
     });
+})();
+
+// * Header
+(() => {
+    const header = document.getElementsByTagName('header')[0];
+    let lastScrollY;
+
+    window.addEventListener('scroll', (_) => {
+        // if (window.scrollY <= window.innerHeight) {
+        //     header.style.position = "absolute";
+        //     header.style.top = "0";
+        //     return;
+        // } else if (header.style.position === "absolute") {
+        //     header.style.position = "fixed";
+        //     header.style.top = "calc(var(--header-height) * -2)";
+        // }
+
+        if (lastScrollY > window.scrollY) {
+            header.style.top = "0";
+        } else {
+            header.style.top = "calc(var(--header-height) * -2)";
+        }
+
+        lastScrollY = window.scrollY;
+    });
+
 })();
