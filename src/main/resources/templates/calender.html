@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Home - FalconX Robotics</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
+    <!-- Change this -->
+    <title>Calender - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/calender.css" />
     <link rel="stylesheet" th:href="@{/css/main.css}" href="../public/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
 
@@ -35,6 +37,78 @@
             </div>
         </div>
     </header>
+    <nav id="menu" style="display: none; z-index: -1;">
+        <div class="wrapper" id="main">
+            <div class="group">
+                <div class="title" data-fade-order="0">About</div>
+                <ul>
+                    <li data-fade-order="1"><a href="javascript:void(0)">History</a></li>
+                    <li data-fade-order="2"><a href="javascript:void(0)">First®</a></li>
+                    <li>
+                        <div class="subtitle" data-fade-order="3">Divisions</div>
+                        <ul>
+                            <li data-fade-order="4"><a href="javascript:void(0)">Engineering</a></li>
+                            <li data-fade-order="5"><a href="javascript:void(0)">Business</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="6">Support</div>
+                <ul>
+                    <li data-fade-order="7"><a href="javascript:void(0)">AMP</a></li>
+                    <li data-fade-order="8"><a href="javascript:void(0)">Our Sponsers</a></li>
+                    <li data-fade-order="9"><a href="javascript:void(0)">Sponser Us</a></li>
+                    <li data-fade-order="10"><a href="javascript:void(0)">Levels of Sponsership</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="11">Resources</div>
+                <ul>
+                    <li>
+                        <div class="subtitle" data-fade-order="12">Curriculum</div>
+                        <ul>
+                            <li data-fade-order="13"><a href="javascript:void(0)">Mechanical</a></li>
+                            <li data-fade-order="14"><a href="javascript:void(0)">Programming</a></li>
+                            <li data-fade-order="15"><a href="javascript:void(0)">CAD</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="16">Events</div>
+                <ul>
+                    <li data-fade-order="17"><a href="javascript:void(0)">FIRST Robotics Competition</a></li>
+                    <li data-fade-order="18"><a href="javascript:void(0)">Capital City Classic</a></li>
+                    <li data-fade-order="19"><a href="javascript:void(0)">US Davis C-STEM</a></li>
+                    <li data-fade-order="20"><a href="javascript:void(0)">STEM and EdTech Symposium</a></li>
+                    <li data-fade-order="21"><a href="javascript:void(0)">Other STEM Events</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="0">Projects</div>
+                <ul>
+                    <li data-fade-order="22"><a href="javascript:void(0)">2019 | Obi-Wan</a></li>
+                    <li data-fade-order="23"><a href="javascript:void(0)">2018 | [Blank]</a></li>
+                    <li data-fade-order="24"><a href="javascript:void(0)">2017 | EZ-GC</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="25"><a href="javascript:void(0)">Contact Us</a></div>
+            </div>
+            <div class="group">
+                <div class="title" data-fade-order="26"><a href="javascript:void(0)">Calender</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-height-div"></div>
+
+    <iframe
+        src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=cnVpc29uZ3podTNAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y2xhc3Nyb29tMTA4MDMyNjE2MTYwMTg1MjI2ODI4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=cjNhdHQ3NGNlbzA1Z21nZDJkOGJnMDk5Mm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%23880e4f&amp;color=%23009688&amp;color=%230B8043&amp;showNav=1"
+        style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+    <!-- <div class="min-height"></div> -->
 
     <footer>
         <div class="wrapper">
@@ -69,7 +143,9 @@
             </div>
         </div>
     </footer>
-    <script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/index.js}" src="../public/js/index.js"></script> -->
 </body>
 
 </html>

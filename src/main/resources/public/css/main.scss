@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -122,6 +123,10 @@ body>header {
     }
 }
 
+.header-height-div {
+    height: var(--header-height);
+}
+
 nav#menu {
     &.on {
         display: initial !important;
@@ -153,9 +158,18 @@ nav#menu {
         flex-flow: row wrap;
         align-content: flex-start;
 
-        &>div {
+        &>.group {
             width: 150px;
             padding: 10px;
+
+            & *[data-fade] {
+                transition: filter 1s;
+                filter: opacity(0);
+
+                &.on {
+                    filter: opacity(1);
+                }
+            }
 
             .title,
             .subtitle {

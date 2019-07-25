@@ -32,4 +32,14 @@ section#front {
     }
 }
 
+.image-test {
+    background-image: url('../images/fatrat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    display: table;
+}
+
 @media screen and (max-width: 500px) {}
