@@ -13,7 +13,12 @@
         });
     }
 
+    let debounce = false;
+
     menuButton.addEventListener('click', (_) => {
+        if (debounce) return;
+        debounce = true;
+
         menuButton.classList.toggle("change");
 
         if (menu.classList.contains('on')) {
@@ -48,8 +53,9 @@
             if (menu.classList.contains('on')) {
                 timeOutLoop(fadableEles, (ele) => ele.classList.add('on'));
             }
-        }, 100);
 
+            debounce = false;
+        }, 100);
     });
 })();
 

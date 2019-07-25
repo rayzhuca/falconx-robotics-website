@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Change this -->
+    <title>History - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/history.css}" href="../../public/css/about/history.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../public/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Uncomment this when deploying! -->
+    <!-- <style th:text="inline">
+        .logo {
+            background: url([[@{/images/logo.png}]]);
+        }
+    </style> -->
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <!-- Change href in other webpages -->
+            <a href="/index">
+                <div class=" logo"></div>
+            </a>
+            <div class="title"><a href="#">FalconX Robotics</a></div>
+            <div class="menu-button-wrapper" id="menu-button">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </header>
+    <nav id="menu" style="display: none; z-index: -1;">
+        <div class="wrapper" id="main">
+            <div class="group">
+                <div class="title fade">About</div>
+                <ul>
+                    <li class="fade"><a href="javascript:void(0)">History</a></li>
+                    <li class="fade"><a href="javascript:void(0)">First®</a></li>
+                    <li>
+                        <div class="subtitle fade">Divisions</div>
+                        <ul>
+                            <li class="fade"><a href="javascript:void(0)">Engineering</a></li>
+                            <li class="fade"><a href="javascript:void(0)">Business</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title fade">Support</div>
+                <ul>
+                    <li class="fade"><a href="javascript:void(0)">AMP</a></li>
+                    <li class="fade"><a href="javascript:void(0)">Our Sponsers</a></li>
+                    <li class="fade"><a href="javascript:void(0)">Sponser Us</a></li>
+                    <li class="fade"><a href="javascript:void(0)">Levels of Sponsership</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title fade">Resources</div>
+                <ul>
+                    <li>
+                        <div class="subtitle fade">Curriculum</div>
+                        <ul>
+                            <li class="fade"><a href="javascript:void(0)">Mechanical</a></li>
+                            <li class="fade"><a href="javascript:void(0)">Programming</a></li>
+                            <li class="fade"><a href="javascript:void(0)">CAD</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title fade">Events</div>
+                <ul>
+                    <li class="fade"><a href="javascript:void(0)">FIRST Robotics Competition</a></li>
+                    <li class="fade"><a href="javascript:void(0)">Capital City Classic</a></li>
+                    <li class="fade"><a href="javascript:void(0)">US Davis C-STEM</a></li>
+                    <li class="fade"><a href="javascript:void(0)">STEM and EdTech Symposium</a></li>
+                    <li class="fade"><a href="javascript:void(0)">Other STEM Events</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title fade">Projects</div>
+                <ul>
+                    <li class="fade"><a href="javascript:void(0)">2019 | Obi-Wan</a></li>
+                    <li class="fade"><a href="javascript:void(0)">2018 | [Blank]</a></li>
+                    <li class="fade"><a href="javascript:void(0)">2017 | EZ-GC</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="title fade"><a href="javascript:void(0)">Contact Us</a></div>
+            </div>
+            <div class="group">
+                <div class="title fade"><a href="javascript:void(0)">Calender</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="header-height-div"></div> -->
+
+    <div id="backButton" style="background:red; width:50px; height: 50px; position: fixed; top: 100px; z-index: 5;"></div>
+    <div id="nextButton" style="background:blue; width:50px; height: 50px; position: fixed; top: 150px; z-index: 5"></div>
+
+    <section id="front">
+        <div class="wrapper">
+            <div class="subtitle">
+                Our History
+            </div>
+            <nav>
+                <ul>
+                    <li><a>Birth</a></li>
+                    <li><a>Development</a></li>
+                    <li><a>Challenges</a></li>
+                    <li><a>Expansion</a></li>
+                    <li><a>Outreach</a></li>
+                    <li><a>Onward</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="slide" id="birth">
+        <div class="wrapper">
+            <div class="subtitle">
+                The Birth of FalconX
+            </div>
+            <div class="description">
+                The early history of FalconX Robotics can be traced back to the 2013-14 school year. In the spring of 2014, a local community member, Mike Morehead, was seeking ways to help support STEM education at College Park and dropped in on a lunchtime Robotics Club meeting. There he found the club president, senior Wally Schichnes, building a rudimentary robot out of a wood board and parts scavenged from a video game controller and joystick. Seeing that Wally had an abundance of motivation but no supporting resources, the community member donated a VEX Robotics kit to the club which was enthusiastically received.
+                <br><br>
+                With Wally’s graduation, the 2014-15 school year saw no club growth but continued on as a caretaker of the VEX kit of parts.
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="early">
+        <div class="wrapper">
+            <div class="subtitle">
+                Early Development
+            </div>
+            <div class="description">
+                The 2015-16 school year saw the renewal and expansion of the robotics club under junior Max Morehead and a core group of friends. More VEX Robotics kits and parts were donated to the club and a team was formed named EWA (Engineers with Attitude) to enter the Clayton Valley High School VEX tournament. The team was successful beyond their expectations and advanced to the quarterfinals, where they were subsequently crushed by truly capable teams. It was a humbling but inspirational experience, demonstrating that they could overcome challenges but had a lot of growth opportunity. While still wholly student-driven, school/community support started to grow, which included club sponsor Mr. Mark Furtado (who opened his classroom for the club to meet and work during lunch and after school) and Frank Harvey, a substitute teacher and avid “maker” who provided club mentorship.
+                <br><br>
+                The 2016-17 school year was the break-out year for the robotics club, which continued to expand under the leadership of Max Morehead. A significant grant was provided by the Foundation for Pleasant Hill Education, and the club anticipated entering several VEX Competitions throughout the year. The club achieved reasonable success at a competition in Ceres, California, and signed up for competition at Google in the spring. But then the club’s focus took a radical new direction when Valley View Middle School (VVMS) technology teacher, Mrs. Shauna Hawes, approached the club with an amazing offer: the company Andeavor (at the time called Tesoro) would make a substantial donation for the team to enter the 2017 FIRST Robotics Competition (FRC).
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="new">
+        <div class="wrapper">
+            <div class="subtitle">
+                New Challenges
+            </div>
+            <div class="description">
+                The FRC was a huge opportunity but not without incredible challenges to overcome.  A local FRC team from Athenian High School reached out with offers of support and donated a robot from a prior year’s competition to de-construct and examine. Mr. Furtado’s classroom started to overflow with parts and mechanisms to the point where he struggled to access his desk and filing cabinet.  Mrs. Hawes came to his rescue by securing an unused VVMS woodshop for the team’s use.
+                <br><br>
+                The newly formed FRC team remained student-driven, growing to about 15 dedicated members (mostly seniors and freshman) and an even mix of girls and boys.  School support continued to grow, including from Mrs. Hawes, Mr. Dylan Bland, and Dr. Brian Tibbott. Despite multiple setbacks and challenges due to complete lack of knowledge about FRC, the team rose to the occasion and performed amazingly well at the San Francisco Regional Competition, advancing to the playoffs as an alliance captain and winning the Judges Award.  It was a demonstration of true grit, and the season’s story is captured in more detail in a separate chapter of the club history.
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="expansion">
+        <div class="wrapper">
+            <div class="subtitle">
+                Expansion
+            </div>
+            <div class="description">
+                The 2017-18 school year saw continued growth of the club under the leadership of senior Jason Vega and another amazing group of dedicated students. The regular 15 members soon became 36 as the season went on. It was still a student-driven effort, but Mrs. Hawes, Mr. Bland, and Dr. Tibbott became regular mentors for the club.  Andeavor continued their generous support of the team and Fresenius also became a key sponsor. The club added a Business Division, expanded their community outreach, and continued to improve the VVMS workspace.
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="outreach">
+        <div class="wrapper">
+            <div class="subtitle">
+                Outreach and Impact
+            </div>
+            <div class="description">
+                One of the goals of FIRST Robotics is to expand awareness of and interest in robotics and robotic opportunities, and the teams worked hard to create public awareness of the programs. They visited elementary school STEM events, even at schools outside the district, attended Tinkers and Thinkers events at the local library, spoke to the school board and local governing boards around the area, solicited support for the team from local companies, and reached out to anyone who expressed interest in the programs. Because of this outreach and exposure, two more high schools in the district, Concord High and Ygnacio Valley High, started their own FIRST Robotics programs, also sponsored by Andeavor and Fresenius.  In addition, Alhambra High School in the neighboring school district is starting a program this year as a direct outcome of the teacher’s conversation with team members at an elementary school STEM night in 2017.
+                <br><br>
+                The community of support and encouragement continues to grow, both with companies and with other schools. Ever since the Athenian School reached out to College Park, we have toured Fresenius and gotten ideas for organization and materials management. We’ve borrowed materials and gotten advice from the mentors at Pittsburg High. We’ve toured the other two schools in our district and utilized tools and teacher support from them, and we’ve provided mentorship and materials to other schools. We anticipate that as Alhambra begins its program this year, it will also be included in our small area group that will host competitions and encourages collaboration through the year.
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="onward">
+        <div class="wrapper">
+            <div class="subtitle">
+                Onward
+            </div>
+            <div class="description">
+                While the first year’s group was mostly seniors, the second year found the team composed mostly of freshmen and sophomores. This created a significant challenge in many areas, including time and money management, and the team mentors were caught off guard with the unexpected issues that arose. This year, the team’s leadership has been working all summer to publicize the team’s goals and achievements, and have focused on building awareness of the program within the school and in the community. We are very excited to see where this leadership takes the students this year.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="left">
+                <ul>
+                    <li>
+                        <div class="logo"></div>
+                    </li>
+                    <li>
+                        <div class="normal">contact us</div>
+                        <div class="subtitle">contact@falconxrobotics.com</div>
+                    </li>
+                    <li>
+                        <div class="normal">address</div>
+                        <div class="subtitle address">201 Viking Dr, Pleasant Hill, CA 94523</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="right">
+                <div class="normal">check us out on social media</div>
+                <div class="list">
+                    <div class="twitter"><a href="https://twitter.com/falconxrobotics" target="_blank">Twitter</a></div>
+                    <div class="youtube"><a href="https://www.youtube.com/channel/UC2MbEcznWa_YakUtgJI8LPg"
+                            target="_blank">YouTube</a>
+                    </div>
+                    <div class="instagram"><a href="https://www.instagram.com/falconxrobotics/"
+                            target="_blank">Instagram</a></div>
+                    <div class="facebook"><a href="https://www.facebook.com/falconxrobotics/"
+                            target="_blank">Facebook</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../../public/js/main.js"></script>
+    <script th:src="@{/js/about/history.js}" src="../../public/js/about/history.js"></script>
+</body>
+
+</html>
