@@ -1,8 +1,14 @@
 section {
     width: 100%;
+
+    .subtitle {
+        font-size: 20px;
+        line-height: 2em;
+    }
 }
 
 section#front {
+    z-index: 2;
     height: 100vh;
 
     &>.wrapper {
@@ -16,8 +22,7 @@ section#front {
             left: 60px;
             min-width: 45%;
             max-width: 50%;
-            line-height: 2em;
-            font-size: 20px;
+
 
             &>a {
                 text-decoration: underline;
@@ -27,6 +32,61 @@ section#front {
                     color: rgb(120, 120, 120);
                     text-decoration-color: rgb(120, 120, 120);
                 }
+            }
+        }
+
+        &>.image {
+            position: absolute;
+            background-image: url('../images/fatrat.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: bottom;
+            width: 20%;
+            height: 100vh;
+            left: 70%;
+            top: 20vh;
+        }
+    }
+}
+
+section#second {
+    background-color: #eecbfd;
+    height: 400px;
+
+    &>.wrapper {
+        &>.subtitle {
+            font-size: 25px;
+            padding-top: 150px;
+            width: 100%;
+            text-align: center;
+        }
+
+        &>article {
+            padding-top: 30px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            line-height: 2em;
+        }
+    }
+}
+
+section#third {
+    height: 500px;
+
+    &>.wrapper {
+        .twitter-container {
+            width: 50%;
+            height: 400px;
+
+            .timeline-Header.timeline-InformationCircle-widgetParent {
+                display: none !important;
+            }
+
+            .timeline-Widget {
+                // display: none;
+                background-color: transparent !important;
             }
         }
     }

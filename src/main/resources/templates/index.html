@@ -12,6 +12,8 @@
     <link rel="stylesheet" th:href="@{/css/main.css}" href="../public/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
 
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!-- Uncomment this when deploying! -->
@@ -23,84 +25,9 @@
 </head>
 
 <body>
-    <header>
-        <div class="wrapper">
-            <!-- Change href in other webpages -->
-            <a href="#">
-                <div class="logo"></div>
-            </a>
-            <div class="title"><a href="#">FalconX Robotics</a></div>
-            <div class="menu-button-wrapper" id="menu-button">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-        </div>
-    </header>
-    <nav id="menu" style="display: none; z-index: -1;">
-        <div class="wrapper" id="main">
-            <div class="group">
-                <div class="title fade">About</div>
-                <ul>
-                    <li class="fade"><a href="javascript:void(0)">History</a></li>
-                    <li class="fade"><a href="javascript:void(0)">First®</a></li>
-                    <li>
-                        <div class="subtitle fade">Divisions</div>
-                        <ul>
-                            <li class="fade"><a href="javascript:void(0)">Engineering</a></li>
-                            <li class="fade"><a href="javascript:void(0)">Business</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="group">
-                <div class="title fade">Support</div>
-                <ul>
-                    <li class="fade"><a href="javascript:void(0)">AMP</a></li>
-                    <li class="fade"><a href="javascript:void(0)">Our Sponsers</a></li>
-                    <li class="fade"><a href="javascript:void(0)">Sponser Us</a></li>
-                    <li class="fade"><a href="javascript:void(0)">Levels of Sponsership</a></li>
-                </ul>
-            </div>
-            <div class="group">
-                <div class="title fade">Resources</div>
-                <ul>
-                    <li>
-                        <div class="subtitle fade">Curriculum</div>
-                        <ul>
-                            <li class="fade"><a href="javascript:void(0)">Mechanical</a></li>
-                            <li class="fade"><a href="javascript:void(0)">Programming</a></li>
-                            <li class="fade"><a href="javascript:void(0)">CAD</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="group">
-                <div class="title fade">Events</div>
-                <ul>
-                    <li class="fade"><a href="javascript:void(0)">FIRST Robotics Competition</a></li>
-                    <li class="fade"><a href="javascript:void(0)">Capital City Classic</a></li>
-                    <li class="fade"><a href="javascript:void(0)">US Davis C-STEM</a></li>
-                    <li class="fade"><a href="javascript:void(0)">STEM and EdTech Symposium</a></li>
-                    <li class="fade"><a href="javascript:void(0)">Other STEM Events</a></li>
-                </ul>
-            </div>
-            <div class="group">
-                <div class="title fade">Projects</div>
-                <ul>
-                    <li class="fade"><a href="javascript:void(0)">2019 | Obi-Wan</a></li>
-                    <li class="fade"><a href="javascript:void(0)">2018 | [Blank]</a></li>
-                    <li class="fade"><a href="javascript:void(0)">2017 | EZ-GC</a></li>
-                </ul>
-            </div>
-            <div class="group">
-                <div class="title fade"><a href="javascript:void(0)">Contact Us</a></div>
-            </div>
-            <div class="group">
-                <div class="title fade"><a href="javascript:void(0)">Calender</a></div>
-            </div>
-        </div>
-    </nav>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+
     <section id="front">
         <div class="wrapper">
             <div class="subtitle">FalconX Robotics is a diverse team from <a target="_blank"
@@ -108,72 +35,30 @@
                     HS</a> comprised of students,
                 parents,
                 mentors, and teachers.</div>
+            <div class="image parallax" data-parallax-slowdown="2" data-parallax-static=""></div>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="image-test parallax" data-parallax-slowdown="2" data-parallax-static></div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer>
+    <section id="second">
         <div class="wrapper">
-            <div class="left">
-                <ul>
-                    <li>
-                        <div class="logo"></div>
-                    </li>
-                    <li>
-                        <div class="normal">contact us</div>
-                        <div class="subtitle">contact@falconxrobotics.com</div>
-                    </li>
-                    <li>
-                        <div class="normal">address</div>
-                        <div class="subtitle address">201 Viking Dr, Pleasant Hill, CA 94523</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="divider"></div>
-            <div class="right">
-                <div class="normal">check us out on social media</div>
-                <div class="list">
-                    <div class="twitter"><a href="https://twitter.com/falconxrobotics" target="_blank">Twitter</a></div>
-                    <div class="youtube"><a href="https://www.youtube.com/channel/UC2MbEcznWa_YakUtgJI8LPg"
-                            target="_blank">YouTube</a>
-                    </div>
-                    <div class="instagram"><a href="https://www.instagram.com/falconxrobotics/"
-                            target="_blank">Instagram</a></div>
-                    <div class="facebook"><a href="https://www.facebook.com/falconxrobotics/"
-                            target="_blank">Facebook</a></div>
-                </div>
+            <div class="subtitle">We got quality minecraft servers.</div>
+            <article>
+                Guaranteed ping of less than 50.
+                <br>
+                Up to 100 players max.
+            </article>
+        </div>
+    </section>
+    <!-- <section id="third">
+        <div class="wrapper">
+            <div class="twitter-container">
+                <a class="twitter-timeline" id="twitter-timeline-frame" href="https://twitter.com/FalconXRobotics?ref_src=twsrc%5Etfw"></a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
-    </footer>
+    </section> -->
+
+    <footer th:replace="fragments/normal :: footer"></footer>
+
     <!-- Change this -->
     <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
     <script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
