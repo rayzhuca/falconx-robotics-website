@@ -7,9 +7,13 @@
     const fadableEles = document.getElementsByClassName('fade');
     const header = document.getElementsByTagName('header')[0];
 
-    function timeOutLoop(iterable, operation, interval = 15) {
+    function timeOutLoop(iterable, operation, interval = 10) {
         Array.prototype.forEach.call(iterable, function (v, i, arr) {
-            setTimeout(() => operation(v, i, arr), interval * ++i);
+            console.log(interval * ++i);
+            setTimeout(() => {
+                console.log('yes');
+                operation(v, i, arr)
+            }, interval * ++i);
         });
     }
 
@@ -40,6 +44,7 @@
                 }
             }, 500);
         } else {
+            //to turn on
             document.documentElement.classList.add('scroll-lock');
             document.body.classList.add('scroll-lock');
             menu.style.display = null;
@@ -51,6 +56,8 @@
             menu.classList.toggle('on')
 
             if (menu.classList.contains('on')) {
+                menu.style.display = null; // just in case
+                menu.style.zIndex = null;
                 timeOutLoop(fadableEles, (ele) => ele.classList.add('on'));
             }
 
@@ -114,7 +121,7 @@
         // make sure menu don't hide when menu is open
         if (menu.classList.contains('on')) {
             header.style.top = "0";
-         
+
             return;
         } else if (lastScrollY > window.scrollY) {
             header.style.top = "0";
