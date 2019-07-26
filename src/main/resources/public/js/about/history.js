@@ -4,27 +4,40 @@ let currentSlideIndex = 0;
 console.log(slides);
 
 //Slider
-(()=>{
-    const nextButton = document.getElementById('nextButton');
-    const beforeButton = document.getElementById('backButton');
+(() => {
+    const nextButton = document.getElementById('next-button');
+    const beforeButton = document.getElementById('back-button');
+    const pathButtons = document.getElementsByClassName('path');
 
-    function changeSlideTo(slideIndex) {
-        console.log(slideIndex);
+    function changeSlideTo(slideIndex, direction = 'forward') {
         if (slideIndex === currentSlideIndex) {
             return;
         }
 
-        slides[currentSlideIndex].classList.remove('current');
+        const lastSlide = slides[currentSlideIndex];
+        lastSlide.classList.add('removing');
+        lastSlide.classList.remove('current');
+        if (direction == "backward") {
+            lastSlide.style.left = `-${window.innerWidth}px`;
+        } else {
+            lastSlide.style.left = `${window.innerWidth}px`
+        }
+
+        setTimeout((currentSlideIndex) => {
+            if (slideIndex !== currentSlideIndex) {
+                lastSlide.classList.remove('removing');
+            }
+        }, 1000, currentSlideIndex);
 
         const slide = slides[slideIndex];
 
-        if (slideIndex > currentSlideIndex) { // going forwards
+        slide.classList.add('current');
+        if (direction === "forward") { // going forwards
             slide.style.left = `-${window.innerWidth}px`;
         } else { // going backwards
             slide.style.left = `${window.innerWidth}px`
         }
         setTimeout(() => {
-            slide.classList.add('current')
             slide.style.left = "0";
         }, 100);
 
@@ -33,12 +46,12 @@ console.log(slides);
 
     function onNextButtonClick(_) {
         let slideIndex = currentSlideIndex;
-        if (slides.length <= currentSlideIndex+1) {
+        if (slides.length <= currentSlideIndex + 1) {
             slideIndex = 0;
         } else {
             slideIndex++;
         }
-        changeSlideTo(slideIndex);
+        changeSlideTo(slideIndex, "forward");
     }
 
     function onBeforeButtonClick(_) {
@@ -48,10 +61,19 @@ console.log(slides);
         } else {
             slideIndex--;
         }
-        changeSlideTo(slideIndex);
+        changeSlideTo(slideIndex, "backward");
     }
 
     nextButton.addEventListener('click', onNextButtonClick);
-
     beforeButton.addEventListener('click', onBeforeButtonClick);
+
+    for (const bln of pathButtons) {
+        bln.addEventListener('click', (e) => {
+            let slideIndex;
+            if (slideIndex = parseInt(e.currentTarget.dataset['slideIndex'])) {
+                changeSlideTo(slideIndex);
+            }
+        })
+    }
+
 })();
