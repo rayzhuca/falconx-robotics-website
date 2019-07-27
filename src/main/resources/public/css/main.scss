@@ -15,7 +15,7 @@ html {
 
 body {
     background-color: var(--background-color);
-    font-family: 'Overpass', sans-serif;
+    font-family: "Overpass", sans-serif;
     font-weight: 300;
 }
 
@@ -53,10 +53,30 @@ a {
 }
 
 .logo {
-    background-image: url('../images/logo.png');
+    background-image: url("../images/logo.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.to-fade {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in-down {
+    transform: translate(0, -40px);
 }
 
 body>header {
@@ -118,7 +138,6 @@ body>header {
     }
 
     &.change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-6px, 4px);
     }
 
@@ -127,7 +146,6 @@ body>header {
     }
 
     &.change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-5px, -4px);
     }
 }
@@ -153,7 +171,7 @@ nav#menu {
     background-color: white;
 
     transition: opacity 0.2s,
-    transform 0.5s cubic-bezier(.16, .06, 0, 1.02);
+    transform 0.5s cubic-bezier(0.16, 0.06, 0, 1.02);
 
     opacity: 0;
 
@@ -234,7 +252,6 @@ footer {
             flex-grow: 3;
 
             &>ul {
-
                 li {
                     &>.logo {
                         margin-bottom: 20px;
@@ -297,7 +314,7 @@ footer {
                     }
 
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
                         display: inline-block;
                         width: 0px;
@@ -323,12 +340,38 @@ footer {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     :root {
         --wrapper-margin: 5%;
     }
 
     .wrapper {
         width: 90%;
+    }
+
+    footer {
+        height: 600px;
+
+        &>.wrapper {
+            flex-wrap: wrap;
+
+            &>.left {
+                width: 100%;
+            }
+
+            &>.divider {
+                width: 100%;
+                height: 1px;
+                margin: 0 0 20px 0;
+            }
+
+            &>.right {
+                width: 100%;
+
+                &>div.normal {
+                    text-align: left;
+                }
+            }
+        }
     }
 }

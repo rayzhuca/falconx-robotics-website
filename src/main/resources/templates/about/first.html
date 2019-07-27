@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- Change this -->
+		<title>FIRSTⓇ - FalconX Robotics</title>
+		<!-- Change this -->
+		<link
+			rel="stylesheet"
+			th:href="@{/css/about/first.css}"
+			href="../../public/css/about/first.css"
+		/>
+		<link
+			rel="stylesheet"
+			th:href="@{/css/main.css}"
+			href="../../public/css/main.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<!-- Uncomment this when deploying! -->
+		<!-- <style th:text="inline">
+        .logo {
+            background: url([[@{/images/logo.png}]]);
+        }
+    </style> -->
+	</head>
+
+	<body>
+		<header th:replace="fragments/normal :: header"></header>
+		<nav th:replace="fragments/normal :: menu"></nav>
+
+		<div class="header-height-div"></div>
+
+		<!-- <div class="middle-space"></div> -->
+
+		<section>
+			<div class="wrapper">
+				<div class="first-image background-image"></div>
+				<div class="subtitle">
+					FIRST is a STEM education organization that is also an anagram for
+					“For Inspiration and Recognition of Science and Technology”. We as
+					FalconX participate in one of their four programs called FRC which is
+					a competition that is the combination of excitement from sports with
+					the rigorous challenges of science and technology. It consists of
+					high-school student participants and under strict rules, limited
+					resources, and an intense six-week time limit, teams of students are
+					challenged to raise funds, design a team “brand,” build/work on
+					teamwork skills, and build and program and industrial-size robot to
+					play a difficult field game against like-minded competitors.
+				</div>
+			</div>
+		</section>
+
+		<!-- <footer th:replace="fragments/normal :: footer"></footer> -->
+
+		<!-- Change this -->
+		<script th:src="@{/js/main.js}" src="../../public/js/main.js"></script>
+	</body>
+</html>

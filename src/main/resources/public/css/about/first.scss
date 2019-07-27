@@ -1,0 +1,18 @@
+section {
+    width: 100%;
+
+    .first-image {
+        background-size: contain;
+        background-image: url('../../images/first-logo.png');
+        height: 400px;
+        width: 80%;
+        margin: 0 auto 100px auto;
+    }
+
+    .subtitle {
+        line-height: 2em;
+        margin-left: 10%;
+        width: 80%;
+        text-align: center;
+    }
+}
