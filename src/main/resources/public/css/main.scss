@@ -9,8 +9,23 @@
     padding: 0;
 }
 
+@keyframes load-in {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 html {
     scroll-behavior: smooth;
+    animation: load-in 1.5s ease-out;
 }
 
 body {
@@ -68,15 +83,27 @@ a {
 .to-fade {
     opacity: 1;
     transform: translate(0, 0);
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.7s, opacity 0.7s !important;
 }
 
 .fade-in {
     opacity: 0;
 }
 
+.fade-in-up {
+    transform: translate(0, 40px);
+}
+
 .fade-in-down {
     transform: translate(0, -40px);
+}
+
+.fade-in-left {
+    transform: translate(40px, 0);
+}
+
+.fade-in-right {
+    transform: translate(-40px, 0);
 }
 
 body>header {
@@ -99,7 +126,7 @@ body>header {
         &>.title {
             font-size: 18px;
             margin-left: 20px;
-            transition: filter 0.2s;
+            transition: filter 0.3s;
 
             &:hover {
                 filter: opacity(0.7);
@@ -109,7 +136,7 @@ body>header {
         &>a>.logo {
             width: 40px;
             height: 40px;
-            transition: filter 0.2s;
+            transition: filter 0.3s;
 
             &:hover {
                 filter: opacity(0.7);
@@ -258,6 +285,17 @@ footer {
                         width: 60px;
                         height: 60px;
                         filter: invert(1);
+                        transition: opacity 0.3s;
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
+
+                        &>a {
+                            display: block;
+                            width: 60px;
+                            height: 60px;
+                        }
                     }
 
                     &>.normal {
@@ -272,6 +310,14 @@ footer {
 
                         &.address {
                             font-size: 15px;
+
+                            &>a {
+                                transition: opacity 0.3s;
+
+                                &:hover {
+                                    opacity: 0.7;
+                                }
+                            }
                         }
                     }
                 }
