@@ -21,7 +21,7 @@ function getY(ele) {
 // async
 function timeOutLoop(iterable, operation, interval = 10) {
 	// return new Promise((res, err) => {
-	Array.prototype.forEach.call(iterable, function(v, i, arr) {
+	Array.prototype.forEach.call(iterable, function (v, i, arr) {
 		setTimeout(() => {
 			operation(v, i, arr);
 
@@ -97,6 +97,8 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	// data-parallax-static: add attribute (and value cannot be false)
 	//                       for program to get y pos from the beginning,
 	//                       thus decreasing compute time.
+	// data-parallax-translate: translates ele instead of backgroundPositionY.
+	// data-parallax-reverse: reverses parallax effect
 
 	const parallaxEles = document.getElementsByClassName("parallax");
 
@@ -115,8 +117,12 @@ function timeOutLoop(iterable, operation, interval = 10) {
 				window.scrollY + window.innerHeight >= yCord &&
 				window.scrollY <= yCord + ele.clientHeight
 			) {
-				const rate = parseFloat(ele.dataset["parallaxSlowdown"]) || 5;
-				ele.style.backgroundPositionY = (window.scrollY - yCord) / rate + "px";
+				const rate = (parseFloat(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+				if (ele.dataset["parallaxTranslate"] !== undefined) {
+					ele.style.transform = `translate(0, ${(window.scrollY - yCord) / rate}px)`;
+				} else {
+					ele.style.backgroundPositionY = `${(window.scrollY - yCord) / rate}px`;
+				}
 			}
 		}
 	});
