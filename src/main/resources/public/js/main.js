@@ -92,36 +92,61 @@ function timeOutLoop(iterable, operation, interval = 10) {
 
 // * Parallax
 (() => {
-	// How to use:
-	// data-parallax-slowdown: as n approaches infinity, parallax effect decreases.
+	// How to use (all units in px):
+	// data-parallax-slowdown: as n approaches infinity, parallax effect decreases
 	// data-parallax-static: add attribute (and value cannot be false)
 	//                       for program to get y pos from the beginning,
-	//                       thus decreasing compute time.
-	// data-parallax-translate: translates ele instead of backgroundPositionY.
+	//                       thus decreasing compute time
+	// data-parallax-translate: translates ele instead of backgroundPositionY
 	// data-parallax-reverse: reverses parallax effect
+	// data-parallax-middle: (made for parallax eles on the front page)
+	//                       initializes div before start (this will not result of a parabola motion)
+	// data-parallax-offset: self-explainatory
 
-	const parallaxEles = document.getElementsByClassName("parallax");
+	const parallaxEles = document.getElementsByClassName("test");
 
 	for (const ele of parallaxEles) {
 		const isStatic = ele.dataset["parallaxStatic"];
-		if (isStatic != undefined && isStatic != "false") {
+		const isMiddle = ele.dataset["parallaxMiddle"];
+		if ((isStatic !== undefined && isStatic != "false") || (isMiddle !== undefined && isMiddle != "false")) {
 			ele.dataset["parallaxStaticYPos"] = getY(ele);
+		}
+
+		if (isMiddle !== undefined) {
+			const rate = (parseInt(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+			const y = ((parseInt(ele.dataset["parallaxOffset"]) || 0) + (window.scrollY - parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele))) / rate;
+
+			if (ele.dataset["parallaxTranslate"] !== undefined) {
+				ele.style.transform = `translate(0, ${y}px)`;
+			} else {
+				ele.style.backgroundPositionY = `${y}px`;
+			}
 		}
 	}
 
 	window.addEventListener("scroll", _ => {
 		for (const ele of parallaxEles) {
 			//If div is in the screen
-			const yCord = parseFloat(ele.dataset["parallaxStaticYPos"]) || getY(ele);
+			const yCord = parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele);
 			if (
 				window.scrollY + window.innerHeight >= yCord &&
 				window.scrollY <= yCord + ele.clientHeight
 			) {
-				const rate = (parseFloat(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+				const rate = (parseInt(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+				// the difference from screen to div + offset + more offset if parallax-middle
+				// const y = (window.scrollY - yCord + (parseInt(ele.dataset["parallaxOffset"]) || 0) + (ele.dataset["parallaxMiddle"] !== undefined ? (parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele)) : 0)) / rate;
+				const y = (window.scrollY - yCord + (parseInt(ele.dataset["parallaxOffset"]) || 0)) / rate;
+
+
+				// console.log(window.scrollY - yCord)
+				// console.log((parseInt(ele.dataset["parallaxOffset"]) || 0));
+				// console.log((ele.dataset["parallaxMiddle"] !== undefined ? (parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele)) : 0));
+
+
 				if (ele.dataset["parallaxTranslate"] !== undefined) {
-					ele.style.transform = `translate(0, ${(window.scrollY - yCord) / rate}px)`;
+					ele.style.transform = `translate(0, ${y}px)`;
 				} else {
-					ele.style.backgroundPositionY = `${(window.scrollY - yCord) / rate}px`;
+					ele.style.backgroundPositionY = `${y}px`;
 				}
 			}
 		}
@@ -237,6 +262,4 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	}, 500);
 
 	window.addEventListener("scroll", onScroll);
-
-	// window.addEventListener('load', onSCroll);
 })();
