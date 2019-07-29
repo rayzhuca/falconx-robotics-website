@@ -20,7 +20,7 @@ public class ContentGetter {
     }
 
     public HashMap<String, String> getAttributes(String sheetTitle) {
-        System.out.println("Getting");
+        System.out.println("Getting value from gsheets.");
         ValueRange value = googleSheetRepository.get(sheetTitle + "!A:B", null);
 
         if (value == null) {
