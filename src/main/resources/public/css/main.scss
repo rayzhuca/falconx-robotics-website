@@ -278,6 +278,12 @@ footer {
         &>.left {
             flex-grow: 3;
 
+            transition: flex-grow 1s;
+
+            &:hover {
+                flex-grow: 6;
+            }
+
             &>ul {
                 li {
                     &>.logo {
@@ -333,12 +339,20 @@ footer {
         }
 
         &>.right {
+            transition: flex-grow 1s;
+
+            &:hover {
+                flex-grow: 6;
+            }
+
             flex-grow: 1;
 
             &>div.normal {
-                text-align: right;
                 width: 50%;
+                min-width: 140px;
+                max-width: 270px;
                 line-height: 28px;
+                text-align: right;
                 display: inline-block;
             }
 
