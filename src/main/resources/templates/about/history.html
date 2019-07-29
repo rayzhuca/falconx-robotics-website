@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Change this -->
     <title>History - FalconX Robotics</title>
     <!-- Change this -->
     <link rel="stylesheet" th:href="@{/css/about/history.css}" href="../../public/css/about/history.css" />
-    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../public/css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <!-- Uncomment this when deploying! -->
-    <!-- <style th:text="inline">
-        .logo {
-            background: url([[@{/images/logo.png}]]);
-        }
-    </style> -->
 </head>
+
+<head th:replace="fragments/normal :: head"></head>
 
 <body>
     <header th:replace="fragments/normal :: header"></header>

@@ -2,27 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Change this -->
     <title>Home - FalconX Robotics</title>
     <!-- Change this -->
     <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
-    <link rel="stylesheet" th:href="@{/css/main.css}" href="../public/css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600&display=swap" rel="stylesheet">
-
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <!-- Uncomment this when deploying! -->
-    <!-- <style th:text="inline">
-        .logo {
-            background: url([[@{/images/logo.png}]]);
-        }
-    </style> -->
 </head>
+
+<head th:replace="fragments/normal :: head"></head>
 
 <body>
     <header th:replace="fragments/normal :: header"></header>
@@ -31,33 +17,26 @@
     <section id="front">
         <div class="wrapper">
             <div class="subtitle fade-in-down fade-in parallax" data-parallax-translate data-parallax-reverse
-                data-parallax-slowdown="2">FalconX Robotics is a diverse team from <a target="_blank"
-                    href="https://cphs.mdusd.org/">College Park
-                    HS</a> comprised of students,
-                parents,
-                mentors, and teachers.</div>
-            <div class="image parallax fade-in-down fade-in" data-parallax-slowdown="2" data-parallax-static=""></div>
+                data-parallax-slowdown="2">
+                FalconX Robotics is a diverse team from
+                <a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
+                comprised of students, parents, mentors, and teachers.
+            </div>
+            <div class="image parallax fade-in-down fade-in test" data-parallax-slowdown="2" data-parallax-middle></div>
         </div>
     </section>
     <section id="second">
         <div class="wrapper">
-            <div class="subtitle fade-in-down fade-in">We got quality minecraft servers.
+            <div class="subtitle fade-in-down fade-in">
+                We got quality minecraft servers.
             </div>
             <article class="fade-in-down fade-in">
                 Guaranteed ping of less than 50.
-                <br>
+                <br />
                 Up to 100 players max.
             </article>
         </div>
     </section>
-    <!-- <section id="third">
-        <div class="wrapper">
-            <div class="twitter-container">
-                <a class="twitter-timeline" id="twitter-timeline-frame" href="https://twitter.com/FalconXRobotics?ref_src=twsrc%5Etfw"></a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-        </div>
-    </section> -->
 
     <footer th:replace="fragments/normal :: footer"></footer>
 
