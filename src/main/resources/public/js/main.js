@@ -103,7 +103,7 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	//                       initializes div before start (this will not result of a parabola motion)
 	// data-parallax-offset: self-explainatory
 
-	const parallaxEles = document.getElementsByClassName("test");
+	const parallaxEles = document.getElementsByClassName("parallax");
 
 	for (const ele of parallaxEles) {
 		const isStatic = ele.dataset["parallaxStatic"];
