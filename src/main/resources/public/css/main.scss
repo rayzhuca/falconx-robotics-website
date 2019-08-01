@@ -1,7 +1,9 @@
 :root {
     --wrapper-margin: 10%;
-    --header-height: 80px;
-    --background-color: rgb(253, 253, 253);
+    --header-height: 100px;
+    --background-color: rgb(255, 255, 255);
+    --hard-text-color: rgb(63, 63, 63);
+    --soft-text-color: #9c9c9c;
 }
 
 * {
@@ -30,6 +32,7 @@ html {
 
 body {
     background-color: var(--background-color);
+    color: var(--soft-text-color);
     font-family: "Overpass", sans-serif;
     font-weight: 300;
 }
@@ -52,14 +55,17 @@ a {
 
 .title {
     font-weight: 600;
+    color: var(--hard-text-color)
 }
 
 .subtitle {
     font-weight: 400;
+    color: var(--hard-text-color);
 }
 
 .normal {
     font-weight: 300;
+    color: var(--soft-text-color);
 }
 
 .wrapper {
@@ -124,6 +130,7 @@ body>header {
         height: 100%;
 
         &>.title {
+            color: black;
             font-size: 18px;
             margin-left: 20px;
             transition: filter 0.3s;
@@ -159,7 +166,7 @@ body>header {
     .bar3 {
         width: 25px;
         height: 1px;
-        background-color: #333;
+        background-color: var(--hard-text-color);
         margin: 6px 0;
         transition: 0.4s;
     }
@@ -195,7 +202,7 @@ nav#menu {
     width: 100%;
     height: 100%;
     z-index: 6;
-    background-color: white;
+    background-color: var(--background-color);
 
     transition: opacity 0.2s,
     transform 0.5s cubic-bezier(0.16, 0.06, 0, 1.02);
@@ -234,12 +241,16 @@ nav#menu {
                 font-size: 18px;
             }
 
+            .subtitle {
+                color: var(--soft-text-color);
+            }
+
             a {
                 transition: color 0.2s;
             }
 
             a:hover {
-                color: rgb(160, 160, 160);
+                color: var(--hard-text-color);
             }
 
             ul {
@@ -265,8 +276,8 @@ footer {
     width: 100%;
     height: 400px;
     position: relative;
-    background-color: #131313;
-    color: #f7f7f7;
+    // background-color: #131313;
+    color: var(--hard-text-color);
 
     &>.wrapper {
         position: absolute;
@@ -276,12 +287,12 @@ footer {
         top: 20%;
 
         &>.left {
-            flex-grow: 3;
+            flex-grow: 2;
 
             transition: flex-grow 1s;
 
             &:hover {
-                flex-grow: 6;
+                flex-grow: 3;
             }
 
             &>ul {
@@ -290,7 +301,7 @@ footer {
                         margin-bottom: 20px;
                         width: 60px;
                         height: 60px;
-                        filter: invert(1);
+                        // filter: invert(1);
                         transition: opacity 0.3s;
 
                         &:hover {
@@ -307,7 +318,7 @@ footer {
                     &>.normal {
                         font-size: 14px;
                         padding-bottom: 5px;
-                        color: #d8d8d8;
+                        // color: col;
                     }
 
                     &>.subtitle {
@@ -334,20 +345,27 @@ footer {
             flex-grow: 0;
             height: 90%;
             width: 1px;
-            background-color: #d8d8d8;
+            background-color: var(--soft-text-color);
+            opacity: 0.5;
             margin: 0 20px;
+            transition: opacity 0.3s;
+
+            &.fade-in {
+                opacity: 0;
+            }
         }
 
         &>.right {
             transition: flex-grow 1s;
 
             &:hover {
-                flex-grow: 6;
+                flex-grow: 2;
             }
 
             flex-grow: 1;
 
             &>div.normal {
+                color: var(--hard-text-color);
                 width: 50%;
                 min-width: 140px;
                 max-width: 270px;
@@ -360,7 +378,7 @@ footer {
                 float: right;
 
                 &>* {
-                    color: #d8d8d8;
+                    color: var(--soft-text-color);
                     font-size: 14px;
                     text-align: right;
                     padding-bottom: 2px;
@@ -370,7 +388,7 @@ footer {
                     transition: color 0.2s;
 
                     &:hover {
-                        color: white;
+                        color: var(--hard-text-color);
                     }
 
                     &::after {
@@ -381,7 +399,7 @@ footer {
                         height: 1px;
                         bottom: -2px;
                         right: 0;
-                        background-color: white;
+                        background-color: var(--hard-text-color);
                         transition: width 0.2s;
                     }
 

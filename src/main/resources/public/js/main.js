@@ -73,7 +73,7 @@ function timeOutLoop(iterable, operation, interval = 10) {
 			document.body.classList.add("scroll-lock");
 			menu.style.display = null;
 			menu.style.zIndex = null;
-			header.style.backgroundColor = "white";
+			header.style.backgroundColor = "var(--background-color)";
 		}
 
 		setTimeout(() => {
@@ -230,7 +230,7 @@ function timeOutLoop(iterable, operation, interval = 10) {
 			v => {
 				fadeIn(v);
 			},
-			200
+			150
 		);
 	}
 
