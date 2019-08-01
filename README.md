@@ -9,6 +9,7 @@
 - [ ] Front page
 - [ ] Projects page
 - [ ] Mobile
+- [ ] Colors in css vars
 - [ ] Error handeling
 - [ ] Dynamic
 - [ ] Heroku
