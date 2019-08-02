@@ -1,72 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
+	<head>
+		<!-- Change this -->
+		<title>Home - FalconX Robotics</title>
+		<!-- Change this -->
+		<link
+			rel="stylesheet"
+			th:href="@{/css/index.css}"
+			href="../public/css/index.css"
+		/>
+	</head>
 
-<head>
-    <!-- Change this -->
-    <title>Home - FalconX Robotics</title>
-    <!-- Change this -->
-    <link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
-</head>
+	<head th:replace="fragments/normal :: head"></head>
 
-<head th:replace="fragments/normal :: head"></head>
+	<body>
+		<header th:replace="fragments/normal :: header"></header>
+		<nav th:replace="fragments/normal :: menu"></nav>
 
-<body>
-    <header th:replace="fragments/normal :: header"></header>
-    <nav th:replace="fragments/normal :: menu"></nav>
+		<section id="front">
+			<div class="wrapper">
+				<div
+					class="subtitle fade-in fade-in-down parallax"
+					data-parallax-translate
+					data-parallax-reverse
+					data-parallax-middle
+					data-parallax-slowdown="2"
+				>
+					FalconX Robotics is a diverse team from
+					<a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
+					comprised of students, parents, mentors, and teachers.
+				</div>
+				<div
+					class="image parallax fade-in-down fade-in test"
+					data-parallax-slowdown="2"
+					data-parallax-middle
+				></div>
+			</div>
+		</section>
 
-    <section id="front">
-        <div class="wrapper">
-            <div class="subtitle fade-in-down fade-in parallax" data-parallax-translate data-parallax-reverse
-                data-parallax-middle data-parallax-slowdown="2">
-                FalconX Robotics is a diverse team from
-                <a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
-                comprised of students, parents, mentors, and teachers.
-            </div>
-            <div class="image parallax fade-in-down fade-in test" data-parallax-slowdown="2" data-parallax-middle></div>
-        </div>
-    </section>
+		<section id="second">
+			<div class="wrapper">
+				<div class="left">
+					<div
+						class="background parallax"
+						data-parallax-slowdown="5"
+						data-parallax-middle
+					></div>
+				</div>
+				<div class="right">
+					<article class="subtitle fade-in fade-in-down">
+						Our ambitious founders and along with the most dankest members in
+						school discovered what is later known as FalconX Robotics.
+					</article>
+					<div class="read-more fade-in fade-in-down">
+						<a href="/">
+							read more
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section id="second">
-        <div class="wrapper">
-            <div class="left">
-                <div class="background"></div>
-            </div>
-            <div class="right">
-                <article class="subtitle">Our ambitious founders and along with the most dankest members in school
-                    discovered what is later known as FalconX Robotics.</article>
-                <div class="read-more">
-                    read more
-                </div>
-            </div>
-        </div>
-    </section>
+		<section id="third">
+			<div class="wrapper">
+				<div class="subtitle">We are proudly sponsored by the following.</div>
+				<div class="sponsors"></div>
+			</div>
+		</section>
 
-    <section id="third">
-        <div class="wrapper">
-            <div class="subtitle">We are proudly sponsored by the following.</div>
-            <div class="sponsors">
+		<section id="fourth">
+			<div class="wrapper">
+				<div class="left"></div>
+				<div class="right">
+					<div class="read-more">
+						read more
+					</div>
+					<article class="subtitle">Read about our recent project.</article>
+				</div>
+			</div>
+		</section>
 
-            </div>
-        </div>
-    </section>
+		<footer th:replace="fragments/normal :: footer"></footer>
 
-    <section id="fourth">
-        <div class="wrapper">
-            <div class="left"></div>
-            <div class="right">
-                <div class="read-more">
-                    read more
-                </div>
-                <article class="subtitle">Read about our recent project.</article>
-            </div>
-        </div>
-    </section>
-
-    <footer th:replace="fragments/normal :: footer"></footer>
-
-    <!-- Change this -->
-    <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
-    <script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
-</body>
-
+		<!-- Change this -->
+		<script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+		<script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
+	</body>
 </html>
