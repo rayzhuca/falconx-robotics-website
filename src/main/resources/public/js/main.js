@@ -177,7 +177,7 @@ function timeOutLoop(iterable, operation, interval = 10) {
 })();
 
 // * Fade in & footer
-(() => {
+setTimeout(() => {
 	const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
 	let fadeEles = document.getElementsByClassName("fade-in");
 
@@ -262,4 +262,4 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	}, 500);
 
 	window.addEventListener("scroll", onScroll);
-})();
+}, 1500);
