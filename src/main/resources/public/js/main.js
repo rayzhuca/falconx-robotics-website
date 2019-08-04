@@ -184,6 +184,14 @@ setTimeout(() => {
 	function fadeIn(ele) {
 		if (ele.classList.contains("in-footer")) return;
 
+		const fadeInTime = parseFloat(ele.dataset["fadeInTime"]);
+		const oldTransition = ele.style.transition;
+		if (!Number.isNaN(fadeInTime)) {
+			console.log(ele.style.transition);
+			ele.style.transition = `transform ${fadeInTime}s, opacity ${fadeInTime}s !important;`;
+			console.log(ele.style.transition);
+		}
+
 		ele.classList.add("to-fade");
 		// setTimeout(() =>
 		ele.classList.remove("fade-in");
@@ -197,6 +205,9 @@ setTimeout(() => {
 
 		setTimeout(() => {
 			ele.classList.remove("to-fade");
+			// TODO yes
+			if (!Number.isNaN(fadeInTime)) console.log();
+			// ele.style.transition = oldTransition;
 		}, 700);
 	}
 

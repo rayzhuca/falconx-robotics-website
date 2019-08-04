@@ -157,8 +157,93 @@ section#second {
             }
         }
     }
+}
 
+section#third {
+    margin-top: 150px;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    background-color: var(--secondary-background-color);
 
+    &>.wrapper {
+        &>.title {
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+        }
+
+        &>.sponsors {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            flex-wrap: wrap;
+
+            &>* {
+                padding: 30px;
+                opacity: 1;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            &>a {
+                &>.apple {
+                    height: 200px;
+                    //     width: 100px;
+                    //     background-image: url('/images/apple.png');
+                }
+
+                &>.tap-plastics {
+                    height: 100px;
+                    // background-image: url('/images/tap-plastics.png');
+                }
+
+                &>.marathon {
+                    height: 350px;
+                    //     background-image: url('/images/marathon.png');
+                }
+
+                &>.google {
+                    height: 100px;
+                    //     background-image: url('/images/google.png');
+                }
+
+                &>.brin-wojcicki-org {
+                    height: 120px;
+                    //     background-image: url('/images/brin-wojcicki-org.png');
+                }
+
+                &>.moutain-mikes {
+                    height: 200px;
+                    //     background-image: url('/images/moutain-mikes.png');
+                }
+            }
+        }
+    }
+}
+
+.image-test {
+    background-image: url('../images/fatrat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    display: table;
+}
+
+@media screen and (max-width: 500px) {
+    section#front {
+        &>.wrapper {
+            &>.subtitle {
+                top: 20%;
+                left: 20px;
+            }
+        }
+    }
 }
 
 // section#second {
@@ -252,24 +337,3 @@ section#second {
 //         }
 //     }
 // }
-
-.image-test {
-    background-image: url('../images/fatrat.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 80%;
-    height: 300px;
-    margin: 0 auto;
-    display: table;
-}
-
-@media screen and (max-width: 500px) {
-    section#front {
-        &>.wrapper {
-            &>.subtitle {
-                top: 20%;
-                left: 20px;
-            }
-        }
-    }
-}
