@@ -8,11 +8,12 @@
 
 - [ ] Front page
 - [ ] Add way to see errors on mobile
+- [ ] StoredCrdential in .env, by making a new file from the env varaible.
 - [ ] Scroll menu mobile bug
 - [ ] Projects page
 - [ ] Mobile
-- [ ] Colors in css vars
+- [x] Colors in css vars
 - [ ] Error handeling
 - [ ] Dynamic
-- [ ] Heroku
+- [x] Heroku
 - [ ] More effects
