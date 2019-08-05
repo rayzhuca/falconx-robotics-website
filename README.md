@@ -1,8 +1,8 @@
 ## Reminder to myself:
 
-- Never make this public unless \*.env is added on .gitignore
-- Never make this public unless token/\* is added on .gitignore
-- Never make this public until sheet id is on .env
+- [x] Never make this public unless \*.env is added on .gitignore
+- [ ] Never make this public unless token/\* is added on .gitignore
+- [ ] Never make this public until sheet id is on .env
 
 ## To do list:
 
