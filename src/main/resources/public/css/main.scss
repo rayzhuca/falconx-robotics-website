@@ -28,6 +28,7 @@
 
 html {
     scroll-behavior: smooth;
+    will-change: opacity;
     animation: load-in 1.5s ease-out;
 }
 
