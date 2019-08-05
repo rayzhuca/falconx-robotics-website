@@ -44,8 +44,15 @@ public class GoogleSheetRepository {
     private Sheets service;
 
     public GoogleSheetRepository() throws GeneralSecurityException, IOException {
-        Dotenv dotenv = Dotenv.load();
-        SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
+        try {
+            Dotenv dotenv = Dotenv.load();
+            SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("TYPE:" + e.getClass());
+
+            throw e;
+        }
 
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
