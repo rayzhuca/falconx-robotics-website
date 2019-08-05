@@ -259,8 +259,8 @@ setTimeout(() => {
 
 	function onScroll(_) {
 		for (let i = 0; i < fadeEles.length; i++) {
-			// ele fades in when scrolled to half of the screen + div y pos
-			if (getY(fadeEles[i]) - (1 / 2) * window.innerHeight < window.scrollY) {
+			// ele fades in when scrolled to one third of the screen + div y pos
+			if (getY(fadeEles[i]) - (1 / 3) * window.innerHeight < window.scrollY) {
 				fadeIn(fadeEles[i]);
 			}
 		}
