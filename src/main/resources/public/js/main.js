@@ -1,7 +1,10 @@
 "use strict";
 
+const debugMode = false;
+
 // * Mobile Error Messages
 function onError(e) {
+	if (!debugMode) throw e;
 	const errEle = document.getElementById("error-mes-mobile");
 
 	errEle.innerHTML = e;
@@ -201,8 +204,6 @@ setTimeout(() => {
 	try {
 		const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
 		const fadeEles = document.getElementsByClassName("fade-in");
-
-		document.getElementById("error-mes-mobile").innerHTML = "fade in ran";
 
 		function fadeIn(ele) {
 			if (ele.classList.contains("in-footer")) return;
