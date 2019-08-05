@@ -30,7 +30,8 @@ build/
 ### VS Code ###
 .vscode/
 
-# *.env
+*.env
+StoredCredential
 *.txt
 # *.css - for heroku :CCCCC
 *.map
