@@ -328,6 +328,7 @@ footer {
   height: 400px;
   position: relative;
   color: var(--hard-text-color);
+  overflow: hidden;
 }
 
 footer > .wrapper {

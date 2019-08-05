@@ -1,3 +1,7 @@
+:root {
+  --sponsor-height-base-line: 100px;
+}
+
 .link {
   text-decoration: underline;
 }
@@ -160,8 +164,7 @@ section#second > .wrapper > .right > .read-more:hover::before {
 
 section#second > .wrapper > .right > .read-more:hover::after {
   right: -45px;
-  border-top-color: var(--hard-text-color);
-  border-right-color: var(--hard-text-color);
+  border-color: black !important;
 }
 
 section#third {
@@ -169,6 +172,7 @@ section#third {
   padding-top: 150px;
   padding-bottom: 100px;
   background-color: var(--secondary-background-color);
+  overflow: hidden;
 }
 
 section#third > .wrapper > .title {
@@ -203,27 +207,27 @@ section#third > .wrapper > .sponsors > *:hover {
 }
 
 section#third > .wrapper > .sponsors > a > .apple {
-  height: 200px;
+  height: calc(var(--sponsor-height-base-line) + 100px);
 }
 
 section#third > .wrapper > .sponsors > a > .tap-plastics {
-  height: 100px;
+  height: var(--sponsor-height-base-line);
 }
 
 section#third > .wrapper > .sponsors > a > .marathon {
-  height: 350px;
+  height: calc(var(--sponsor-height-base-line) + 250px);
 }
 
 section#third > .wrapper > .sponsors > a > .google {
-  height: 100px;
+  height: var(--sponsor-height-base-line);
 }
 
 section#third > .wrapper > .sponsors > a > .brin-wojcicki-org {
-  height: 120px;
+  height: calc(var(--sponsor-height-base-line) + 20px);
 }
 
 section#third > .wrapper > .sponsors > a > .moutain-mikes {
-  height: 200px;
+  height: calc(var(--sponsor-height-base-line) + 100px);
 }
 
 .image-test {
@@ -240,6 +244,30 @@ section#third > .wrapper > .sponsors > a > .moutain-mikes {
   section#front > .wrapper > .subtitle {
     top: 20%;
     left: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section#second > .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  section#second > .wrapper > .left {
+    max-width: none;
+    width: 100%;
+  }
+  section#second > .wrapper > .right {
+    width: auto;
+    margin: 100px auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  :root {
+    --sponsor-height-base-line: 50px;
+  }
+  section#third > .wrapper > .sponsors > a > .marathon {
+    height: 200px;
   }
 }
 /*# sourceMappingURL=index.css.map */
