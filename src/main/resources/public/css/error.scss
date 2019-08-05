@@ -1,0 +1,63 @@
+main {
+    &>.wrapper {
+        &>.error-code {
+            font-size: 2em;
+            padding-top: 20vh;
+        }
+
+        &>.message {
+            margin-top: 20px;
+        }
+
+        &>.go-back {
+            margin-top: calc(60vh - 20px);
+            position: relative;
+            display: inline-block;
+
+            transition: color 0.5s;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: var(--soft-text-color);
+                right: -30px;
+                top: 50%;
+                height: 1px;
+                width: 20px;
+
+                transition: width 0.5s, right 0.5s, color 0.5s;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                transform: rotate(45deg);
+                border-top: 1px solid var(--soft-text-color);
+                border-right: 1px solid var(--soft-text-color);
+                right: -30px;
+                top: calc(50% - 4px);
+                height: 8px;
+                width: 8px;
+
+                transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+            }
+
+            &:hover {
+                color: var(--hard-text-color);
+
+                &::before {
+                    width: 35px;
+                    right: -45px;
+                    background-color: var(--hard-text-color);
+                }
+
+                &::after {
+                    right: -45px;
+                    // border-top-color: var(--hard-text-color);
+                    // border-right-color: var(--hard-text-color);
+                    border-color: black !important;
+                }
+            }
+        }
+    }
+}

@@ -289,11 +289,11 @@ section#fourth {
 
 @media screen and (max-width: 700px) {
 
-    section#first {
-        &>.wrapper {
-            &>.image {}
-        }
-    }
+    // section#first {
+    //     &>.wrapper {
+    //         &>.image {}
+    //     }
+    // }
 
     section#second {
         &>.wrapper {

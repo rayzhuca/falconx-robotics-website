@@ -1,0 +1,59 @@
+main > .wrapper > .error-code {
+  font-size: 2em;
+  padding-top: 20vh;
+}
+
+main > .wrapper > .message {
+  margin-top: 20px;
+}
+
+main > .wrapper > .go-back {
+  margin-top: calc(60vh - 20px);
+  position: relative;
+  display: inline-block;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+main > .wrapper > .go-back::before {
+  content: '';
+  position: absolute;
+  background-color: var(--soft-text-color);
+  right: -30px;
+  top: 50%;
+  height: 1px;
+  width: 20px;
+  -webkit-transition: width 0.5s, right 0.5s, color 0.5s;
+  transition: width 0.5s, right 0.5s, color 0.5s;
+}
+
+main > .wrapper > .go-back::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid var(--soft-text-color);
+  border-right: 1px solid var(--soft-text-color);
+  right: -30px;
+  top: calc(50% - 4px);
+  height: 8px;
+  width: 8px;
+  -webkit-transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+  transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+}
+
+main > .wrapper > .go-back:hover {
+  color: var(--hard-text-color);
+}
+
+main > .wrapper > .go-back:hover::before {
+  width: 35px;
+  right: -45px;
+  background-color: var(--hard-text-color);
+}
+
+main > .wrapper > .go-back:hover::after {
+  right: -45px;
+  border-color: black !important;
+}
+/*# sourceMappingURL=error.css.map */

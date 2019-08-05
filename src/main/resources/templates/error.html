@@ -3,11 +3,27 @@
 
 <head>
 	<title>Error - FalconX Robotics</title>
+
+	<link rel="stylesheet" th:href="@{/css/error.css}" href="../public/css/index.css" />
 </head>
 
 <head th:replace="fragments/normal :: head"></head>
 
 
-<body></body>
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="error-code subtitle" th:text="${statuscode}">
+				520
+			</div>
+			<div class="message normal" th:text="${message}">
+				Unknown error
+			</div>
+			<div class="go-back">
+				<a href="/">click here to go back to home</a>
+			</div>
+		</div>
+	</main>
+</body>
 
 </html>
