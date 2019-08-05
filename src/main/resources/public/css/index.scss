@@ -280,7 +280,7 @@ section#fourth {
         &>.wrapper {
             &>.subtitle {
                 font-size: 17px;
-                top: 5%;
+                top: calc(5% + var(--header-height));
                 left: 20px;
             }
         }
