@@ -280,6 +280,7 @@ footer {
     position: relative;
     // background-color: #131313;
     color: var(--hard-text-color);
+    overflow: hidden;
 
     &>.wrapper {
         position: absolute;
