@@ -1,5 +1,12 @@
 "use strict";
 
+// * Mobile Error Messages
+function onError(e) {
+	const errEle = document.getElementById("error-mes-mobile");
+
+	errEle.innerHTML = e;
+}
+
 // global for fade in and parallax
 function getY(ele) {
 	let y = 0;
@@ -191,98 +198,102 @@ function timeOutLoop(iterable, operation, interval = 10) {
 
 // * Fade in & footer
 setTimeout(() => {
-	const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
-	let fadeEles = document.getElementsByClassName("fade-in");
+	try {
+		const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
+		let fadeEles = document.getElementsByClassName("fade-in");
 
-	function fadeIn(ele) {
-		if (ele.classList.contains("in-footer")) return;
+		function fadeIn(ele) {
+			if (ele.classList.contains("in-footer")) return;
 
-		// const fadeInTime = parseFloat(ele.dataset["fadeInTime"]);
-		// const oldTransition = ele.style.transition;
-		// if (!Number.isNaN(fadeInTime)) {
-		// console.log(ele.style.transition);
-		// ele.style.transition = `transform ${fadeInTime}s, opacity ${fadeInTime}s !important;`;
-		// console.log(ele.style.transition);
+			// const fadeInTime = parseFloat(ele.dataset["fadeInTime"]);
+			// const oldTransition = ele.style.transition;
+			// if (!Number.isNaN(fadeInTime)) {
+			// console.log(ele.style.transition);
+			// ele.style.transition = `transform ${fadeInTime}s, opacity ${fadeInTime}s !important;`;
+			// console.log(ele.style.transition);
+			// }
+
+			ele.classList.add("to-fade");
+			// setTimeout(() =>
+			ele.classList.remove("fade-in");
+			// , 100);
+
+			for (const eleClass of ele.classList) {
+				if (eleClass.startsWith("fade-in")) {
+					ele.classList.remove(eleClass);
+				}
+			}
+
+			setTimeout(() => {
+				ele.classList.remove("to-fade");
+				// if (!Number.isNaN(fadeInTime)) console.log();
+				// ele.style.transition = oldTransition;
+			}, 700);
+		}
+
+		function isClose(num1, num2, range) {
+			// num1, num2 = parseInt(num1), parseInt(num2);
+
+			// n1: 9, n2: 10
+			// 9 + 5/2 > 10
+			// 9 - 5/2 < 10
+
+			return num1 + range / 2 >= num2 && num1 - range / 2 <= num2;
+		}
+
+		// function isInFooter(ele) {
+		// 	let parent = ele.parentElement;
+		// 	while (parent && parent !== document.body) {
+		// 		if (parent.tagName === 'FOOTER') {
+		// 			return true;
+		// 		}
+		// 		ele = parent;
+		// 		parent = ele.parentElement;
+		// 	}
+		// 	return false;
 		// }
 
-		ele.classList.add("to-fade");
-		// setTimeout(() =>
-		ele.classList.remove("fade-in");
-		// , 100);
+		function animateFooter() {
+			const footerFadeEles = document.querySelectorAll("footer *.fade-in");
 
-		for (const eleClass of ele.classList) {
-			if (eleClass.startsWith("fade-in")) {
-				ele.classList.remove(eleClass);
+			timeOutLoop(
+				footerFadeEles,
+				v => {
+					fadeIn(v);
+				},
+				150
+			);
+		}
+
+		function onScroll(_) {
+			for (let i = 0; i < fadeEles.length; i++) {
+				// ele fades in when scrolled to one third of the screen + div y pos
+				if (getY(fadeEles[i]) - (1 / 3) * window.innerHeight < window.scrollY) {
+					fadeIn(fadeEles[i]);
+				}
+			}
+
+			if (
+				footer &&
+				isClose(
+					window.scrollY + window.innerHeight,
+					document.documentElement.scrollHeight,
+					400
+				)
+			) {
+				animateFooter();
 			}
 		}
 
 		setTimeout(() => {
-			ele.classList.remove("to-fade");
-			// if (!Number.isNaN(fadeInTime)) console.log();
-			// ele.style.transition = oldTransition;
-		}, 700);
-	}
-
-	function isClose(num1, num2, range) {
-		// num1, num2 = parseInt(num1), parseInt(num2);
-
-		// n1: 9, n2: 10
-		// 9 + 5/2 > 10
-		// 9 - 5/2 < 10
-
-		return num1 + range / 2 >= num2 && num1 - range / 2 <= num2;
-	}
-
-	// function isInFooter(ele) {
-	// 	let parent = ele.parentElement;
-	// 	while (parent && parent !== document.body) {
-	// 		if (parent.tagName === 'FOOTER') {
-	// 			return true;
-	// 		}
-	// 		ele = parent;
-	// 		parent = ele.parentElement;
-	// 	}
-	// 	return false;
-	// }
-
-	function animateFooter() {
-		const footerFadeEles = document.querySelectorAll("footer *.fade-in");
-
-		timeOutLoop(
-			footerFadeEles,
-			v => {
-				fadeIn(v);
-			},
-			150
-		);
-	}
-
-	function onScroll(_) {
-		for (let i = 0; i < fadeEles.length; i++) {
-			// ele fades in when scrolled to one third of the screen + div y pos
-			if (getY(fadeEles[i]) - (1 / 3) * window.innerHeight < window.scrollY) {
-				fadeIn(fadeEles[i]);
+			// timeout to fix the weirdest fucking bug
+			for (let i = 0; i < fadeEles.length; i++) {
+				onScroll();
 			}
-		}
+		}, 500);
 
-		if (
-			footer &&
-			isClose(
-				window.scrollY + window.innerHeight,
-				document.documentElement.scrollHeight,
-				400
-			)
-		) {
-			animateFooter();
-		}
+		window.addEventListener("scroll", onScroll);
+	} catch (e) {
+		onError(e);
 	}
-
-	setTimeout(() => {
-		// timeout to fix the weirdest fucking bug
-		for (let i = 0; i < fadeEles.length; i++) {
-			onScroll();
-		}
-	}, 500);
-
-	window.addEventListener("scroll", onScroll);
 }, 1500);
