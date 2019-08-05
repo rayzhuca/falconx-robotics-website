@@ -30,6 +30,7 @@ import com.google.api.services.sheets.v4.model.ValueRange;
 
 import org.springframework.stereotype.Repository;
 
+import io.github.cdimascio.dotenv.DotEnvException;
 import io.github.cdimascio.dotenv.Dotenv;
 
 @Repository
@@ -38,9 +39,9 @@ public class GoogleSheetRepository {
     private final String APPLICATION_NAME = "website";
     private final String SHEET_ID = "1FbbEs4_8v8LqqpAmLqAcVGUFeK4rRlentKwJbzEIgP8";
     private final String SHEET_TOKEN_PATH = "./src/main/resources/secrets/token";
-    private final String SHEET_CREDENTIALS;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+    private String SHEET_CREDENTIALS;
     private Sheets service;
 
     public GoogleSheetRepository() throws GeneralSecurityException, IOException {
@@ -48,10 +49,11 @@ public class GoogleSheetRepository {
             Dotenv dotenv = Dotenv.load();
             SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("TYPE:" + e.getClass());
-
-            throw e;
+            if (e.getClass() == DotEnvException.class) {
+                SHEET_CREDENTIALS = System.getenv("SHEET_CREDENTIALS");
+            } else {
+                throw e;
+            }
         }
 
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
