@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+section > .wrapper {
+  width: calc(100% - var(--wrapper-margin) * 2);
+  height: 100%;
+  position: relative;
+}
+
+section#front > .wrapper > .subtitle {
+  margin-top: 35vh;
+  min-width: 45%;
+  max-width: 50%;
+  line-height: 2em;
+  font-size: 30px;
+}
+
+section#front > .wrapper > nav > ul {
+  margin-top: 10px;
+}
+
+section#front > .wrapper > nav > ul > li {
+  color: #5e5e5e;
+  display: inline-block;
+  -webkit-transition: padding-bottom 0.1s;
+  transition: padding-bottom 0.1s;
+  font-size: 15px;
+  margin-right: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #a7a7a7;
+  cursor: pointer;
+}
+
+section#front > .wrapper > nav > ul > li:hover {
+  color: black;
+  padding-bottom: 0px;
+  border-bottom-color: #5e5e5e;
+}
+
+section.slide {
+  position: absolute;
+  top: 0;
+  display: none;
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+section.slide.removing {
+  -webkit-transition: left 1s;
+  transition: left 1s;
+  z-index: 4;
+  display: initial;
+}
+
+section.slide.current {
+  -webkit-transition: left 1s;
+  transition: left 1s;
+  z-index: 4;
+  display: initial;
+}
+
+section.slide > .wrapper > .subtitle {
+  margin-top: 20vh;
+  font-size: 40px;
+}
+
+section.slide > .wrapper > .description {
+  margin-top: 50px;
+  width: 80%;
+  margin-top: 10%;
+  font-size: 18px;
+  padding-bottom: 50px;
+}
+
+.middle-space {
+  height: 100vh;
+}
+
+#back-button,
+#next-button {
+  z-index: 5;
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: fixed;
+  margin-top: auto;
+  top: calc(50vh - 10px);
+}
+
+#back-button {
+  border-left: 1px solid #a7a7a7;
+  border-bottom: 1px solid #a7a7a7;
+  left: 35px;
+  -webkit-transition: left 0.3s, border-color 0.3s;
+  transition: left 0.3s, border-color 0.3s;
+}
+
+#back-button:hover {
+  border-color: #5e5e5e;
+  left: 30px;
+}
+
+#next-button {
+  border-right: 1px solid #a7a7a7;
+  border-top: 1px solid #a7a7a7;
+  right: 35px;
+  -webkit-transition: right 0.3s, border-color 0.3s;
+  transition: right 0.3s, border-color 0.3s;
+}
+
+#next-button:hover {
+  border-color: #5e5e5e;
+  right: 30px;
+}
+/*# sourceMappingURL=history.css.map */

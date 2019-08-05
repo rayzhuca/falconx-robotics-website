@@ -1,0 +1,245 @@
+.link {
+  text-decoration: underline;
+}
+
+section {
+  width: 100%;
+}
+
+section .subtitle {
+  font-size: 20px;
+  line-height: 2em;
+}
+
+section#front {
+  z-index: 2;
+  height: 100vh;
+}
+
+section#front > .wrapper {
+  width: calc(100% - var(--wrapper-margin) * 2);
+  height: 100%;
+  position: relative;
+}
+
+section#front > .wrapper > .subtitle {
+  position: absolute;
+  top: 25%;
+  left: 60px;
+  min-width: 45%;
+  max-width: 50%;
+}
+
+section#front > .wrapper > .subtitle > a {
+  text-decoration: underline;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+section#front > .wrapper > .subtitle > a:hover {
+  color: #787878;
+  -webkit-text-decoration-color: #787878;
+          text-decoration-color: #787878;
+}
+
+section#front > .wrapper > .image {
+  position: absolute;
+  background-image: url("https://images.wallpaperscraft.com/image/castle_neuschwanstein_castle_architecture_126354_1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  width: 30%;
+  min-width: 70px;
+  height: 75vh;
+  left: 70%;
+  top: 20vh;
+}
+
+section#second {
+  margin-top: 200px;
+}
+
+section#second > .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+section#second > .wrapper > .left {
+  height: 40vw;
+  min-height: 500px;
+  width: 50%;
+  max-width: 500px;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+section#second > .wrapper > .left .background {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cyberlinkserver.net/wp-content/uploads/2017/05/brooklyn-bridge-4000x2667-new-york-dumbo-in-brooklyn-clouds-sunset-6183.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  -webkit-transition: width 0.5s, height 0.5s, margin 0.5s;
+  transition: width 0.5s, height 0.5s, margin 0.5s;
+}
+
+section#second > .wrapper > .left .background:hover {
+  width: 110%;
+  height: 110%;
+  margin-left: -5%;
+  margin-top: -5%;
+}
+
+section#second > .wrapper > .left .background > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+section#second > .wrapper > .right {
+  height: 400px;
+  width: calc(50% - 50px);
+  margin: 100px;
+}
+
+section#second > .wrapper > .right > .subtitle {
+  font-size: 18px;
+}
+
+section#second > .wrapper > .right > .read-more {
+  position: relative;
+  margin-top: 50px;
+  display: inline-block;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+section#second > .wrapper > .right > .read-more::before {
+  content: '';
+  position: absolute;
+  background-color: var(--soft-text-color);
+  right: -30px;
+  top: 50%;
+  height: 1px;
+  width: 20px;
+  -webkit-transition: width 0.5s, right 0.5s, color 0.5s;
+  transition: width 0.5s, right 0.5s, color 0.5s;
+}
+
+section#second > .wrapper > .right > .read-more::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid var(--soft-text-color);
+  border-right: 1px solid var(--soft-text-color);
+  right: -30px;
+  top: calc(50% - 4px);
+  height: 8px;
+  width: 8px;
+  -webkit-transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+  transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+}
+
+section#second > .wrapper > .right > .read-more:hover {
+  color: var(--hard-text-color);
+}
+
+section#second > .wrapper > .right > .read-more:hover::before {
+  width: 35px;
+  right: -45px;
+  background-color: var(--hard-text-color);
+}
+
+section#second > .wrapper > .right > .read-more:hover::after {
+  right: -45px;
+  border-top-color: var(--hard-text-color);
+  border-right-color: var(--hard-text-color);
+}
+
+section#third {
+  margin-top: 150px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background-color: var(--secondary-background-color);
+}
+
+section#third > .wrapper > .title {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+section#third > .wrapper > .sponsors {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#third > .wrapper > .sponsors > * {
+  padding: 30px 40px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+section#third > .wrapper > .sponsors > *:hover {
+  opacity: 0.5;
+}
+
+section#third > .wrapper > .sponsors > a > .apple {
+  height: 200px;
+}
+
+section#third > .wrapper > .sponsors > a > .tap-plastics {
+  height: 100px;
+}
+
+section#third > .wrapper > .sponsors > a > .marathon {
+  height: 350px;
+}
+
+section#third > .wrapper > .sponsors > a > .google {
+  height: 100px;
+}
+
+section#third > .wrapper > .sponsors > a > .brin-wojcicki-org {
+  height: 120px;
+}
+
+section#third > .wrapper > .sponsors > a > .moutain-mikes {
+  height: 200px;
+}
+
+.image-test {
+  background-image: url("../images/fatrat.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  display: table;
+}
+
+@media screen and (max-width: 500px) {
+  section#front > .wrapper > .subtitle {
+    top: 20%;
+    left: 20px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -32,6 +32,8 @@ build/
 
 # *.env
 *.txt
-*.css
+# *.css - for heroku :CCCCC
 *.map
 *.DS_STORE
+# current problem: css files needed for heroku, scss files needed for myself, having
+# one gitignore means less efficient bc both types are added
