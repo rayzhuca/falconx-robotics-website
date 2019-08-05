@@ -60,11 +60,13 @@ section#front > .wrapper > .image {
   top: 20vh;
 }
 
-section#second {
+section#second,
+section#fourth {
   margin-top: 200px;
 }
 
-section#second > .wrapper {
+section#second > .wrapper,
+section#fourth > .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +75,8 @@ section#second > .wrapper {
           justify-content: flex-end;
 }
 
-section#second > .wrapper > .left {
+section#second > .wrapper > .left,
+section#fourth > .wrapper > .left {
   height: 40vw;
   min-height: 500px;
   width: 50%;
@@ -82,7 +85,8 @@ section#second > .wrapper > .left {
   overflow: hidden;
 }
 
-section#second > .wrapper > .left .background {
+section#second > .wrapper > .left .background,
+section#fourth > .wrapper > .left .background {
   width: 100%;
   height: 100%;
   background-image: url("https://cyberlinkserver.net/wp-content/uploads/2017/05/brooklyn-bridge-4000x2667-new-york-dumbo-in-brooklyn-clouds-sunset-6183.jpg");
@@ -94,30 +98,37 @@ section#second > .wrapper > .left .background {
   transition: width 0.5s, height 0.5s, margin 0.5s;
 }
 
-section#second > .wrapper > .left .background:hover {
+section#second > .wrapper > .left .background:hover,
+section#fourth > .wrapper > .left .background:hover {
   width: 110%;
   height: 110%;
   margin-left: -5%;
   margin-top: -5%;
 }
 
-section#second > .wrapper > .left .background > a {
+section#second > .wrapper > .left .background > a,
+section#fourth > .wrapper > .left .background > a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-section#second > .wrapper > .right {
+section#second > .wrapper > .right,
+section#fourth > .wrapper > .right {
   height: 400px;
   width: calc(50% - 50px);
   margin: 100px;
 }
 
-section#second > .wrapper > .right > .subtitle {
+section#second > .wrapper > .right > .subtitle,
+section#fourth > .wrapper > .right > .subtitle {
   font-size: 18px;
 }
 
-section#second > .wrapper > .right > .read-more {
+section#second > .wrapper > .right > .read-more,
+section#second > .wrapper > .right > .arrow,
+section#fourth > .wrapper > .right > .read-more,
+section#fourth > .wrapper > .right > .arrow {
   position: relative;
   margin-top: 50px;
   display: inline-block;
@@ -125,7 +136,10 @@ section#second > .wrapper > .right > .read-more {
   transition: color 0.5s;
 }
 
-section#second > .wrapper > .right > .read-more::before {
+section#second > .wrapper > .right > .read-more::before,
+section#second > .wrapper > .right > .arrow::before,
+section#fourth > .wrapper > .right > .read-more::before,
+section#fourth > .wrapper > .right > .arrow::before {
   content: '';
   position: absolute;
   background-color: var(--soft-text-color);
@@ -137,7 +151,10 @@ section#second > .wrapper > .right > .read-more::before {
   transition: width 0.5s, right 0.5s, color 0.5s;
 }
 
-section#second > .wrapper > .right > .read-more::after {
+section#second > .wrapper > .right > .read-more::after,
+section#second > .wrapper > .right > .arrow::after,
+section#fourth > .wrapper > .right > .read-more::after,
+section#fourth > .wrapper > .right > .arrow::after {
   content: '';
   position: absolute;
   -webkit-transform: rotate(45deg);
@@ -152,17 +169,26 @@ section#second > .wrapper > .right > .read-more::after {
   transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
 }
 
-section#second > .wrapper > .right > .read-more:hover {
+section#second > .wrapper > .right > .read-more:hover,
+section#second > .wrapper > .right > .arrow:hover,
+section#fourth > .wrapper > .right > .read-more:hover,
+section#fourth > .wrapper > .right > .arrow:hover {
   color: var(--hard-text-color);
 }
 
-section#second > .wrapper > .right > .read-more:hover::before {
+section#second > .wrapper > .right > .read-more:hover::before,
+section#second > .wrapper > .right > .arrow:hover::before,
+section#fourth > .wrapper > .right > .read-more:hover::before,
+section#fourth > .wrapper > .right > .arrow:hover::before {
   width: 35px;
   right: -45px;
   background-color: var(--hard-text-color);
 }
 
-section#second > .wrapper > .right > .read-more:hover::after {
+section#second > .wrapper > .right > .read-more:hover::after,
+section#second > .wrapper > .right > .arrow:hover::after,
+section#fourth > .wrapper > .right > .read-more:hover::after,
+section#fourth > .wrapper > .right > .arrow:hover::after {
   right: -45px;
   border-color: black !important;
 }
@@ -230,8 +256,33 @@ section#third > .wrapper > .sponsors > a > .moutain-mikes {
   height: calc(var(--sponsor-height-base-line) + 100px);
 }
 
+section#fourth {
+  margin-top: 150px;
+}
+
+section#fourth > .wrapper > .left {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  height: 30vw;
+  min-height: 400px;
+  width: 60%;
+  max-width: 600px;
+}
+
+section#fourth > .wrapper > .left > .background {
+  background-image: url("/images/red-house-three-windows.jpg");
+}
+
+section#fourth > .wrapper > .right {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin: 30px 0 0 0;
+}
+
 .image-test {
-  background-image: url("../images/fatrat.png");
+  background-image: url("/images/fatrat.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 80%;
@@ -242,7 +293,8 @@ section#third > .wrapper > .sponsors > a > .moutain-mikes {
 
 @media screen and (max-width: 500px) {
   section#front > .wrapper > .subtitle {
-    top: 20%;
+    font-size: 17px;
+    top: 5%;
     left: 20px;
   }
 }
@@ -259,6 +311,31 @@ section#third > .wrapper > .sponsors > a > .moutain-mikes {
   section#second > .wrapper > .right {
     width: auto;
     margin: 100px auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section#fourth > .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  section#fourth > .wrapper > .left {
+    max-width: none;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  section#fourth > .wrapper > .right {
+    width: auto;
+    height: auto;
+    margin: 80px auto 0 auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  section#fourth > .wrapper > .right > article.subtitle {
+    margin-top: 0;
   }
 }
 
