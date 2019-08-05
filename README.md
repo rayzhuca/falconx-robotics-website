@@ -7,6 +7,8 @@
 ## To do list:
 
 - [ ] Front page
+- [ ] Add way to see errors on mobile
+- [ ] Scroll menu mobile bug
 - [ ] Projects page
 - [ ] Mobile
 - [ ] Colors in css vars
