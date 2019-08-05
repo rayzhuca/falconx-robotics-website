@@ -13,7 +13,8 @@
 - [ ] Projects page
 - [ ] Mobile
 - [x] Colors in css vars
-- [ ] Error handeling
+- [x] Error handeling
+- [ ] Custom error handeling
 - [ ] Dynamic
 - [x] Heroku
 - [ ] More effects
