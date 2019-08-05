@@ -200,7 +200,7 @@ function timeOutLoop(iterable, operation, interval = 10) {
 setTimeout(() => {
 	try {
 		const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
-		let fadeEles = document.getElementsByClassName("fade-in");
+		const fadeEles = document.getElementsByClassName("fade-in");
 
 		document.getElementById("error-mes-mobile").innerHTML = "fade in ran";
 
@@ -270,7 +270,10 @@ setTimeout(() => {
 		function onScroll(_) {
 			for (let i = 0; i < fadeEles.length; i++) {
 				// ele fades in when scrolled to one third of the screen + div y pos
-				if (getY(fadeEles[i]) - (1 / 3) * window.innerHeight < window.scrollY) {
+				if (
+					getY(fadeEles[i]) - (1 / 1.5) * window.innerHeight <
+					window.scrollY
+				) {
 					fadeIn(fadeEles[i]);
 				}
 			}
