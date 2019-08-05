@@ -1,138 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="/index">
-	<head>
-		<!-- Change this -->
-		<title>Home - FalconX Robotics</title>
-		<!-- Change this -->
-		<link
-			rel="stylesheet"
-			th:href="@{/css/index.css}"
-			href="../public/css/index.css"
-		/>
-	</head>
 
-	<head th:replace="fragments/normal :: head"></head>
+<head>
+	<!-- Change this -->
+	<title>Home - FalconX Robotics</title>
+	<!-- Change this -->
+	<link rel="stylesheet" th:href="@{/css/index.css}" href="../public/css/index.css" />
+</head>
 
-	<body>
-		<header th:replace="fragments/normal :: header"></header>
-		<nav th:replace="fragments/normal :: menu"></nav>
+<head th:replace="fragments/normal :: head"></head>
 
-		<section id="front">
-			<div class="wrapper">
-				<div
-					class="subtitle fade-in fade-in-down parallax"
-					data-parallax-translate
-					data-parallax-reverse
-					data-parallax-middle
-					data-parallax-slowdown="2"
-				>
-					FalconX Robotics is a diverse team from
-					<a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
-					comprised of students, parents, mentors, and teachers.
-				</div>
-				<div
-					class="image parallax fade-in-down fade-in test"
-					data-parallax-slowdown="2"
-					data-parallax-middle
-				></div>
+<body>
+	<header th:replace="fragments/normal :: header"></header>
+	<nav th:replace="fragments/normal :: menu"></nav>
+
+	<section id="front">
+		<div class="wrapper">
+			<div class="subtitle fade-in fade-in-down parallax" data-parallax-translate data-parallax-reverse
+				data-parallax-middle data-parallax-slowdown="2">
+				FalconX Robotics is a diverse team from
+				<a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
+				comprised of students, parents, mentors, and teachers.
 			</div>
-		</section>
+			<div class="image parallax fade-in-down fade-in test" data-parallax-slowdown="2" data-parallax-middle></div>
+		</div>
+	</section>
 
-		<section id="second">
-			<div class="wrapper">
-				<div class="left">
-					<div
-						class="background parallax"
-						data-parallax-slowdown="5"
-						data-parallax-middle
-					>
-						<a href="/"></a>
-					</div>
-				</div>
-				<div class="right">
-					<article class="subtitle fade-in fade-in-down">
-						Our ambitious founders and along with the most dankest members in
-						school discovered what is later known as FalconX Robotics.
-					</article>
-					<div class="read-more fade-in fade-in-down">
-						<a href="/">
-							read more
-						</a>
-					</div>
+	<section id="second">
+		<div class="wrapper">
+			<div class="left">
+				<div class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
+					<a href="/"></a>
 				</div>
 			</div>
-		</section>
-
-		<section id="third">
-			<div class="wrapper">
-				<div
-					class="title fade-in fade-in-down parallax"
-					data-parallax-slowdown="13"
-					data-parallax-reverse
-					data-parallax-translate
-				>
-					We are proudly sponsored by the following.
-				</div>
-				<div class="sponsors">
-					<a href="https://www.apple.com/" target="_blank"
-						><img
-							class="apple fade-in fade-in-down"
-							data-fade-in-time="10"
-							src="/images/apple.png"
-							alt="apple"
-					/></a>
-					<a href="https://www.marathonpetroleum.com/" target="_blank"
-						><img
-							class="marathon fade-in fade-in-down"
-							src="/images/marathon.png"
-							alt="marathon"
-					/></a>
-					<a href="https://www.tapplastics.com/" target="_blank"
-						><img
-							class="tap-plastics fade-in fade-in-down"
-							src="/images/tap-plastics.png"
-							alt="tap plastics"
-					/></a>
-					<a href="https://www.google.com" target="_blank"
-						><img
-							class="google fade-in fade-in-down"
-							src="/images/google.png"
-							alt="google"
-					/></a>
-					<a
-						href="https://fconline.foundationcenter.org/fdo-grantmaker-profile/?key=RINF001"
-						target="_blank"
-						><img
-							class="brin-wojcicki-org fade-in fade-in-down"
-							src="/images/brin-wojcicki-org.png"
-							alt="brin wojcicki foundation"
-					/></a>
-					<a href="https://www.mountainmikespizza.com/" target="_blank"
-						><img
-							class="moutain-mikes fade-in fade-in-down"
-							src="/images/moutain-mikes.png"
-							alt="mountain mikes"
-					/></a>
-				</div>
-			</div>
-		</section>
-
-		<section id="fourth">
-			<div class="wrapper">
-				<div class="left"></div>
-				<div class="right">
-					<div class="read-more">
+			<div class="right">
+				<article class="subtitle fade-in fade-in-down">
+					Our ambitious founders and along with the most dankest members in
+					school discovered what is later known as FalconX Robotics.
+				</article>
+				<div class="read-more fade-in fade-in-down">
+					<a href="/">
 						read more
-					</div>
-					<article class="subtitle">Read about our recent project.</article>
+					</a>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<footer th:replace="fragments/normal :: footer"></footer>
+	<section id="third">
+		<div class="wrapper">
+			<div class="title fade-in fade-in-down parallax" data-parallax-slowdown="13" data-parallax-reverse
+				data-parallax-translate>
+				We are proudly sponsored by the following.
+			</div>
+			<div class="sponsors">
+				<a href="https://www.apple.com/" target="_blank"><img class="apple fade-in fade-in-down"
+						data-fade-in-time="10" src="/images/apple.png" alt="apple" /></a>
+				<a href="https://www.marathonpetroleum.com/" target="_blank"><img class="marathon fade-in fade-in-down"
+						src="/images/marathon.png" alt="marathon" /></a>
+				<a href="https://www.tapplastics.com/" target="_blank"><img class="tap-plastics fade-in fade-in-down"
+						src="/images/tap-plastics.png" alt="tap plastics" /></a>
+				<a href="https://www.google.com" target="_blank"><img class="google fade-in fade-in-down"
+						src="/images/google.png" alt="google" /></a>
+				<a href="https://fconline.foundationcenter.org/fdo-grantmaker-profile/?key=RINF001" target="_blank"><img
+						class="brin-wojcicki-org fade-in fade-in-down" src="/images/brin-wojcicki-org.png"
+						alt="brin wojcicki foundation" /></a>
+				<a href="https://www.mountainmikespizza.com/" target="_blank"><img
+						class="moutain-mikes fade-in fade-in-down" src="/images/moutain-mikes.png"
+						alt="mountain mikes" /></a>
+			</div>
+		</div>
+	</section>
 
-		<!-- Change this -->
-		<script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
-		<script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
-	</body>
+	<section id="fourth">
+		<div class="wrapper">
+			<div class="left">
+				<div class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
+					<a href="/"></a>
+				</div>
+			</div>
+			<div class="right">
+				<article class="subtitle fade-in fade-in-down arrow">Read about our recent project.</article>
+			</div>
+		</div>
+	</section>
+
+	<footer th:replace="fragments/normal :: footer"></footer>
+
+	<!-- Change this -->
+	<script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+	<script th:src="@{/js/index.js}" src="../public/js/index.js"></script>
+</body>
+
 </html>
