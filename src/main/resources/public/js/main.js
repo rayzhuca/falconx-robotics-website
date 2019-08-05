@@ -21,7 +21,7 @@ function getY(ele) {
 // async
 function timeOutLoop(iterable, operation, interval = 10) {
 	// return new Promise((res, err) => {
-	Array.prototype.forEach.call(iterable, function (v, i, arr) {
+	Array.prototype.forEach.call(iterable, function(v, i, arr) {
 		setTimeout(() => {
 			operation(v, i, arr);
 
@@ -108,13 +108,22 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	for (const ele of parallaxEles) {
 		const isStatic = ele.dataset["parallaxStatic"];
 		const isMiddle = ele.dataset["parallaxMiddle"];
-		if ((isStatic !== undefined && isStatic != "false") || (isMiddle !== undefined && isMiddle != "false")) {
+		if (
+			(isStatic !== undefined && isStatic != "false") ||
+			(isMiddle !== undefined && isMiddle != "false")
+		) {
 			ele.dataset["parallaxStaticYPos"] = getY(ele);
 		}
 
 		if (isMiddle !== undefined) {
-			const rate = (parseInt(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
-			const y = ((parseInt(ele.dataset["parallaxOffset"]) || 0) + (window.scrollY - parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele))) / rate;
+			const rate =
+				(parseInt(ele.dataset["parallaxSlowdown"]) || 5) *
+				(ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+			const y =
+				((parseInt(ele.dataset["parallaxOffset"]) || 0) +
+					(window.scrollY - parseInt(ele.dataset["parallaxStaticYPos"]) ||
+						getY(ele))) /
+				rate;
 
 			if (ele.dataset["parallaxTranslate"] !== undefined) {
 				ele.style.transform = `translate(0, ${y}px)`;
@@ -132,16 +141,20 @@ function timeOutLoop(iterable, operation, interval = 10) {
 				window.scrollY + window.innerHeight >= yCord &&
 				window.scrollY <= yCord + ele.clientHeight
 			) {
-				const rate = (parseInt(ele.dataset["parallaxSlowdown"]) || 5) * (ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
+				const rate =
+					(parseInt(ele.dataset["parallaxSlowdown"]) || 5) *
+					(ele.dataset["parallaxReverse"] === undefined ? 1 : -1);
 				// the difference from screen to div + offset + more offset if parallax-middle
 				// const y = (window.scrollY - yCord + (parseInt(ele.dataset["parallaxOffset"]) || 0) + (ele.dataset["parallaxMiddle"] !== undefined ? (parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele)) : 0)) / rate;
-				const y = (window.scrollY - yCord + (parseInt(ele.dataset["parallaxOffset"]) || 0)) / rate;
-
+				const y =
+					(window.scrollY -
+						yCord +
+						(parseInt(ele.dataset["parallaxOffset"]) || 0)) /
+					rate;
 
 				// console.log(window.scrollY - yCord)
 				// console.log((parseInt(ele.dataset["parallaxOffset"]) || 0));
 				// console.log((ele.dataset["parallaxMiddle"] !== undefined ? (parseInt(ele.dataset["parallaxStaticYPos"]) || getY(ele)) : 0));
-
 
 				if (ele.dataset["parallaxTranslate"] !== undefined) {
 					ele.style.transform = `translate(0, ${y}px)`;
@@ -184,13 +197,13 @@ setTimeout(() => {
 	function fadeIn(ele) {
 		if (ele.classList.contains("in-footer")) return;
 
-		const fadeInTime = parseFloat(ele.dataset["fadeInTime"]);
-		const oldTransition = ele.style.transition;
-		if (!Number.isNaN(fadeInTime)) {
-			console.log(ele.style.transition);
-			ele.style.transition = `transform ${fadeInTime}s, opacity ${fadeInTime}s !important;`;
-			console.log(ele.style.transition);
-		}
+		// const fadeInTime = parseFloat(ele.dataset["fadeInTime"]);
+		// const oldTransition = ele.style.transition;
+		// if (!Number.isNaN(fadeInTime)) {
+		// console.log(ele.style.transition);
+		// ele.style.transition = `transform ${fadeInTime}s, opacity ${fadeInTime}s !important;`;
+		// console.log(ele.style.transition);
+		// }
 
 		ele.classList.add("to-fade");
 		// setTimeout(() =>
@@ -205,8 +218,7 @@ setTimeout(() => {
 
 		setTimeout(() => {
 			ele.classList.remove("to-fade");
-			// TODO yes
-			if (!Number.isNaN(fadeInTime)) console.log();
+			// if (!Number.isNaN(fadeInTime)) console.log();
 			// ele.style.transition = oldTransition;
 		}, 700);
 	}

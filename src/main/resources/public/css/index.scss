@@ -66,6 +66,7 @@ section#second {
 
         &>.left {
             height: 40vw;
+            min-height: 500px;
             width: 50%;
             max-width: 500px;
             max-height: 600px;
@@ -88,6 +89,12 @@ section#second {
                     height: 110%;
                     margin-left: -5%;
                     margin-top: -5%;
+                }
+
+                &>a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -180,7 +187,7 @@ section#third {
             flex-wrap: wrap;
 
             &>* {
-                padding: 30px;
+                padding: 30px 40px;
                 opacity: 1;
                 transition: opacity 0.3s;
 
