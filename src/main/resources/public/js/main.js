@@ -202,6 +202,8 @@ setTimeout(() => {
 		const footer = document.getElementsByClassName("footer"); // ! footer can be undefined (make sure I include that in code)
 		let fadeEles = document.getElementsByClassName("fade-in");
 
+		document.getElementById("error-mes-mobile").innerHTML = "fade in ran";
+
 		function fadeIn(ele) {
 			if (ele.classList.contains("in-footer")) return;
 
