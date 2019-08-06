@@ -152,4 +152,9 @@ section.slide {
             }
         }
     }
+
+    section#front>.wrapper>nav>ul>li {
+        padding-bottom: 1px;
+        margin-bottom: 10px;
+    }
 }

@@ -138,5 +138,9 @@ section.slide > .wrapper > .description {
   section.slide > .wrapper > .description {
     width: 100%;
   }
+  section#front > .wrapper > nav > ul > li {
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+  }
 }
 /*# sourceMappingURL=history.css.map */
