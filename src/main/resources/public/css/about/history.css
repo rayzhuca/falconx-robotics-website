@@ -120,4 +120,17 @@ section.slide > .wrapper > .description {
   border-color: #5e5e5e;
   right: 30px;
 }
+
+@media screen and (max-width: 700px) {
+  section.slide > .wrapper {
+    width: 67%;
+    margin: 0 auto 0 auto;
+  }
+  section.slide > .wrapper > .subtitle {
+    font-size: 20px;
+  }
+  section.slide > .wrapper > .description {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=history.css.map */
