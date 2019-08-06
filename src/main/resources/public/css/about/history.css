@@ -122,6 +122,12 @@ section.slide > .wrapper > .description {
 }
 
 @media screen and (max-width: 700px) {
+  section#front > .wrapper > .subtitle {
+    font-size: 20px;
+  }
+  section#front > .wrapper > .subtitle {
+    margin-top: 43vh;
+  }
   section.slide > .wrapper {
     width: 67%;
     margin: 0 auto 0 auto;
