@@ -294,7 +294,7 @@ section#fourth > .wrapper > .right {
 @media screen and (max-width: 500px) {
   section#front > .wrapper > .subtitle {
     font-size: 17px;
-    top: calc(5% + var(--header-height));
+    top: calc(7% + var(--header-height));
     left: 20px;
   }
 }
