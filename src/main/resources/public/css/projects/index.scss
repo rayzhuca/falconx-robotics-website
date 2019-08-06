@@ -1,0 +1,149 @@
+section {
+    width: 100%;
+    margin-bottom: 100px;
+
+    &>.wrapper {
+        display: flex;
+        justify-content: space-evenly;
+
+        &>.left {
+            // flex: 5;
+            margin-right: 50px;
+            max-width: 800px;
+
+            &>.subtitle {
+                font-size: 23px;
+            }
+
+            &>article {
+                font-size: 18px;
+                margin-top: 30px;
+                max-width: 700px;
+            }
+
+            &>.read-more {
+                margin-top: 25px;
+                margin-bottom: 50px;
+
+                position: relative;
+                display: inline-block;
+
+                transition: color 0.5s;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-color: var(--soft-text-color);
+                    right: -30px;
+                    top: 50%;
+                    height: 1px;
+                    width: 20px;
+
+                    transition: width 0.5s, right 0.5s, color 0.5s;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    transform: rotate(45deg);
+                    border-top: 1px solid var(--soft-text-color);
+                    border-right: 1px solid var(--soft-text-color);
+                    right: -30px;
+                    top: calc(50% - 4px);
+                    height: 8px;
+                    width: 8px;
+
+                    transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+                }
+
+                &:hover {
+                    color: var(--hard-text-color);
+
+                    &::before {
+                        width: 35px;
+                        right: -45px;
+                        background-color: var(--hard-text-color);
+                    }
+
+                    &::after {
+                        right: -45px;
+                        // border-top-color: var(--hard-text-color);
+                        // border-right-color: var(--hard-text-color);
+                        border-color: black !important;
+                    }
+                }
+            }
+        }
+
+        &>.right {
+            // flex: 1;
+            width: 400px;
+            // overflow: hidden;
+
+            &>.background {
+                height: 100%;
+                width: 100%;
+                background-image: url('https://www.bhphotovideo.com/images/images2500x2500/ubtech_robotics_alpha_1s_humanoid_robot_1204899.jpg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position-x: center;
+                background-position-y: bottom;
+
+                transition: width 0.5s, height 0.5s, margin 0.5s;
+
+                &:hover {
+                    width: 110%;
+                    height: 110%;
+                    margin-left: -5%;
+                    margin-top: -5%;
+                }
+            }
+        }
+    }
+}
+
+section:first-of-type {
+    height: 100vh;
+
+    &>.wrapper {
+        margin-top: calc(var(--header-height) + 20vh);
+
+        &>.right {
+            height: 300px;
+            width: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        &>.wrapper {
+            flex-wrap: wrap;
+
+            // &>.right {
+            //     &>.background {
+            //         width: 100%;
+            //     }
+            // }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    section:first-of-type {
+        &>.wrapper {
+            margin-top: calc(var(--header-height) + 5vh);
+        }
+    }
+}
+
+@media screen and (max-width: 530px) {
+
+    body {
+        background-color: red;
+    }
+
+    section>.wrapper>.right {
+        width: 100% !important;
+    }
+}

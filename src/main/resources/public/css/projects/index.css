@@ -1,1 +1,138 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+section {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+section > .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section > .wrapper > .left {
+  margin-right: 50px;
+  max-width: 800px;
+}
+
+section > .wrapper > .left > .subtitle {
+  font-size: 23px;
+}
+
+section > .wrapper > .left > article {
+  font-size: 18px;
+  margin-top: 30px;
+  max-width: 700px;
+}
+
+section > .wrapper > .left > .read-more {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+section > .wrapper > .left > .read-more::before {
+  content: '';
+  position: absolute;
+  background-color: var(--soft-text-color);
+  right: -30px;
+  top: 50%;
+  height: 1px;
+  width: 20px;
+  -webkit-transition: width 0.5s, right 0.5s, color 0.5s;
+  transition: width 0.5s, right 0.5s, color 0.5s;
+}
+
+section > .wrapper > .left > .read-more::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid var(--soft-text-color);
+  border-right: 1px solid var(--soft-text-color);
+  right: -30px;
+  top: calc(50% - 4px);
+  height: 8px;
+  width: 8px;
+  -webkit-transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+  transition: right 0.5s, border-top-color 0.5s, border-right-color 0.5s;
+}
+
+section > .wrapper > .left > .read-more:hover {
+  color: var(--hard-text-color);
+}
+
+section > .wrapper > .left > .read-more:hover::before {
+  width: 35px;
+  right: -45px;
+  background-color: var(--hard-text-color);
+}
+
+section > .wrapper > .left > .read-more:hover::after {
+  right: -45px;
+  border-color: black !important;
+}
+
+section > .wrapper > .right {
+  width: 400px;
+}
+
+section > .wrapper > .right > .background {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://www.bhphotovideo.com/images/images2500x2500/ubtech_robotics_alpha_1s_humanoid_robot_1204899.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: bottom;
+  -webkit-transition: width 0.5s, height 0.5s, margin 0.5s;
+  transition: width 0.5s, height 0.5s, margin 0.5s;
+}
+
+section > .wrapper > .right > .background:hover {
+  width: 110%;
+  height: 110%;
+  margin-left: -5%;
+  margin-top: -5%;
+}
+
+section:first-of-type {
+  height: 100vh;
+}
+
+section:first-of-type > .wrapper {
+  margin-top: calc(var(--header-height) + 20vh);
+}
+
+section:first-of-type > .wrapper > .right {
+  height: 300px;
+  width: 500px;
+}
+
+@media screen and (max-width: 1000px) {
+  section > .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section:first-of-type > .wrapper {
+    margin-top: calc(var(--header-height) + 5vh);
+  }
+}
+
+@media screen and (max-width: 530px) {
+  body {
+    background-color: red;
+  }
+  section > .wrapper > .right {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=index.css.map */

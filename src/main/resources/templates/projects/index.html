@@ -2,14 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- Change this -->
+    <title>Projects - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/projects/index.css}" href="/public/css/projects/index.css" />
 </head>
 
+<head th:replace="fragments/normal :: head"></head>
+
 <body>
-    <div>Hi</div>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+
+    <section>
+        <div class="wrapper">
+            <div class="left">
+                <div class="subtitle">2019 FRC - Epic Fortnite Robot</div>
+                <article class="description">This video was given a special license directly from the artists.
+                    I am not allowed to give out permissions of the usage of the visual + audio
+                    All music on this channel are copyrighted! </article>
+                <div class="read-more"><a href="/">read more</a></div>
+            </div>
+            <div class="right">
+                <div class="background"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="left">
+                <div class="subtitle">2018 FRC - Epic Fortnite Robot</div>
+                <article class="description">This video was given a special license directly from the artists.
+                    I am not allowed to give out permissions of the usage of the visual + audio
+                    All music on this channel are copyrighted! </article>
+                <div class="read-more"><a href="/">read more</a></div>
+            </div>
+            <div class="right">
+                <div class="background"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="left">
+                <div class="subtitle">2017 FRC - Epic Fortnite Robot</div>
+                <article class="description">This video was given a special license directly from the artists.
+                    I am not allowed to give out permissions of the usage of the visual + audio
+                    All music on this channel are copyrighted! </article>
+                <div class="read-more"><a href="/">read more</a></div>
+            </div>
+            <div class="right">
+                <div class="background"></div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="fragments/normal :: footer"></footer>
+
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/index.js}" src="../public/js/index.js"></script> -->
 </body>
 
 </html>
