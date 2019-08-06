@@ -61,3 +61,14 @@ main {
         }
     }
 }
+
+@media screen and (max-width: 700px) {
+    .wrapper {
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+
+    main>.wrapper>.go-back {
+        margin-top: calc(55vh - 20px);
+    }
+}

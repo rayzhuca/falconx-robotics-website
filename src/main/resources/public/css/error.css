@@ -56,4 +56,14 @@ main > .wrapper > .go-back:hover::after {
   right: -45px;
   border-color: black !important;
 }
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  main > .wrapper > .go-back {
+    margin-top: calc(55vh - 20px);
+  }
+}
 /*# sourceMappingURL=error.css.map */
