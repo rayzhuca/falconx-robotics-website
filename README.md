@@ -7,7 +7,7 @@
 ## To do list:
 
 - [ ] Front page
-- [ ] Add way to see errors on mobile
+- [x] Add way to see errors on mobile
 - [ ] StoredCrdential in .env, by making a new file from the env varaible.
 - [ ] Scroll menu mobile bug
 - [ ] Projects page
