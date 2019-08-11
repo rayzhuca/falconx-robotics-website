@@ -3,7 +3,9 @@
 
 <head>
     <!-- Change this -->
-    <title th:text="${name} + '- FalconX Robotics'">[Robot Name] - FalconX Robotics</title>
+    <title th:text="${name} + ' - FalconX Robotics'">
+        [Robot Name] - FalconX Robotics
+    </title>
     <!-- Change this -->
     <link rel="stylesheet" th:href="@{/css/projects/project.css}" href="/public/css/projects/project.css" />
 </head>
@@ -22,11 +24,9 @@
         </div>
     </main>
 
-
     <div class="group top">
         <div class="wrapper">
             <section id="measurements">
-
                 <div class="title fade-in fade-in-down">Measurements</div>
                 <table class="fade-in fade-in-down">
                     <tbody>
@@ -52,17 +52,17 @@
                         </tr>
                     </tbody>
                 </table>
-
             </section>
 
             <section id="in-action" class="fade-in fade-in-down">
                 <div class="title">In Action</div>
 
                 <div class="youtube-vid-container">
-                    <a href="">
-                        <div class="youtube-vid">
+                    <a>
+                        <iframe class="youtube-vid" th:src="'https://www.youtube.com/embed/' + ${inActionYouTubeLink}"
+                            src="https://www.youtube.com/embed/C6xu72ixbxo">
                             <div class="popup">Click to watch on YouTube</div>
-                        </div>
+                        </iframe>
                     </a>
                 </div>
             </section>
@@ -74,29 +74,9 @@
             <div class="title fade-in fade-in-down">Abilities</div>
             <table class="fade-in fade-in-down">
                 <tbody>
-                    <tr>
-                        <td class="ability">ability</td>
-                        <td class="scale">scale</td>
-                        <td class="special"></td>
-                    </tr>
-                    <tr>
-                        <td class="ability">balls</td>
-                        <td class="scale">0 per game</td>
-                        <td class="special"></td>
-                    </tr>
-                    <tr>
-                        <td class="ability">clout</td>
-                        <td class="scale">no</td>
-                        <td class="special"></td>
-                    </tr>
-                    <tr>
-                        <td class="ability">defense</td>
-                        <td class="scale">strong</td>
-                        <td class="special"></td>
-                    </tr>
-                    <tr>
-                        <td class="ability">durability</td>
-                        <td class="scale">no</td>
+                    <tr th:each="instance : ${abilities}">
+                        <td class="ability" th:text="${instance.key}">ability</td>
+                        <td class="scale" th:text="${instance.value}">scale</td>
                         <td class="special"></td>
                     </tr>
                 </tbody>
@@ -108,15 +88,20 @@
         <div class="wrapper">
             <div class="title">Compeitions</div>
             <div class="flex">
-                <div class="container">
-                    <figure class="image-container">
+                <div th:each="instance : ${compeitions}" class="container">
+                    <iframe class="youtube-vid" th:src="'https://www.youtube.com/embed/' + ${instance[2]}"></iframe>
+                    <figcaption class="title name" th:text="${instance[0]}">San Francisco Regional</figcaption>
+                    <dd class="subtitle score" th:text="${instance[1]}">Rank 43 with a record of 3-8-1</dd>
+                </div>
+
+                <!-- <div class="container"> -->
+                <!-- <figure class="image-container">
                         <a href="/">
                             <div class="image"></div>
                         </a>
                     </figure>
                     <figcaption class="title name">San Francisco Regional</figcaption>
                     <dd class="subtitle score">Rank 43 with a record of 3-8-1</dd>
-
                 </div>
                 <div class="container">
                     <figure class="image-container">
@@ -125,11 +110,9 @@
                         </a>
                     </figure>
                     <figcaption class="title name">Sacramento Regional</figcaption>
-                    <dd class="subtitle score">Rank 28 with a record of 5-4-0</dd>
-
-                </div>
+                    <dd class="subtitle score">Rank 28 with a record of 5-4-0</dd> -->
+                <!-- </div> -->
             </div>
-
         </div>
     </section>
 
