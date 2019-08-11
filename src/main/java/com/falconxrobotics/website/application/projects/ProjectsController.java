@@ -41,7 +41,7 @@ public class ProjectsController {
     @GetMapping(path = { "/project" })
     public String project(Model model, @RequestParam(name = "name") String name) {
         try {
-            model.addAllAttributes(projectsComponent.getAttributes(name));
+            model.addAllAttributes(projectsComponent.getProjectAttributes(name));
         } catch (IOException e) {
             // TODO Auto-generated catch block
             return "error";
