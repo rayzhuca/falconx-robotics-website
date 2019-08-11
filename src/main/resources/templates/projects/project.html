@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Change this -->
+    <title>[Robot Name] - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/projects/project.css}" href="/public/css/projects/project.css" />
+</head>
+
+<head th:replace="fragments/normal :: head"></head>
+
+<body>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+
+    <main>
+        <div class="wrapper">
+            <div class="left title">2019 FRC Robot</div>
+            <div class="bar title">―</div>
+            <div class="name title">Vape Bot</div>
+        </div>
+    </main>
+
+
+    <div class="group top">
+        <div class="wrapper">
+            <section id="measurements">
+
+                <div class="title">Measurements</div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>category</td>
+                            <td>measurement</td>
+                        </tr>
+                        <tr>
+                            <td>weight</td>
+                            <td>254lbs</td>
+                        </tr>
+                        <tr>
+                            <td>height</td>
+                            <td>254m</td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td>420m</td>
+                        </tr>
+                        <tr>
+                            <td>length</td>
+                            <td>21m</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section id="in-action">
+                <div class="title">In Action</div>
+
+                <div class="youtube-vid-container">
+                    <a href="">
+                        <div class="youtube-vid">
+                            <div class="popup">Click to watch on YouTube</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section id="abilities">
+        <div class="wrapper">
+            <div class="title">Abilities</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="ability">ability</td>
+                        <td class="scale">scale</td>
+                        <td class="special"></td>
+                    </tr>
+                    <tr>
+                        <td class="ability">balls</td>
+                        <td class="scale">0 per game</td>
+                        <td class="special"></td>
+                    </tr>
+                    <tr>
+                        <td class="ability">clout</td>
+                        <td class="scale">no</td>
+                        <td class="special"></td>
+                    </tr>
+                    <tr>
+                        <td class="ability">defense</td>
+                        <td class="scale">strong</td>
+                        <td class="special"></td>
+                    </tr>
+                    <tr>
+                        <td class="ability">durability</td>
+                        <td class="scale">no</td>
+                        <td class="special"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="competitions">
+        <div class="wrapper">
+            <div class="title">Compeitions</div>
+            <div class="flex">
+                <div class="container">
+                    <figure class="image-container">
+                        <a href="/">
+                            <div class="image"></div>
+                        </a>
+                    </figure>
+                    <figcaption class="title name">San Francisco Regional</figcaption>
+                    <dd class="subtitle score">Rank 43 with a record of 3-8-1</dd>
+
+                </div>
+                <div class="container">
+                    <figure class="image-container">
+                        <a href="/">
+                            <div class="image"></div>
+                        </a>
+                    </figure>
+                    <figcaption class="title name">Sacramento Regional</figcaption>
+                    <dd class="subtitle score">Rank 28 with a record of 5-4-0</dd>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer th:replace="fragments/normal :: footer"></footer>
+
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/index.js}" src="../public/js/index.js"></script> -->
+</body>
+
+</html>

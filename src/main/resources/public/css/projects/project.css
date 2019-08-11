@@ -1,0 +1,209 @@
+section {
+  width: 100%;
+}
+
+main {
+  margin-top: calc(var(--header-height) + 10vh);
+}
+
+main > .wrapper > * {
+  font-size: 22px;
+  display: inline-block;
+}
+
+main > .wrapper .bar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.group.top {
+  width: 100%;
+}
+
+.group.top > .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.group.top section#measurements {
+  vertical-align: top;
+  width: 48%;
+  display: inline-block;
+  margin-top: 75px;
+}
+
+.group.top section#measurements > .title {
+  font-size: 18px;
+}
+
+.group.top section#measurements > table {
+  margin-top: 30px;
+  width: 90%;
+  background-color: var(--lower-secondary-background-color);
+  border-collapse: collapse;
+}
+
+.group.top section#measurements > table > tbody > tr > td {
+  width: 50%;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 50px;
+}
+
+.group.top section#measurements > table > tbody > tr > td:nth-child(1) {
+  color: var(--hard-text-color);
+}
+
+.group.top section#measurements > table > tbody > tr:nth-child(even) {
+  background-color: var(--secondary-background-color);
+}
+
+.group.top section#measurements > table > tbody > tr:nth-child(1) {
+  background-color: var(--tertiary-background-color);
+}
+
+.group.top section#in-action {
+  width: 48%;
+  margin: 75px auto 0 auto;
+  display: inline-block;
+}
+
+.group.top section#in-action > .title {
+  font-size: 18px;
+}
+
+.group.top section#in-action > .youtube-vid-container {
+  position: relative;
+  margin-top: 30px;
+  height: 200px;
+  width: 400px;
+  background-color: var(--tertiary-background-color);
+  overflow: hidden;
+}
+
+.group.top section#in-action > .youtube-vid-container > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.group.top section#in-action > .youtube-vid-container > a > .youtube-vid {
+  -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, height 0.4s, transform 0.4s;
+  transition: width 0.4s, height 0.4s, transform 0.4s, -webkit-transform 0.4s;
+}
+
+.group.top section#in-action > .youtube-vid-container > a > .youtube-vid:hover {
+  width: 110%;
+  height: 110%;
+  -webkit-transform: translate(-5%, -5%);
+          transform: translate(-5%, -5%);
+}
+
+.group.top section#in-action > .youtube-vid-container > a > .youtube-vid > .popup {
+  display: none;
+}
+
+section#abilities {
+  margin-top: 150px;
+}
+
+section#abilities > .wrapper > .title {
+  font-size: 18px;
+}
+
+section#abilities > .wrapper > table {
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+section#abilities > .wrapper > table > tbody > tr > td {
+  width: 50%;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 50px;
+}
+
+section#abilities > .wrapper > table > tbody > tr > td:nth-child(1) {
+  color: var(--hard-text-color);
+}
+
+section#abilities > .wrapper > table > tbody > tr:nth-child(even) {
+  background-color: var(--secondary-background-color);
+}
+
+section#abilities > .wrapper > table > tbody > tr:nth-child(1) {
+  background-color: var(--tertiary-background-color);
+}
+
+section#competitions {
+  margin-top: 150px;
+}
+
+section#competitions > .wrapper > .title {
+  font-size: 18px;
+}
+
+section#competitions > .wrapper > .flex {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+section#competitions > .wrapper > .flex > .container {
+  min-width: 300px;
+  width: 45%;
+}
+
+section#competitions > .wrapper > .flex > .container > figure {
+  height: 200px;
+  width: 400px;
+  max-width: 100%;
+  background-color: var(--tertiary-background-color);
+  position: relative;
+}
+
+section#competitions > .wrapper > .flex > .container > figure > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+section#competitions > .wrapper > .flex > .container > figure > a > .image {
+  -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, height 0.4s, transform 0.4s;
+  transition: width 0.4s, height 0.4s, transform 0.4s, -webkit-transform 0.4s;
+}
+
+section#competitions > .wrapper > .flex > .container > figure > a > .image:hover {
+  width: 110%;
+  height: 110%;
+  -webkit-transform: translate(-5%, -5%);
+          transform: translate(-5%, -5%);
+}
+
+section#competitions > .wrapper > .flex > .container > figcaption {
+  margin-top: 40px;
+}
+
+section#competitions > .wrapper > .flex > .container > dd {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=project.css.map */

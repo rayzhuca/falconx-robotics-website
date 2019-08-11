@@ -34,4 +34,20 @@ public class ProjectsController {
         }
         return null; // TODO: Delete this
     }
+
+    // TODO: You know what to do ;)
+    @GetMapping(path = { "/project" })
+    public String project(Model model) {
+        try {
+            model.addAllAttributes(sheetComponent.getAttributes(null));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+            // TODO: Let error controllers handle
+        }
+
+        return "projects/project";
+    }
 }
