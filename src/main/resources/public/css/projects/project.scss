@@ -24,7 +24,7 @@ main {
     &>.wrapper {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
 
     section#measurements {
@@ -80,8 +80,8 @@ main {
         &>.youtube-vid-container {
             position: relative;
             margin-top: 30px;
-            height: 200px;
-            width: 400px;
+            height: 22.5vw;
+            width: 40vw;
             background-color: var(--tertiary-background-color);
             overflow: hidden;
 
@@ -91,15 +91,18 @@ main {
                 height: 100%;
 
                 &>.youtube-vid {
+                    border: 0;
+                    width: 100%;
+                    height: 100%;
 
                     transition: width 0.4s, height 0.4s, transform 0.4s;
 
-                    &:hover {
-                        width: 110%;
-                        height: 110%;
+                    // &:hover {
+                    //     width: 110%;
+                    //     height: 110%;
 
-                        transform: translate(-5%, -5%);
-                    }
+                    //     transform: translate(-5%, -5%);
+                    // }
 
                     &>.popup {
                         display: none;
@@ -170,29 +173,13 @@ section#competitions {
                 min-width: 300px;
                 width: 45%;
 
-                &>figure {
-                    height: 200px;
-                    width: 400px;
+                &>iframe {
+                    border: 0;
+                    height: 20.2vw;
+                    width: 40vw;
                     max-width: 100%;
                     background-color: var(--tertiary-background-color);
                     position: relative;
-
-                    &>a {
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-
-                        &>.image {
-                            transition: width 0.4s, height 0.4s, transform 0.4s;
-
-                            &:hover {
-                                width: 110%;
-                                height: 110%;
-
-                                transform: translate(-5%, -5%);
-                            }
-                        }
-                    }
                 }
 
                 &>figcaption {

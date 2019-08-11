@@ -27,9 +27,9 @@ main > .wrapper .bar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .group.top section#measurements {
@@ -82,8 +82,8 @@ main > .wrapper .bar {
 .group.top section#in-action > .youtube-vid-container {
   position: relative;
   margin-top: 30px;
-  height: 200px;
-  width: 400px;
+  height: 22.5vw;
+  width: 40vw;
   background-color: var(--tertiary-background-color);
   overflow: hidden;
 }
@@ -95,17 +95,13 @@ main > .wrapper .bar {
 }
 
 .group.top section#in-action > .youtube-vid-container > a > .youtube-vid {
+  border: 0;
+  width: 100%;
+  height: 100%;
   -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
   transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
   transition: width 0.4s, height 0.4s, transform 0.4s;
   transition: width 0.4s, height 0.4s, transform 0.4s, -webkit-transform 0.4s;
-}
-
-.group.top section#in-action > .youtube-vid-container > a > .youtube-vid:hover {
-  width: 110%;
-  height: 110%;
-  -webkit-transform: translate(-5%, -5%);
-          transform: translate(-5%, -5%);
 }
 
 .group.top section#in-action > .youtube-vid-container > a > .youtube-vid > .popup {
@@ -172,32 +168,13 @@ section#competitions > .wrapper > .flex > .container {
   width: 45%;
 }
 
-section#competitions > .wrapper > .flex > .container > figure {
-  height: 200px;
-  width: 400px;
+section#competitions > .wrapper > .flex > .container > iframe {
+  border: 0;
+  height: 20.2vw;
+  width: 40vw;
   max-width: 100%;
   background-color: var(--tertiary-background-color);
   position: relative;
-}
-
-section#competitions > .wrapper > .flex > .container > figure > a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-section#competitions > .wrapper > .flex > .container > figure > a > .image {
-  -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
-  transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
-  transition: width 0.4s, height 0.4s, transform 0.4s;
-  transition: width 0.4s, height 0.4s, transform 0.4s, -webkit-transform 0.4s;
-}
-
-section#competitions > .wrapper > .flex > .container > figure > a > .image:hover {
-  width: 110%;
-  height: 110%;
-  -webkit-transform: translate(-5%, -5%);
-          transform: translate(-5%, -5%);
 }
 
 section#competitions > .wrapper > .flex > .container > figcaption {
