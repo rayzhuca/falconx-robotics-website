@@ -47,6 +47,10 @@ public class ContentGetter {
     }
 
     /**
+     * Remember that if you just directly use this method for attributes. You would
+     * need to do: key[0] because all items are lists regardless if they are
+     * singleton.
+     * 
      * @return all values of sheet
      */
     public HashMap<String, List<String>> getAllAttributes(String sheetTitle) {
