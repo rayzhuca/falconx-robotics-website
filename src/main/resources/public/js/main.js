@@ -31,7 +31,7 @@ function getY(ele) {
 // async
 function timeOutLoop(iterable, operation, interval = 10) {
 	// return new Promise((res, err) => {
-	Array.prototype.forEach.call(iterable, function(v, i, arr) {
+	Array.prototype.forEach.call(iterable, function (v, i, arr) {
 		setTimeout(() => {
 			operation(v, i, arr);
 
@@ -291,12 +291,12 @@ setTimeout(() => {
 			}
 		}
 
-		setTimeout(() => {
-			// timeout to fix the weirdest fucking bug
-			for (let i = 0; i < fadeEles.length; i++) {
-				onScroll();
-			}
-		}, 500);
+		// setTimeout(() => {
+		// timeout to fix the weirdest fucking bug
+		for (let i = 0; i < fadeEles.length; i++) {
+			onScroll();
+		}
+		// }, 0);
 
 		window.addEventListener("scroll", onScroll);
 	} catch (e) {
