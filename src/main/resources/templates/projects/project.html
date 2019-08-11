@@ -3,7 +3,7 @@
 
 <head>
     <!-- Change this -->
-    <title>[Robot Name] - FalconX Robotics</title>
+    <title th:text="${name} + '- FalconX Robotics'">[Robot Name] - FalconX Robotics</title>
     <!-- Change this -->
     <link rel="stylesheet" th:href="@{/css/projects/project.css}" href="/public/css/projects/project.css" />
 </head>
@@ -18,7 +18,7 @@
         <div class="wrapper">
             <div class="left title">2019 FRC Robot</div>
             <div class="bar title">―</div>
-            <div class="name title">Vape Bot</div>
+            <div class="name title" th:text="${name}">Vape Bot</div>
         </div>
     </main>
 
@@ -36,19 +36,19 @@
                         </tr>
                         <tr>
                             <td>weight</td>
-                            <td>254lbs</td>
+                            <td th:text="${weight}">254lbs</td>
                         </tr>
                         <tr>
                             <td>height</td>
-                            <td>254m</td>
+                            <td th:text="${height}">254m</td>
                         </tr>
                         <tr>
                             <td>width</td>
-                            <td>420m</td>
+                            <td th:text="${width}">420m</td>
                         </tr>
                         <tr>
                             <td>length</td>
-                            <td>21m</td>
+                            <td th:text="${length}">21m</td>
                         </tr>
                     </tbody>
                 </table>

@@ -8,16 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProjectsController {
 
     private SheetComponent sheetComponent;
+    private ProjectsComponent projectsComponent;
 
     @Autowired
-    public ProjectsController(SheetComponent sheetComponent) {
+    public ProjectsController(SheetComponent sheetComponent, ProjectsComponent projectsComponent) {
         this.sheetComponent = sheetComponent;
-        System.out.println("yes");
+        this.projectsComponent = projectsComponent;
     }
 
     @GetMapping(path = { "/projects", "/projects/index" })
@@ -37,12 +39,12 @@ public class ProjectsController {
 
     // TODO: You know what to do ;)
     @GetMapping(path = { "/project" })
-    public String project(Model model) {
+    public String project(Model model, @RequestParam(name = "name") String name) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            model.addAllAttributes(projectsComponent.getAttributes(name));
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            return "error";
         } catch (RuntimeException re) {
             re.printStackTrace();
             // TODO: Let error controllers handle
