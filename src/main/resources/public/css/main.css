@@ -2,8 +2,11 @@
   --wrapper-margin: 10%;
   --header-height: 100px;
   --background-color: rgb(255, 255, 255);
+  --lower-secondary-background-color: #F5F5F5;
   --secondary-background-color: #f9f9f9;
+  --tertiary-background-color: #E9E9E9;
   --hard-text-color: #3f3f3f;
+  --lower-hard-text-color: #8b8b8b;
   --soft-text-color: #9c9c9c;
 }
 
