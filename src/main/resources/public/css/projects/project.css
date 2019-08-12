@@ -184,4 +184,35 @@ section#competitions > .wrapper > .flex > .container > figcaption {
 section#competitions > .wrapper > .flex > .container > dd {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 770px) {
+  .group.top > .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .group.top > .wrapper > section#measurements,
+  .group.top > .wrapper > section#in-action {
+    width: 100%;
+  }
+  .group.top > .wrapper > section#measurements .youtube-vid-container,
+  .group.top > .wrapper > section#in-action .youtube-vid-container {
+    height: 50.6vw;
+    width: 90vw;
+  }
+  section#competitions {
+    margin-bottom: 0;
+  }
+  section#competitions > .wrapper {
+    overflow: hidden;
+  }
+  section#competitions > .wrapper > .flex > .container {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  section#competitions > .wrapper > .flex > .container > iframe.youtube-vid {
+    width: 90vw;
+    height: 50.6vw;
+  }
+}
 /*# sourceMappingURL=project.css.map */

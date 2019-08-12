@@ -193,3 +193,42 @@ section#competitions {
         }
     }
 }
+
+@media screen and (max-width: 770px) {
+    .group.top {
+        &>.wrapper {
+            flex-wrap: wrap;
+            overflow: hidden;
+
+            &>section#measurements,
+            &>section#in-action {
+                width: 100%;
+
+                .youtube-vid-container {
+                    height: 50.6vw;
+                    width: 90vw;
+                }
+            }
+        }
+    }
+
+    section#competitions {
+        margin-bottom: 0;
+
+        &>.wrapper {
+            overflow: hidden;
+
+            &>.flex {
+                &>.container {
+                    width: 100%;
+                    margin-bottom: 50px;
+
+                    &>iframe.youtube-vid {
+                        width: 90vw;
+                        height: 50.6vw;
+                    }
+                }
+            }
+        }
+    }
+}
