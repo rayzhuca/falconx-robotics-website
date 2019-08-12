@@ -6,15 +6,15 @@
 
 ## To do list:
 
-- [ ] Front page
+- [x] Front page
 - [x] Add way to see errors on mobile
 - [ ] StoredCrdential in .env, by making a new file from the env varaible.
 - [ ] Scroll menu mobile bug
-- [ ] Projects page
+- [x] Projects page
 - [ ] Mobile
 - [x] Colors in css vars
 - [x] Error handeling
-- [ ] Custom error handeling
+- [x] Custom error handeling
 - [ ] Dynamic
 - [x] Heroku
 - [ ] More effects
