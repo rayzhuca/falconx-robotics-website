@@ -2,6 +2,7 @@ package com.falconxrobotics.website.application.projects;
 
 import java.io.IOException;
 
+import com.falconxrobotics.website.application.error.ErrorComponent;
 import com.falconxrobotics.website.application.googlesheets.SheetComponent;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,14 @@ public class ProjectsController {
 
     private SheetComponent sheetComponent;
     private ProjectsComponent projectsComponent;
+    private ErrorComponent errorComponent;
 
     @Autowired
-    public ProjectsController(SheetComponent sheetComponent, ProjectsComponent projectsComponent) {
+    public ProjectsController(SheetComponent sheetComponent, ProjectsComponent projectsComponent,
+            ErrorComponent errorComponent) {
         this.sheetComponent = sheetComponent;
         this.projectsComponent = projectsComponent;
+        this.errorComponent = errorComponent;
     }
 
     @GetMapping(path = { "/projects", "/projects/index" })
@@ -30,26 +34,25 @@ public class ProjectsController {
         } catch (IOException ioe) {
             ioe.printStackTrace();
             // TODO: Let error controllers handle
-        } catch (RuntimeException re) {
-            re.printStackTrace();
-            // TODO: Let error controllers handle
-        }
-        return null; // TODO: Delete this
-    }
-
-    // TODO: You know what to do ;)
-    @GetMapping(path = { "/project" })
-    public String project(Model model, @RequestParam(name = "name") String name) {
-        try {
-            model.addAllAttributes(projectsComponent.getProjectAttributes(name));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
             return "error";
         } catch (RuntimeException re) {
             re.printStackTrace();
             // TODO: Let error controllers handle
+            return "error";
         }
+    }
 
-        return "projects/project";
+    @GetMapping(path = { "/project" })
+    public String project(Model model, @RequestParam(name = "name") String name) {
+        try {
+            model.addAllAttributes(projectsComponent.getProjectAttributes(name));
+            return "projects/project";
+        } catch (IOException ioe) {
+            model.addAllAttributes(errorComponent.getAttributes("404", null, ioe.getMessage()));
+            return "error";
+        } catch (RuntimeException re) {
+            model.addAllAttributes(errorComponent.getAttributes("404", null, re.getMessage()));
+            return "error";
+        }
     }
 }
