@@ -297,6 +297,15 @@ nav#menu > div.wrapper#main > .group .title {
   font-size: 18px;
 }
 
+nav#menu > div.wrapper#main > .group .title.projects > a {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+nav#menu > div.wrapper#main > .group .title.projects > a:hover {
+  color: var(--soft-text-color);
+}
+
 nav#menu > div.wrapper#main > .group .subtitle {
   color: var(--soft-text-color);
 }

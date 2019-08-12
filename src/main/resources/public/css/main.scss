@@ -244,6 +244,16 @@ nav#menu {
 
             .title {
                 font-size: 18px;
+
+                &.projects {
+                    &>a {
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: var(--soft-text-color);
+                        }
+                    }
+                }
             }
 
             .subtitle {
