@@ -102,6 +102,7 @@ main > .wrapper .bar {
   transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
   transition: width 0.4s, height 0.4s, transform 0.4s;
   transition: width 0.4s, height 0.4s, transform 0.4s, -webkit-transform 0.4s;
+  background-color: #181818;
 }
 
 .group.top section#in-action > .youtube-vid-container > a > .youtube-vid > .popup {
@@ -173,7 +174,7 @@ section#competitions > .wrapper > .flex > .container > iframe {
   height: 20.2vw;
   width: 40vw;
   max-width: 100%;
-  background-color: var(--tertiary-background-color);
+  background-color: black;
   position: relative;
 }
 

@@ -97,12 +97,7 @@ main {
 
                     transition: width 0.4s, height 0.4s, transform 0.4s;
 
-                    // &:hover {
-                    //     width: 110%;
-                    //     height: 110%;
-
-                    //     transform: translate(-5%, -5%);
-                    // }
+                    background-color: rgb(24, 24, 24);
 
                     &>.popup {
                         display: none;
@@ -178,7 +173,7 @@ section#competitions {
                     height: 20.2vw;
                     width: 40vw;
                     max-width: 100%;
-                    background-color: var(--tertiary-background-color);
+                    background-color: black;
                     position: relative;
                 }
 
