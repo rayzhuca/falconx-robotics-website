@@ -13,10 +13,10 @@
 <body>
 	<main>
 		<div class="wrapper">
-			<div class="error-code subtitle" th:text="${statuscode}">
+			<div class="error-code subtitle" th:text="${statuscode != null ? statuscode : '520'}">
 				520
 			</div>
-			<div class="message normal" th:text="${message}">
+			<div class="message normal" th:text="${message != null ? message : 'Unknown error'}">
 				Unknown error
 			</div>
 			<div class="go-back">
