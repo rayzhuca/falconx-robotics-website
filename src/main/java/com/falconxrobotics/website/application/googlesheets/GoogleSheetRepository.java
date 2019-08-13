@@ -40,19 +40,24 @@ public class GoogleSheetRepository {
     private final String APPLICATION_NAME = "website";
     private final String SHEET_ID = "1FbbEs4_8v8LqqpAmLqAcVGUFeK4rRlentKwJbzEIgP8";
     private final String SHEET_TOKEN_PATH = "./src/main/resources/secrets/token";
-    private final String SHEET_CREDENTIALS;
+    private String SHEET_CREDENTIALS;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private Dotenv dotenv;
     private Sheets service;
 
-    public GoogleSheetRepository() throws GeneralSecurityException, IOException {
-        dotenv = Dotenv.load();
-        SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
+    public GoogleSheetRepository() {
+        try {
+            dotenv = Dotenv.load();
+            SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
 
-        NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName(APPLICATION_NAME).build();
+            NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+            service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                    .setApplicationName(APPLICATION_NAME).build();
+
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private String getFromEnvFile(String key) {
@@ -72,12 +77,16 @@ public class GoogleSheetRepository {
     }
 
     private File createStoredCredentialFile(String toWrite) {
-        File file = new File(SHEET_TOKEN_PATH);
-        try (FileWriter fileWriter = new FileWriter(file)) {
+        File file = new File(SHEET_TOKEN_PATH + "/StoredCredential");
+        try {
             file.createNewFile();
+
+            FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(toWrite);
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            fileWriter.close();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
 
         return file;
@@ -87,10 +96,8 @@ public class GoogleSheetRepository {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
 
-        File storedCredentialFile = createStoredCredentialFile(getFromEnvFile("STORED_CREDENTIALS"));
-
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(storedCredentialFile))
+                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(new File(SHEET_TOKEN_PATH)))
                         .setAccessType("offline").build();
 
         LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
