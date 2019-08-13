@@ -3,9 +3,10 @@ Reads StoredCredential files and puts it into .env file.
 """
 
 file_dir = 'src/main/resources/secrets/token/StoredCredential'
+target_dir = file_dir
 
 def main():
-    with open(file_dir, 'r') as f, open('.env', 'a') as a:
+    with open(file_dir, 'r') as f, open(target_dir, 'a') as a:
         lines = f.readlines()
         f.seek(0)
         a.write('\nSTORED_CREDENTIAL="')
