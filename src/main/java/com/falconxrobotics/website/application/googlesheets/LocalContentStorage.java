@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LocalContentStorage {
 
-    public ContentLocalStorage() {
+    public LocalContentStorage() {
 
     }
 }
