@@ -1,10 +1,14 @@
 package com.falconxrobotics.website.application.googlesheets;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,10 +51,24 @@ public class GoogleSheetRepository {
     private Sheets service;
 
     public GoogleSheetRepository() {
+        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+        System.out.println("YESYESYESY12313123123123ESYSEYESYSEYSEYSEY");
         try {
             dotenv = Dotenv.load();
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYES444444444YESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
             SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
-
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
+            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
             NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
             service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                     .setApplicationName(APPLICATION_NAME).build();
@@ -62,7 +80,8 @@ public class GoogleSheetRepository {
 
     private String getFromEnvFile(String key) {
         try {
-            return fallback(dotenv.get(key), System.getenv(key));
+            return fallback(System.getenv(key), dotenv.get(key));
+            // return fallback(dotenv.get(key), System.getenv(key));
         } catch (Exception e) {
             if (e instanceof DotEnvException) {
                 return System.getenv(key);
@@ -81,7 +100,9 @@ public class GoogleSheetRepository {
         try {
             file.createNewFile();
 
-            FileWriter fileWriter = new FileWriter(file);
+            BufferedWriter fileWriter = new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(SHEET_TOKEN_PATH), StandardCharsets.UTF_8));
+
             fileWriter.write(toWrite);
 
             fileWriter.close();
@@ -95,6 +116,9 @@ public class GoogleSheetRepository {
     private Credential getCredentials(NetHttpTransport HTTP_TRANSPORT) throws IOException {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
+
+        // String STORED_CREDENTIAL = getFromEnvFile("STORED_CREDENTIAL");
+        // createStoredCredentialFile(STORED_CREDENTIAL);
 
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
                 clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(new File(SHEET_TOKEN_PATH)))
