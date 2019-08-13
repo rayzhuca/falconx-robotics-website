@@ -47,7 +47,7 @@ section#flags {
             }
 
             &.bronze {
-                filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
+                filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
 
                 &>.background-square {
                     background-color: #a3938c;
@@ -72,7 +72,7 @@ section#flags {
             }
 
             &.gold {
-                filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.2));
+                filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.15));
 
                 &>.background-square {
                     background-color: #fbf9c5;
@@ -141,5 +141,26 @@ section#flags {
 }
 
 section#perk-descriptions {
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+
+    &>.wrapper {
+        &>.subtitle {
+            font-size: 22px;
+        }
+
+        &>ul {
+            margin-top: 50px;
+
+            &>li {
+                margin-top: 25px;
+
+                &>.description {
+                    margin-top: 8px;
+                    max-width: 700px;
+                    line-height: 27px;
+                }
+            }
+        }
+    }
 }
