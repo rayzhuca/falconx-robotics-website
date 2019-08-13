@@ -51,24 +51,9 @@ public class GoogleSheetRepository {
     private Sheets service;
 
     public GoogleSheetRepository() {
-        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-        System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-        System.out.println("YESYESYESY12313123123123ESYSEYESYSEYSEYSEY");
         try {
             dotenv = Dotenv.load();
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYES444444444YESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
             SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
-            System.out.println("YESYESYESYESYSEYESYSEYSEYSEY");
             NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
             service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                     .setApplicationName(APPLICATION_NAME).build();
