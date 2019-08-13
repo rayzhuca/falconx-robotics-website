@@ -1,14 +1,11 @@
-## Reminder to myself:
+## [Website](https://falconxrobotics.herokuapp.com/)
 
-- [x] Never make this public unless \*.env is added on .gitignore
-- [ ] Never make this public unless token/\* is added on .gitignore
-- [ ] Never make this public until sheet id is on .env
+This is the official repository for the upcoming website of FalconX Robotics.
 
 ## To do list:
 
 - [x] Front page
 - [x] Add way to see errors on mobile
-- [ ] StoredCrdential in .env, by making a new file from the env varaible.
 - [ ] Scroll menu mobile bug
 - [x] Projects page
 - [ ] Mobile
