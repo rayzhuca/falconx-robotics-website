@@ -59,7 +59,7 @@ public class GoogleSheetRepository {
         try {
             return fallback(dotenv.get(key), System.getenv(key));
         } catch (Exception e) {
-            if (e.getClass() == DotEnvException.class) {
+            if (e instanceof DotEnvException) {
                 return System.getenv(key);
             } else {
                 throw e;
