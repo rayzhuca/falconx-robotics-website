@@ -40,23 +40,15 @@ public class GoogleSheetRepository {
     private final String APPLICATION_NAME = "website";
     private final String SHEET_ID = "1FbbEs4_8v8LqqpAmLqAcVGUFeK4rRlentKwJbzEIgP8";
     private final String SHEET_TOKEN_PATH = "./src/main/resources/secrets/token";
+    private final String SHEET_CREDENTIALS;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private Dotenv dotenv;
-    private String SHEET_CREDENTIALS;
     private Sheets service;
 
     public GoogleSheetRepository() throws GeneralSecurityException, IOException {
         dotenv = Dotenv.load();
-        try {
-            SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
-        } catch (Exception e) {
-            if (e.getClass() == DotEnvException.class) {
-                SHEET_CREDENTIALS = System.getenv("SHEET_CREDENTIALS");
-            } else {
-                throw e;
-            }
-        }
+        SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
 
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
@@ -65,7 +57,6 @@ public class GoogleSheetRepository {
 
     private String getFromEnvFile(String key) {
         try {
-            Dotenv dotenv = Dotenv.load();
             return fallback(dotenv.get(key), System.getenv(key));
         } catch (Exception e) {
             if (e.getClass() == DotEnvException.class) {
@@ -96,7 +87,7 @@ public class GoogleSheetRepository {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
 
-        File storedCredentialFile = createStoredCredentialFile("STORED_CREDENTIALS");
+        File storedCredentialFile = createStoredCredentialFile(getFromEnvFile("STORED_CREDENTIALS"));
 
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
                 clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(storedCredentialFile))
