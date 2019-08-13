@@ -31,7 +31,7 @@ public class AboutController {
             re.printStackTrace();
             // TODO: Let error controllers handle
         }
-        return null; // TODO: Delete this
+        return "error";
     }
 
     @GetMapping("/about/first")
@@ -46,6 +46,6 @@ public class AboutController {
             re.printStackTrace();
             // TODO: Let error controllers handle
         }
-        return null; // TODO: Delete this
+        return "error";
     }
 }

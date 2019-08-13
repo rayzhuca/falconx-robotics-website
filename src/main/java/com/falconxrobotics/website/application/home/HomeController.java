@@ -32,6 +32,6 @@ public class HomeController {
             re.printStackTrace();
             // TODO: Let error controllers handle
         }
-        return null; // TODO: Delete this
+        return "error";
     }
 }
