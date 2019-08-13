@@ -31,10 +31,8 @@ build/
 .vscode/
 
 *.env
-# secrets/
+secrets/
 *.txt
-# *.css - for heroku :CCCCC
+# *.css - for heroku
 *.map
 *.DS_STORE
-# current problem: css files needed for heroku, scss files needed for myself, having
-# one gitignore means less efficient bc both types are added
