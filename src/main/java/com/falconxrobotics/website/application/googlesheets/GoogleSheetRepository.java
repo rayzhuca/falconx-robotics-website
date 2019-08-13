@@ -42,7 +42,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class GoogleSheetRepository {
 
     private final String APPLICATION_NAME = "website";
-    private final String SHEET_ID = "1FbbEs4_8v8LqqpAmLqAcVGUFeK4rRlentKwJbzEIgP8";
+    private final String SHEET_ID;
     private final String SHEET_TOKEN_PATH = "./src/main/resources/secrets/token";
     private String SHEET_CREDENTIALS;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
@@ -51,9 +51,10 @@ public class GoogleSheetRepository {
     private Sheets service;
 
     public GoogleSheetRepository() {
+        dotenv = Dotenv.load();
+        SHEET_ID = getFromEnvFile("SHEET_ID");
+        SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
         try {
-            dotenv = Dotenv.load();
-            SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
             NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
             service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                     .setApplicationName(APPLICATION_NAME).build();
