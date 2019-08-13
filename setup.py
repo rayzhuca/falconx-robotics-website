@@ -1,5 +1,5 @@
 """
-Reads StoredCredential files and puts it into .env file.
+Reads StoredCredential file and puts it into .env file.
 """
 
 file_dir = 'src/main/resources/secrets/token/StoredCredential'
