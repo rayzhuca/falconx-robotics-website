@@ -2,6 +2,7 @@ package com.falconxrobotics.website.application.googlesheets;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
@@ -41,12 +42,13 @@ public class GoogleSheetRepository {
     private final String SHEET_TOKEN_PATH = "./src/main/resources/secrets/token";
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+    private Dotenv dotenv;
     private String SHEET_CREDENTIALS;
     private Sheets service;
 
     public GoogleSheetRepository() throws GeneralSecurityException, IOException {
+        dotenv = Dotenv.load();
         try {
-            Dotenv dotenv = Dotenv.load();
             SHEET_CREDENTIALS = fallback(dotenv.get("SHEET_CREDENTIALS"), System.getenv("SHEET_CREDENTIALS"));
         } catch (Exception e) {
             if (e.getClass() == DotEnvException.class) {
@@ -61,15 +63,43 @@ public class GoogleSheetRepository {
                 .setApplicationName(APPLICATION_NAME).build();
     }
 
+    private String getFromEnvFile(String key) {
+        try {
+            Dotenv dotenv = Dotenv.load();
+            return fallback(dotenv.get(key), System.getenv(key));
+        } catch (Exception e) {
+            if (e.getClass() == DotEnvException.class) {
+                return System.getenv(key);
+            } else {
+                throw e;
+            }
+        }
+    }
+
     private String fallback(String arg1, String arg2) {
         return arg1 == null ? arg2 : arg1;
+    }
+
+    private File createStoredCredentialFile(String toWrite) {
+        File file = new File(SHEET_TOKEN_PATH);
+        try (FileWriter fileWriter = new FileWriter(file)) {
+            file.createNewFile();
+            fileWriter.write(toWrite);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return file;
     }
 
     private Credential getCredentials(NetHttpTransport HTTP_TRANSPORT) throws IOException {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
+
+        File storedCredentialFile = createStoredCredentialFile("STORED_CREDENTIALS");
+
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(new File(SHEET_TOKEN_PATH)))
+                clientSecrets, SCOPES).setDataStoreFactory(new FileDataStoreFactory(storedCredentialFile))
                         .setAccessType("offline").build();
 
         LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
