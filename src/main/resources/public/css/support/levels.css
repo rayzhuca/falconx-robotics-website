@@ -29,6 +29,8 @@ section#flags > .wrapper {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 section#flags > .wrapper > .flag {
@@ -99,7 +101,7 @@ section#flags > .wrapper > .flag > .background-square {
 
 section#flags > .wrapper > .flag > .background-triangle {
   position: absolute;
-  top: calc(100% - 100px);
+  top: calc(100% - 101px);
   border-left: 100px solid transparent;
   border-right: 100px solid transparent;
   border-top: 50px solid #aee0ff;
@@ -146,7 +148,14 @@ section#perk-descriptions > .wrapper > ul > li {
 
 section#perk-descriptions > .wrapper > ul > li > .description {
   margin-top: 8px;
-  max-width: 700px;
+  max-width: 70%;
   line-height: 27px;
+}
+
+@media screen and (max-width: 500px) {
+  section#perk-descriptions > .wrapper > ul > li > .description {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 /*# sourceMappingURL=levels.css.map */

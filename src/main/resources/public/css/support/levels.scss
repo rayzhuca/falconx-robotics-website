@@ -25,6 +25,7 @@ section#flags {
         display: flex;
         justify-content: space-around;
         align-items: flex-start;
+        flex-wrap: wrap;
 
         &>.flag {
             // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
@@ -108,7 +109,7 @@ section#flags {
                 // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
                 // filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
                 position: absolute;
-                top: calc(100% - 100px);
+                top: calc(100% - 101px);
                 border-left: 100px solid transparent;
                 border-right: 100px solid transparent;
                 border-top: 50px solid #aee0ff;
@@ -157,10 +158,18 @@ section#perk-descriptions {
 
                 &>.description {
                     margin-top: 8px;
-                    max-width: 700px;
+                    max-width: 70%;
                     line-height: 27px;
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    section#perk-descriptions>.wrapper>ul>li>.description {
+        width: 100%;
+        max-width: 100%;
     }
 }
