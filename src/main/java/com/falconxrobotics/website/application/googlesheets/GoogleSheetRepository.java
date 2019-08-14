@@ -80,24 +80,6 @@ public class GoogleSheetRepository {
         return arg1 == null ? arg2 : arg1;
     }
 
-    private File createStoredCredentialFile(String toWrite) {
-        File file = new File(SHEET_TOKEN_PATH + "/StoredCredential");
-        try {
-            file.createNewFile();
-
-            BufferedWriter fileWriter = new BufferedWriter(
-                    new OutputStreamWriter(new FileOutputStream(SHEET_TOKEN_PATH), StandardCharsets.UTF_8));
-
-            fileWriter.write(toWrite);
-
-            fileWriter.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-
-        return file;
-    }
-
     private Credential getCredentials(NetHttpTransport HTTP_TRANSPORT) throws IOException {
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(new ByteArrayInputStream(SHEET_CREDENTIALS.getBytes())));
