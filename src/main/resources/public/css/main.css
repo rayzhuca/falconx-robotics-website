@@ -297,12 +297,12 @@ nav#menu > div.wrapper#main > .group .title {
   font-size: 18px;
 }
 
-nav#menu > div.wrapper#main > .group .title.projects > a {
+nav#menu > div.wrapper#main > .group .title > a[href] {
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
 }
 
-nav#menu > div.wrapper#main > .group .title.projects > a:hover {
+nav#menu > div.wrapper#main > .group .title > a[href]:hover {
   color: var(--soft-text-color);
 }
 

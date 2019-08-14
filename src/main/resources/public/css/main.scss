@@ -244,14 +244,11 @@ nav#menu {
 
             .title {
                 font-size: 18px;
+                &>a[href] {
+                    transition: color 0.2s;
 
-                &.projects {
-                    &>a {
-                        transition: color 0.2s;
-
-                        &:hover {
-                            color: var(--soft-text-color);
-                        }
+                    &:hover {
+                        color: var(--soft-text-color);
                     }
                 }
             }
