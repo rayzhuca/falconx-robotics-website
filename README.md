@@ -6,7 +6,7 @@ This is the official repository for the upcoming website of FalconX Robotics. Th
 
 - [x] Front page
 - [x] Add way to see errors on mobile
-- [ ] Scroll menu mobile bug
+- [x] Scroll menu mobile bug
 - [x] Projects page
 - [ ] Mobile
 - [x] Colors in css vars
