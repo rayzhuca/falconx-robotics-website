@@ -1,6 +1,6 @@
 ## [Website](https://falconxrobotics.herokuapp.com/)
 
-This is the official repository for the upcoming website of FalconX Robotics.
+This is the official repository for the upcoming website of FalconX Robotics. This project is currently in development.
 
 ## To do list:
 
