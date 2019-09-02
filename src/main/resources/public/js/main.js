@@ -184,13 +184,15 @@ function timeOutLoop(iterable, operation, interval = 10) {
 	let lastScrollY;
 
 	window.addEventListener("scroll", _ => {
-		// make sure menu don't hide when menu is open
+		// to make sure menu don't hide when menu is open
 		if (menu.classList.contains("on")) {
 			header.style.top = "0";
 
 			return;
 		} else if (lastScrollY > window.scrollY) {
 			header.style.top = "0";
+		} else if (window.scrollY <= 150) {
+			// intentional empty
 		} else {
 			header.style.top = "calc(var(--header-height) * -2)";
 		}
