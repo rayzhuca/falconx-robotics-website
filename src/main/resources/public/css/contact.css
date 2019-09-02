@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=contact.css.map */
+main {
+  margin-top: 17vh;
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+
+body > footer .logo {
+  display: none;
+}
+/*# sourceMappingURL=contact.css.map */
