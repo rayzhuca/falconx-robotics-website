@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Change this -->
+    <title>Contact - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/contact.css}" href="../public/css/contact.css" />
+</head>
+
+<head th:replace="fragments/normal :: head"></head>
+
+<body>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+
+    <footer th:replace="fragments/normal :: footer"></footer>
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/index.js}" src="../public/js/index.js"></script> -->
+</body>
+
+</html>
