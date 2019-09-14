@@ -49,6 +49,7 @@ public class GoogleSheetRepository {
         try {
             dotenv = Dotenv.load();
         } catch (Exception e) {
+            System.out.println(e.getClass().getSimpleName());
             if (!(e instanceof DotEnvException)) {
                 throw e;
             }
