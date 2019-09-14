@@ -42,11 +42,17 @@ public class GoogleSheetRepository {
     private String SHEET_CREDENTIALS;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    private Dotenv dotenv;
+    private Dotenv dotenv = null;
     private Sheets service;
 
     public GoogleSheetRepository() {
-        dotenv = Dotenv.load();
+        try {
+            dotenv = Dotenv.load();
+        } catch (Exception e) {
+            if (!(e instanceof DotEnvException)) {
+                throw e;
+            }
+        }
         SHEET_ID = getFromEnvFile("SHEET_ID");
         SHEET_CREDENTIALS = getFromEnvFile("SHEET_CREDENTIALS");
         try {
@@ -61,10 +67,9 @@ public class GoogleSheetRepository {
 
     private String getFromEnvFile(String key) {
         try {
-            return fallback(System.getenv(key), dotenv.get(key));
-            // return fallback(dotenv.get(key), System.getenv(key));
+            return fallback(System.getenv(key), dotenv == null ? dotenv.get(key) : null);
         } catch (Exception e) {
-            return System.getenv(key);
+            throw e;
         }
     }
 
