@@ -70,6 +70,7 @@ public class GoogleSheetRepository {
         try {
             return fallback(System.getenv(key), dotenv == null ? dotenv.get(key) : null);
         } catch (Exception e) {
+            System.out.println("exception line 73");
             throw e;
         }
     }
