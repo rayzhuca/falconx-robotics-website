@@ -4,7 +4,7 @@ This is the official repository for the upcoming website of FalconX Robotics. Th
 
 ## To do list:
 
-- [x] Front page
+- [ ] All pages
 - [x] Add way to see errors on mobile
 - [x] Scroll menu mobile bug
 - [x] Projects page
