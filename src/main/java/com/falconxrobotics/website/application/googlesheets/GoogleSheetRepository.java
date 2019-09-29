@@ -44,11 +44,12 @@ public class GoogleSheetRepository {
     private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private Dotenv dotenv = null;
     private Sheets service;
-
+    //a
     public GoogleSheetRepository() {
         try {
             dotenv = Dotenv.load();
         } catch (Exception e) {
+            System.out.println("exception line 52");
             System.out.println(e.getClass().getSimpleName());
             if (!(e instanceof DotEnvException)) {
                 throw e;
@@ -68,7 +69,7 @@ public class GoogleSheetRepository {
 
     private String getFromEnvFile(String key) {
         try {
-            return fallback(System.getenv(key), dotenv == null ? dotenv.get(key) : null);
+            return fallback(System.getenv(key), dotenv != null ? dotenv.get(key) : null);
         } catch (Exception e) {
             System.out.println("exception line 73");
             throw e;
