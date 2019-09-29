@@ -33,4 +33,34 @@ public class SupportController {
         }
         return "error";
     }
+
+    @GetMapping("/support/amp")
+    public String amp(Model model) {
+        try {
+            model.addAllAttributes(sheetComponent.getAttributes(null));
+            return "support/amp";
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            // TODO: Let error controllers handle
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+            // TODO: Let error controllers handle
+        }
+        return "error";
+    }
+
+    @GetMapping("/support/our-sponsors")
+    public String ourSponsors(Model model) {
+        try {
+            model.addAllAttributes(sheetComponent.getAttributes(null));
+            return "support/our-sponsors";
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            // TODO: Let error controllers handle
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+            // TODO: Let error controllers handle
+        }
+        return "error";
+    }
 }
