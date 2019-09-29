@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Change this -->
+    <title>AMP - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/support/amp.css}" href="../../public/css/support/amp.css" />
+</head>
+
+<head th:replace="fragments/normal :: head"></head>
+
+<body>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+    <div class="header-height-div"></div>
+    <main>
+        <div class="wrapper">
+            <div class="subtitle fade-in fade-in-down">AMP</div>
+            <article class="fade-in fade-in-down">AMP are our Advisors, Mentors, and Parents. AMP support would help sort out carpool situations for
+                events, maybe help fundraise, become a food organizer for when the team works in the woodshop, help plan
+                logistics for events, and cheer and support us during competition.</article>
+        </div>
+    </main>
+
+    <footer th:replace="fragments/normal :: footer"></footer>
+
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/about/history.js}" src="../../public/js/about/history.js"></script> -->
+</body>
+
+</html>

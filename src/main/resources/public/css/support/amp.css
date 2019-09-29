@@ -1,0 +1,14 @@
+main > .wrapper {
+  margin-top: 70px;
+}
+
+main > .wrapper > .subtitle {
+  font-size: 35px;
+}
+
+main > .wrapper > article {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 30px;
+}
+/*# sourceMappingURL=amp.css.map */
