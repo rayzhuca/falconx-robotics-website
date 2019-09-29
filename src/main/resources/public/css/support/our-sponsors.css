@@ -1,0 +1,74 @@
+:root {
+  --sponsor-height-base-line: 100px;
+}
+
+section#third {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+section#third > .wrapper > .title {
+  font-size: 35px;
+  width: 100%;
+  text-align: center;
+}
+
+section#third > .wrapper > .sponsors {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#third > .wrapper > .sponsors > * {
+  padding: 30px 40px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+section#third > .wrapper > .sponsors > *:hover {
+  opacity: 0.5;
+}
+
+section#third > .wrapper > .sponsors > a > .apple {
+  height: calc(var(--sponsor-height-base-line) + 100px);
+}
+
+section#third > .wrapper > .sponsors > a > .tap-plastics {
+  height: var(--sponsor-height-base-line);
+}
+
+section#third > .wrapper > .sponsors > a > .marathon {
+  height: calc(var(--sponsor-height-base-line) + 250px);
+}
+
+section#third > .wrapper > .sponsors > a > .google {
+  height: var(--sponsor-height-base-line);
+}
+
+section#third > .wrapper > .sponsors > a > .brin-wojcicki-org {
+  height: calc(var(--sponsor-height-base-line) + 20px);
+}
+
+section#third > .wrapper > .sponsors > a > .moutain-mikes {
+  height: calc(var(--sponsor-height-base-line) + 100px);
+}
+
+@media screen and (max-width: 750px) {
+  :root {
+    --sponsor-height-base-line: 50px;
+  }
+  section#third > .wrapper > .sponsors > a > .marathon {
+    height: 200px;
+  }
+}
+/*# sourceMappingURL=our-sponsors.css.map */

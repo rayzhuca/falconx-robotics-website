@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Change this -->
+    <title>Our Sponsors - FalconX Robotics</title>
+    <!-- Change this -->
+    <link rel="stylesheet" th:href="@{/css/support/our-sponsors.css}" href="../../public/css/support/our-sponsors.css" />
+</head>
+
+<head th:replace="fragments/normal :: head"></head>
+
+<body>
+    <header th:replace="fragments/normal :: header"></header>
+    <nav th:replace="fragments/normal :: menu"></nav>
+    <div class="header-height-div"></div>
+    
+    <section id="third">
+		<div class="wrapper">
+			<div class="title fade-in fade-in-down parallax" data-parallax-slowdown="13" data-parallax-reverse
+				data-parallax-translate>
+				Our Sponsors
+			</div>
+			<div class="sponsors">
+				<a href="https://www.apple.com/" target="_blank"><img class="apple fade-in fade-in-down"
+						data-fade-in-time="10" src="/images/apple.png" alt="apple" /></a>
+				<a href="https://www.marathonpetroleum.com/" target="_blank"><img class="marathon fade-in fade-in-down"
+						src="/images/marathon.png" alt="marathon" /></a>
+				<a href="https://www.tapplastics.com/" target="_blank"><img class="tap-plastics fade-in fade-in-down"
+						src="/images/tap-plastics.png" alt="tap plastics" /></a>
+				<a href="https://www.google.com" target="_blank"><img class="google fade-in fade-in-down"
+						src="/images/google.png" alt="google" /></a>
+				<a href="https://fconline.foundationcenter.org/fdo-grantmaker-profile/?key=RINF001" target="_blank"><img
+						class="brin-wojcicki-org fade-in fade-in-down" src="/images/brin-wojcicki-org.png"
+						alt="brin wojcicki foundation" /></a>
+				<a href="https://www.mountainmikespizza.com/" target="_blank"><img
+						class="moutain-mikes fade-in fade-in-down" src="/images/moutain-mikes.png"
+						alt="mountain mikes" /></a>
+			</div>
+		</div>
+	</section>
+
+    <footer th:replace="fragments/normal :: footer"></footer>
+
+    <!-- Change this -->
+    <script th:src="@{/js/main.js}" src="../../public/js/main.js"></script>
+    <!-- <script th:src="@{/js/about/history.js}" src="../../public/js/about/history.js"></script> -->
+</body>
+
+</html>
