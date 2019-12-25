@@ -31,7 +31,7 @@ build/
 .vscode/
 
 *.env
-secrets/
+# secrets/
 *.txt
 # *.css - for heroku
 *.map
