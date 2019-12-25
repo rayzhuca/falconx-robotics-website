@@ -61,16 +61,16 @@ section#flags > .wrapper > .flag.bronze > .background-triangle {
 }
 
 section#flags > .wrapper > .flag.silver {
-  -webkit-filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.08));
-          filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.08));
+  -webkit-filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.17));
+          filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.17));
 }
 
 section#flags > .wrapper > .flag.silver > .background-square {
-  background-color: #fbfbfb;
+  background-color: #f8f8f8;
 }
 
 section#flags > .wrapper > .flag.silver > .background-triangle {
-  border-top-color: #fbfbfb;
+  border-top-color: #f8f8f8;
 }
 
 section#flags > .wrapper > .flag.gold {
