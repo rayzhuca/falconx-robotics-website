@@ -127,7 +127,7 @@ section#mentor {
         }
         &>.normal {
             font-size: 1.2em;
-            margin-top: 20px;
+            margin-top: 18px;
 
             &>a.link {
                 border-bottom: 1px solid gray;
@@ -150,12 +150,12 @@ section#resources {
             font-size: 1.4em;
         }
         &>ul {
-            margin-top: 12px;
+            margin-top: 15px;
             list-style-type: lower-greek;
             list-style-position: inside; 
             &>li {
                 font-size: 1.2em;
-                margin-bottom: 7px;
+                margin-bottom: 10px;
                 &>a {
                     border-bottom: 1px solid gray;
                     transition: border-bottom-color .1s, color .1s;

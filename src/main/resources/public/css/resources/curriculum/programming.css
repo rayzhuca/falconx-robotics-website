@@ -150,7 +150,7 @@ section#mentor > .wrapper > .subtitle {
 
 section#mentor > .wrapper > .normal {
   font-size: 1.2em;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 section#mentor > .wrapper > .normal > a.link {
@@ -174,14 +174,14 @@ section#resources > .wrapper > .subtitle {
 }
 
 section#resources > .wrapper > ul {
-  margin-top: 12px;
+  margin-top: 15px;
   list-style-type: lower-greek;
   list-style-position: inside;
 }
 
 section#resources > .wrapper > ul > li {
   font-size: 1.2em;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 section#resources > .wrapper > ul > li > a {
