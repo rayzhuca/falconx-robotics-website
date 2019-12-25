@@ -30,4 +30,8 @@ public class CustomErrorController implements ErrorController {
         return "error";
     }
 
+    // TODO: make a method a takes in error parameters and returns a path that displays the error:
+    // e.g.,
+    // getErrorPath(520); // -> "error?statuscode=520" -> page w/ status code 520
+
 }

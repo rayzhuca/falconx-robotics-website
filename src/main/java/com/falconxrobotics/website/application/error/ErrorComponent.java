@@ -27,25 +27,36 @@ public class ErrorComponent {
             @Nullable Object exception) {
         HashMap<String, String> attributes = new HashMap<>();
 
+        // set default values
         attributes.put("statuscode", status != null ? status.toString() : "520");
         attributes.put("message", message != null ? message.toString() : null);
         attributes.put("exception", exception != null ? exception.toString() : "");
 
-        if (attributes.get("messsage") == null) {
-            try {
-                String customMsg = ErrorCode.getMessageFromCode(Integer.parseInt(attributes.get("statuscode")));
-                attributes.put("message", customMsg);
-            } catch (NumberFormatException nfe) {
-                attributes.put("message", "");
-                nfe.printStackTrace();
+        try {
+            if (!ErrorCode.containsCode(ErrorCode.getCodeFromInt(Integer.parseInt(attributes.get("statuscode"))))) {
+                // leave message empty if there is no message for the code
+                attributes.replace("message", "");
+            } else if (attributes.get("messsage") == null) {
+                // put set message of the status code if there was no pre-set message
+                try {
+                    String customMsg = ErrorCode.getMessageFromCode(Integer.parseInt(attributes.get("statuscode")));
+                    attributes.replace("message", customMsg);
+                } catch (NumberFormatException nfe) {
+                    attributes.replace("message", "");
+                    nfe.printStackTrace();
+                }
             }
+        } catch (NumberFormatException nfe) {
+            attributes.replace("message", "");
+            nfe.printStackTrace();
         }
 
         return attributes;
     }
 
     private enum ErrorCode {
-        FOUR_ZERO_FOUR(404, "Page not found"), FIVE_TWENTY(520, "Unknown error");
+        FOUR_ZERO_FOUR(404, "Page not found"), FIVE_HUNDRED(500, "Internal sever error"),
+        FIVE_TWENTY(520, "Unknown error");
 
         private int code;
         private String message;
@@ -73,5 +84,21 @@ public class ErrorComponent {
             return null;
         }
 
+        public static ErrorCode getCodeFromInt(int code) {
+            for (ErrorCode v : values()) {
+                if (v.getCode() == code) {
+                    return v;
+                }
+            }
+            return FIVE_TWENTY;
+        }
+
+        public static boolean containsCode(ErrorCode code) {
+            for (ErrorCode v : values()) {
+                if (code == v)
+                    return true;
+            }
+            return false;
+        }
     }
 }
