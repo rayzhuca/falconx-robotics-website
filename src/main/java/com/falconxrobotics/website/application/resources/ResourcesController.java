@@ -23,7 +23,7 @@ public class ResourcesController {
     public String programming(Model model) {
         try {
             model.addAllAttributes(sheetComponent.getAttributes("home"));
-            return "/resources/curriculum/programming";
+            return "resources/curriculum/programming";
         } catch (IOException ioe) {
             ioe.printStackTrace();
             // TODO: Let error controllers handle
