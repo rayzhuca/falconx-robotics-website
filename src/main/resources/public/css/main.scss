@@ -6,8 +6,8 @@
     --secondary-background-color: #f9f9f9;
     --tertiary-background-color: #E9E9E9;
     --hard-text-color: #3f3f3f;
-    --lower-hard-text-color: #8b8b8b;
-    --soft-text-color: #9c9c9c;
+    --lower-hard-text-color: #555555;
+    --soft-text-color: #525252;
 }
 
 * {
@@ -39,6 +39,9 @@ body {
     color: var(--soft-text-color);
     font-family: "Overpass", sans-serif;
     font-weight: 300;
+    font-smooth: always; // non-standard
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html,
