@@ -1,0 +1,186 @@
+.flexbox {
+    display: flex;
+}
+
+section#heading {
+    margin-top: 100px;
+    &>.wrapper {
+        &>.flexbox {
+            justify-content: space-between;
+            flex-wrap: wrap-reverse;
+            margin-top: -30px;
+
+            &>*{
+                margin-top: 30px;
+            }
+
+            &>.left {
+                width: 50%;
+                min-width: 300px;
+                margin-right: 30px;
+
+                &>.subtitle {
+                    font-size: 1.4em;
+                }
+
+                &>.normal {
+                    margin-top: 20px;
+                    font-size: 1.1em;
+                }
+            }
+
+            &>.right {
+                height: 200px;
+                flex-grow: 2;
+                min-width: 300px;
+                background-color: #c4c4c4;
+            }
+        }
+    }
+}
+
+section#what-we-learn-here {
+    margin-top: 80px;
+
+    // TOOD: fix flex-box
+    &>.wrapper {
+        &>.subtitle {
+            margin-bottom: 30px;
+            font-size: 1.4em;
+        }
+        &>.flexbox {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: -40px;
+            &>.element {
+                flex-grow: 1;
+                width: 20vh;
+                min-width: 200px;
+                margin-right: 20px;
+                margin-top: 40px;
+
+                &>.image {
+                    height: 20vh;
+                    width: 20vh;
+                    min-width: 100px;
+                    min-height: 100px;
+                    background-color: #c4c4c4;;
+                }
+                &>.subtitle {
+                    margin-top: 20px;
+                    font-size: 1.1em;
+                }
+                &>.normal {
+                    margin-top: 10px;
+                    width: 100%;
+                }
+            }
+        }
+    }  
+}
+
+section#leader {
+    background-color: rgb(248, 223, 255);
+    margin-top: 120px;
+    &>.wrapper {
+        &>.flexbox {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-bottom: 50px;
+
+            &>* {
+                margin-top: 30px;
+            }
+
+            &>.image {
+                display: inline-block;
+                border-radius: 100%;
+                background-color: white;
+                height: 150px;
+                width: 150px;
+                margin-right: 40px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            &>.right {
+                flex-grow: 2;
+                &>.subtitle {
+                    font-size: 1.2em;
+                }
+                &>.normal {
+                    margin-top: 5px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
+
+section#mentor {
+    margin-top: 120px;
+    &>.wrapper {
+        &>.subtitle {
+            font-size: 1.4em;
+        }
+        &>.normal {
+            font-size: 1.2em;
+            margin-top: 20px;
+
+            &>a.link {
+                border-bottom: 1px solid gray;
+                transition: color .2s, border-color .2s;
+
+                &:hover {
+                    color: black;
+                    border-color: black;
+                }
+            }
+        }
+    }
+}
+
+section#resources {
+    margin-top: 100px;
+    margin-bottom: 40px;
+    &>.wrapper {
+        &>.subtitle {
+            font-size: 1.4em;
+        }
+        &>ul {
+            margin-top: 12px;
+            list-style-type: lower-greek;
+            list-style-position: inside; 
+            &>li {
+                font-size: 1.2em;
+                margin-bottom: 7px;
+                &>a {
+                    border-bottom: 1px solid gray;
+                    transition: border-bottom-color .1s, color .1s;
+                    &:hover {
+                        border-bottom-color: black;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    section#what-we-learn-here {    
+        &>.wrapper {
+            &>.flexbox {
+                &>.element {
+                    width: 100%;
+                    &>.image {
+                        height: 80vw;
+                        width: 80vw;
+                    }
+                }
+            }
+        }  
+    }
+}

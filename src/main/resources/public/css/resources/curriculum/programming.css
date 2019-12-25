@@ -1,0 +1,207 @@
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#heading {
+  margin-top: 100px;
+}
+
+section#heading > .wrapper > .flexbox {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  margin-top: -30px;
+}
+
+section#heading > .wrapper > .flexbox > * {
+  margin-top: 30px;
+}
+
+section#heading > .wrapper > .flexbox > .left {
+  width: 50%;
+  min-width: 300px;
+  margin-right: 30px;
+}
+
+section#heading > .wrapper > .flexbox > .left > .subtitle {
+  font-size: 1.4em;
+}
+
+section#heading > .wrapper > .flexbox > .left > .normal {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+section#heading > .wrapper > .flexbox > .right {
+  height: 200px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  min-width: 300px;
+  background-color: #c4c4c4;
+}
+
+section#what-we-learn-here {
+  margin-top: 80px;
+}
+
+section#what-we-learn-here > .wrapper > .subtitle {
+  margin-bottom: 30px;
+  font-size: 1.4em;
+}
+
+section#what-we-learn-here > .wrapper > .flexbox {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -40px;
+}
+
+section#what-we-learn-here > .wrapper > .flexbox > .element {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 20vh;
+  min-width: 200px;
+  margin-right: 20px;
+  margin-top: 40px;
+}
+
+section#what-we-learn-here > .wrapper > .flexbox > .element > .image {
+  height: 20vh;
+  width: 20vh;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #c4c4c4;
+}
+
+section#what-we-learn-here > .wrapper > .flexbox > .element > .subtitle {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+section#what-we-learn-here > .wrapper > .flexbox > .element > .normal {
+  margin-top: 10px;
+  width: 100%;
+}
+
+section#leader {
+  background-color: #f8dfff;
+  margin-top: 120px;
+}
+
+section#leader > .wrapper > .flexbox {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+section#leader > .wrapper > .flexbox > * {
+  margin-top: 30px;
+}
+
+section#leader > .wrapper > .flexbox > .image {
+  display: inline-block;
+  border-radius: 100%;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  margin-right: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section#leader > .wrapper > .flexbox > .right {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+section#leader > .wrapper > .flexbox > .right > .subtitle {
+  font-size: 1.2em;
+}
+
+section#leader > .wrapper > .flexbox > .right > .normal {
+  margin-top: 5px;
+  font-size: 1.1em;
+}
+
+section#mentor {
+  margin-top: 120px;
+}
+
+section#mentor > .wrapper > .subtitle {
+  font-size: 1.4em;
+}
+
+section#mentor > .wrapper > .normal {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+section#mentor > .wrapper > .normal > a.link {
+  border-bottom: 1px solid gray;
+  -webkit-transition: color .2s, border-color .2s;
+  transition: color .2s, border-color .2s;
+}
+
+section#mentor > .wrapper > .normal > a.link:hover {
+  color: black;
+  border-color: black;
+}
+
+section#resources {
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+section#resources > .wrapper > .subtitle {
+  font-size: 1.4em;
+}
+
+section#resources > .wrapper > ul {
+  margin-top: 12px;
+  list-style-type: lower-greek;
+  list-style-position: inside;
+}
+
+section#resources > .wrapper > ul > li {
+  font-size: 1.2em;
+  margin-bottom: 7px;
+}
+
+section#resources > .wrapper > ul > li > a {
+  border-bottom: 1px solid gray;
+  -webkit-transition: border-bottom-color .1s, color .1s;
+  transition: border-bottom-color .1s, color .1s;
+}
+
+section#resources > .wrapper > ul > li > a:hover {
+  border-bottom-color: black;
+  color: black;
+}
+
+@media screen and (max-width: 400px) {
+  section#what-we-learn-here > .wrapper > .flexbox > .element {
+    width: 100%;
+  }
+  section#what-we-learn-here > .wrapper > .flexbox > .element > .image {
+    height: 80vw;
+    width: 80vw;
+  }
+}
+/*# sourceMappingURL=programming.css.map */
