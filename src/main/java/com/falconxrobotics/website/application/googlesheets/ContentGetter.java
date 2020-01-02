@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.google.api.services.sheets.v4.model.ValueRange;
 
@@ -80,6 +82,50 @@ public class ContentGetter {
         for (Object value : collection) {
             output.add(value.toString());
         }
+        return output;
+    }
+
+    public HashMap<String, Object> stripSingletonLists(HashMap<String, List<String>> input) {
+        HashMap<String, Object> output = new HashMap<String, Object>();
+
+        for (Entry<String, List<String>> entry : input.entrySet()) {
+            if (entry.getValue().size() == 1) {
+                output.put(entry.getKey(), entry.getValue().get(0));
+            } else {
+                output.put(entry.getKey(), entry.getValue());
+            }
+        }
+
+        return output;
+    }
+
+    /**
+     * @throws IndexOutOfBoundsException if size of l1 and l2 is not equal
+     */
+    public <T, V> Map<T, V> zip(List<T> l1, List<V> l2) {
+        Map<T, V> output = new HashMap<>();
+        for (int i = 0; i < l1.size(); i++) {
+            output.put(l1.get(i), l2.get(i));
+        }
+        return output;
+    }
+
+    /**
+     * @throws IndexOutOfBoundsException any array in arrays parameter have
+     *                                   different lengths
+     */
+    public String[][] zipArrays(String[]... arrays) {
+        String[][] output = new String[arrays[0].length][arrays.length];
+
+        // [a,b,c], [d,e,f]
+        // [[a, d], [b, e], [c, f]]
+
+        for (int arraysI = 0; arraysI < arrays.length; arraysI++) {
+            for (int i = 0; i < arrays[0].length; i++) {
+                output[i][arraysI] = arrays[arraysI][i];
+            }
+        }
+
         return output;
     }
 }
