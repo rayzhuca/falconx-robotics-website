@@ -36,7 +36,7 @@ public class ResourcesComponent {
         HashMap<String, Object> attributes = sheet.stripSingletonLists( // So I don't need to do: key[0]
                 (HashMap<String, List<String>>) sheetAttributes.clone());
 
-        attributes.put("resources", sheet.zip(sheetAttributes.get("resource names"), sheetAttributes.get("resource links")));
+        attributes.put("resources", sheet.zip(sheetAttributes.get("resourceNames"), sheetAttributes.get("resourceLinks")));
         attributes.put("learnings",
                 sheet.zipArrays(sheetAttributes.get("learn item names").toArray(new String[0]),
                         sheetAttributes.get("learn item descriptions").toArray(new String[0]),

@@ -32,10 +32,10 @@
         <div class="wrapper">
             <div class="subtitle fade-in fade-in-down">What we learn here</div>
             <div class="flexbox">
-                <div class="element fade-in fade-in-down">
-                    <div class="image"></div>
-                    <div class="subtitle">Java</div>
-                    <div class="normal">blah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blah</div>
+                <div class="element fade-in fade-in-down" th:each="instance : ${learnings}">
+                    <div class="image" th:src="${instance[2]}"></div>
+                    <div class="subtitle" th:text="${instance[0]}">Java</div>
+                    <div class="normal" th:text="${instance[1]}">blah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blahah nlah blah</div>
                 </div>
             </div>
         </div>
@@ -44,10 +44,10 @@
     <section id="leader">
         <div class="wrapper">
             <div class="flexbox">
-                <div class="image fade-in fade-in-down" style="background-image: url(https://cdn.discordapp.com/avatars/150689208435081216/54336600c87ee961811416274d5f9fce.png)"></div>
+                <div class="image fade-in fade-in-down" th:style="'background-image: url(' + ${leaderImageLink} + ')'"></div>
                 <div class="right fade-in fade-in-down">
-                    <div class="subtitle">Programming leader — Casey</div>
-                    <div class="normal">Hi, I'm Casey. I'm an experienced programmer and Terraria modder. 😎</div>
+                    <div class="subtitle" th:text="'Programming Leader — ' + ${leaderName}"></div>
+                    <div class="normal" th:text="${leaderQuote}"></div>
                 </div>
             </div>
         </div>
@@ -55,8 +55,8 @@
 
     <section id="mentor">
         <div class="wrapper">
-            <div class="subtitle fade-in fade-in-down">Are you an experienced developer?</div>
-            <div class="normal fade-in fade-in-down">We are always trying to find more mentors. <a class="link" target="_blank" href="/contact">Contact us</a> to help us out!</div>
+            <div class="subtitle fade-in fade-in-down" th:text="${hiringTitle}"></div>
+            <div class="normal fade-in fade-in-down" th:text="${hiringDescription}"></div>
         </div>
     </section>
 
@@ -64,11 +64,9 @@
         <div class="wrapper">
             <div class="subtitle fade-in fade-in-down">Resources</div>
             <ul>
-                <li><a target="_blank" class="fade-in fade-in-down" href="javascript:void(0)">wow! you're the 1 million-th visitor. click here to get your 1 million dollar prize reward</a></li>
-                <li><a target="_blank" class="fade-in fade-in-down" href="https://photricity.com/flw/ajax/">Cute anime girls. Must watch!</a></li>
-                <li><a target="_blank" class="fade-in fade-in-down" href="https://soundcloud.com/professoramazing/anohana-ost-i-lleft-you-not-sure-if-i-did">good soundcloud music</a></li>
-                <li><a target="_blank" class="fade-in fade-in-down" href="https://youtu.be/1ZucZ-IZK8U">Chris — 10 Facts About Me!!!</a></li>
-                <li><a target="_blank" class="fade-in fade-in-down" href="https://youtu.be/OdJFqFmwh14">Ray's favorite Geometry Dash level</a></li>
+                <li th:each="instance : ${resources}">
+                    <a target="_blank" class="fade-in fade-in-down" th:href="${instance.value}" th:text="${instance.key}"></a>
+                </li>
             </ul>
         </div>
     </section>
