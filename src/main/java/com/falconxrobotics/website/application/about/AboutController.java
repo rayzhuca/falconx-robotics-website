@@ -22,7 +22,7 @@ public class AboutController {
     @GetMapping("/about/history")
     public String history(Model model) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            model.addAllAttributes(sheetComponent.getAttributes("history"));
             return "about/history";
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -37,7 +37,7 @@ public class AboutController {
     @GetMapping("/about/first")
     public String first(Model model) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            model.addAllAttributes(sheetComponent.getAttributes("first"));
             return "about/first";
         } catch (IOException ioe) {
             ioe.printStackTrace();
