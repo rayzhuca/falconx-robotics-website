@@ -46,7 +46,7 @@
             <div class="flexbox">
                 <div class="image fade-in fade-in-down" th:style="'background-image: url(' + ${leaderImageLink} + ')'"></div>
                 <div class="right fade-in fade-in-down">
-                    <div class="subtitle" th:text="'Programming Leader — ' + ${leaderName}"></div>
+                    <div class="subtitle" th:text="${leaderTitle}"></div>
                     <div class="normal" th:text="${leaderQuote}"></div>
                 </div>
             </div>
