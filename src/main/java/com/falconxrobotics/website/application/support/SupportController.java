@@ -67,7 +67,7 @@ public class SupportController {
     @GetMapping("/support/sponsor-us")
     public String sponsorUs(Model model) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            model.addAllAttributes(sheetComponent.getAttributes("sponsor-us"));
             return "support/sponsor-us";
         } catch (IOException ioe) {
             ioe.printStackTrace();
