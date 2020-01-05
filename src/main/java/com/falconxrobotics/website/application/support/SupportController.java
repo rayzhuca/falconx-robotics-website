@@ -63,4 +63,19 @@ public class SupportController {
         }
         return "error";
     }
+
+    @GetMapping("/support/sponsor-us")
+    public String sponsorUs(Model model) {
+        try {
+            model.addAllAttributes(sheetComponent.getAttributes(null));
+            return "support/sponsor-us";
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            // TODO: Let error controllers handle
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+            // TODO: Let error controllers handle
+        }
+        return "error";
+    }
 }
