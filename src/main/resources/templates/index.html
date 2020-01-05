@@ -22,14 +22,14 @@
 				<a target="_blank" href="https://cphs.mdusd.org/">College Park HS</a>
 				comprised of students, parents, mentors, and teachers.
 			</div>
-			<div class="image parallax fade-in-down fade-in test" data-parallax-slowdown="2" data-parallax-middle></div>
+			<div th:style="'background-image:url(\'' + ${firstImageLink} + '\')'" class="image parallax fade-in-down fade-in test" data-parallax-slowdown="2" data-parallax-middle></div>
 		</div>
 	</section>
 
 	<section id="second">
 		<div class="wrapper">
 			<div class="left">
-				<div class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
+				<div th:style="'background-image:url(\'' + ${secondImageLink} + '\')'" class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
 					<a href="/"></a>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 	<section id="fourth">
 		<div class="wrapper">
 			<div class="left">
-				<div class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
+				<div th:style="'background-image:url(\'' + ${thirdImageLink} + '\')'" class="background parallax" data-parallax-slowdown="5" data-parallax-middle>
 					<a href="/"></a>
 				</div>
 			</div>
