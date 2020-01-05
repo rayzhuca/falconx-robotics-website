@@ -16,6 +16,7 @@ Run the following commands on git bash.
 ```
 git branch -D product
 git branch product master
+git checkout product
 ```
 Then, remove `secrets/` in [.gitignore](.gitignore) and run the following.
 ```
