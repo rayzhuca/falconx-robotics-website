@@ -14,6 +14,10 @@ section > .wrapper {
   position: relative;
 }
 
+section#front {
+  margin-top: 50px;
+}
+
 section#front > .wrapper > .subtitle {
   margin-top: 35vh;
   min-width: 45%;
