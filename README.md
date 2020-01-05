@@ -21,7 +21,7 @@ git checkout product
 Then, remove `secrets/` in [.gitignore](.gitignore) and run the following.
 ```
 git commit -a -m "Added Credentials for Heroku."
-git push heroku product:master
+git push heroku product:master -f
 ```
 Lastly, to return back to the master branch:
 ```
