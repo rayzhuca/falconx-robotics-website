@@ -22,7 +22,7 @@ public class SupportController {
     @GetMapping("/support/levels")
     public String history(Model model) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            model.addAllAttributes(sheetComponent.getAttributes("sponsor-levels"));
             return "support/levels";
         } catch (IOException ioe) {
             ioe.printStackTrace();
