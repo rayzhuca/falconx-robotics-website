@@ -1,0 +1,35 @@
+main {
+    margin-top: 50px;
+    & > .wrapper > .subtitle {
+        font-size: 2.5em;
+    }
+}
+
+section {
+    margin-top: 50px;
+    &>.wrapper {
+        &>.subtitle {
+            font-size: 1.5em;
+        }
+        &>.subtitle+.normal {
+            margin-top: 20px;
+            font-size: 1.2em;
+            line-height: 38px;
+        }
+        &>.normal+ol {
+            margin-top: 20px;
+            list-style-position: inside;
+            &>li {
+                margin-top: 15px;
+                &>.subtitle {
+                    display: inline-block;
+                    font-size: 1.2em;
+                }
+                &>.normal {
+                    margin-top: 10px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
