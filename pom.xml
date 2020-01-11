@@ -12,7 +12,7 @@
 	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Website for FalconX Robotics—FRC team 6662.</description>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
