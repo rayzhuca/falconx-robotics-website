@@ -15,13 +15,16 @@ section#third {
             text-align: center;
         }
 
-        &>.sponsors {
-            margin-top: 60px;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        flex-wrap: wrap;
 
+        &>.sponsor {
+            flex: 1;
+
+            margin-top: 100px;
+            
             &>* {
                 padding: 30px 40px;
                 opacity: 1;
@@ -33,36 +36,9 @@ section#third {
             }
 
             &>a {
-                &>.apple {
-                    height: calc(var(--sponsor-height-base-line) + 100px);
-                    //     width: 100px;
-                    //     background-image: url('/images/apple.png');
-                }
-
-                &>.tap-plastics {
-                    height: var(--sponsor-height-base-line);
-                    // background-image: url('/images/tap-plastics.png');
-                }
-
-                &>.marathon {
-                    height: calc(var(--sponsor-height-base-line) + 250px);
-                    //     background-image: url('/images/marathon.png');
-                }
-
-                &>.google {
-                    height: var(--sponsor-height-base-line);
-                    //     background-image: url('/images/google.png');
-                }
-
-                &>.brin-wojcicki-org {
-                    height: calc(var(--sponsor-height-base-line) + 20px);
-                    //     background-image: url('/images/brin-wojcicki-org.png');
-                }
-
-                &>.moutain-mikes {
-                    height: calc(var(--sponsor-height-base-line) + 100px);
-                    //     background-image: url('/images/moutain-mikes.png');
-                }
+                &>img {
+                    max-width: 30vw;
+                }        
             }
         }
     }
