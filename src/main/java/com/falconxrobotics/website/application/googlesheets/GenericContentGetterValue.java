@@ -16,11 +16,12 @@ import com.google.api.services.sheets.v4.model.ValueRange;
  */
 public class GenericContentGetterValue implements Map<String, Object> {
 
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_PURPLE = "\u001B[35m";
 
-    private Map<String, Object> attributes = new HashMap<>();
+    private Map<String, Object> attributes = new HashMap<>(20);
 
     /**
      * @param valueRange the value range to be converted to a {@link Map} called {@code attributes}
@@ -29,7 +30,11 @@ public class GenericContentGetterValue implements Map<String, Object> {
         for (final List<Object> row : valueRange.getValues()) {
             if (row == null || row.isEmpty())
                 throw new RuntimeException("Data from sheets is expected to not be empty");
-            attributes.put(row.get(0).toString(), row.subList(1, row.size()));
+            if (row.size() == 1) {
+                attributes.put(row.get(0).toString(), null);
+            } else {
+                attributes.put(row.get(0).toString(), row.subList(1, row.size()));
+            }
         }
     }
 
@@ -63,7 +68,7 @@ public class GenericContentGetterValue implements Map<String, Object> {
      * The specified value for the attribute will be zipped into a {@link Map}. For
      * example {"key": ["a", "b"]} becomes {"key": {"a": "b"}}.
      */
-    public void zip(final String... keys) {
+    public void link(final String... keys) {
         for (final String key : keys) {
             attributes.compute(key, (k, v) -> {
                 final List<?> list = (List<?>) v;
@@ -124,8 +129,33 @@ public class GenericContentGetterValue implements Map<String, Object> {
         transpose(key, input);
     }
 
+    /**
+     * Packages all values into a list of maps containing the original key and value,
+     * which is then added to {@attributes} with the key {@code target}.
+     * The key is not included. 
+     * 
+     * @param target the new key that all values is stored to
+     */
+    public void packageAll(final String target) {
+        List<Map<String, Object>> output = new ArrayList<>();
+        attributes.forEach((k, v) -> {
+            output.add(Map.of(k, v));
+        });
+        attributes.put(target, output);
+    }
+
+    /**
+     * @return {@code attributes}
+     */
     public Map<String, Object> getAttributes() {
         return attributes;
+    }
+
+    /**
+     * Prints itself via {@link java.io.PrintStream#println(Object) println(Object)}.
+     */
+    public void print() {
+        System.out.println(this);
     }
 
     /**
@@ -138,7 +168,9 @@ public class GenericContentGetterValue implements Map<String, Object> {
 
         attributes.forEach((k, v) -> {
             builder.append("    " + ANSI_PURPLE + k + ANSI_RESET + ": " + ANSI_CYAN);
-            if (v instanceof List<?>) {
+            if (v == null) {
+                builder.append(ANSI_RED + "null" + ANSI_RESET + ",\n");
+            } else if (v instanceof List<?>) {
                 builder.append(Arrays.deepToString(((List<?>) v).toArray(new Object[0])) + ANSI_RESET + ",\n");
             } else if (v.getClass().isArray()) {
                 builder.append(Arrays.deepToString((Object[]) v) + ANSI_RESET + ",\n");
