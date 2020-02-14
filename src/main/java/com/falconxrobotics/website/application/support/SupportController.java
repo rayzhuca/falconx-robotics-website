@@ -2,6 +2,8 @@ package com.falconxrobotics.website.application.support;
 
 import java.io.IOException;
 
+import com.falconxrobotics.website.application.googlesheets.GenericContentGetter;
+import com.falconxrobotics.website.application.googlesheets.GenericContentGetterValue;
 import com.falconxrobotics.website.application.googlesheets.SheetComponent;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SupportController {
 
     private SheetComponent sheetComponent;
+    private GenericContentGetter contentGetter;
 
     @Autowired
-    public SupportController(SheetComponent sheetComponent) {
+    public SupportController(SheetComponent sheetComponent, GenericContentGetter contentGetter) {
         this.sheetComponent = sheetComponent;
+        this.contentGetter = contentGetter;
     }
 
     @GetMapping("/support/levels")
@@ -52,10 +56,13 @@ public class SupportController {
     @GetMapping("/support/our-sponsors")
     public String ourSponsors(Model model) {
         try {
-            model.addAllAttributes(sheetComponent.getAttributes(null));
+            GenericContentGetterValue value = contentGetter.getAttributes("sponsors");
+            value.transpose("sponsors", "names", "image-link", "link");
+            value.print();
+            model.addAllAttributes(value);
             return "support/our-sponsors";
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        // } catch (IOException ioe) {
+            // ioe.printStackTrace();
             // TODO: Let error controllers handle
         } catch (RuntimeException re) {
             re.printStackTrace();
