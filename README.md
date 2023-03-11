@@ -1,8 +1,8 @@
 ## About
 
-This is the official repository for the upcoming website of FalconX Robotics. This project is currently in development.
+This is the old repository for the upcoming website of FalconX Robotics. This project is currently not in development.
 
-[Here](https://falconxrobotics.herokuapp.com/) is the link.
+[Here](https://falconxrobotics.herokuapp.com/) is the link (inactive).
 
 ## Cautions
 Remember to never leak Google Sheets authentication files onto git.
